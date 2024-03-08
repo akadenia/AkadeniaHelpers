@@ -1,12 +1,10 @@
 name: Release Package
 
 on:
-  release:
-    types: [published]
-
-env:
-  CI: true
-  NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

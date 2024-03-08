@@ -24,14 +24,11 @@
     "url": "git+https://github.com/akadenia/AkadeniaUtilities.git"
   },
   "author": "Akadenia",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/akadenia/AkadeniaUtilities/issues"
   },
   "homepage": "https://github.com/akadenia/AkadeniaUtilities#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "devDependencies": {
     "@commitlint/cli": "^18.6.1",
     "@commitlint/config-conventional": "^18.6.2",
