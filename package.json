@@ -1,7 +1,7 @@
 {
-  "name": "@akadenia/template",
+  "name": "@akadenia/utilities",
   "version": "1.0.0",
-  "description": "Akadenia package: BaseAkadeniaPackageTemplate",
+  "description": "Akadenia package: Utilities",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [
@@ -14,21 +14,21 @@
     "lint": "prettier --check \"./**/*.{ts,tsx,js,jsx,json,yml}\"",
     "prepare": "npm run build",
     "version": "git add -A src",
-    "updateLink": "pm run build && npm rm @akadenia/BaseAkadeniaPackageTemplate -g && npm link"
+    "updateLink": "pm run build && npm rm @akadenia/utilities -g && npm link"
   },
   "files": [
     "dist"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akadenia/BaseAkadeniaPackageTemplate.git"
+    "url": "git+https://github.com/akadenia/AkadeniaUtilities.git"
   },
   "author": "Akadenia",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/akadenia/BaseAkadeniaPackageTemplate/issues"
+    "url": "https://github.com/akadenia/AkadeniaUtilities/issues"
   },
-  "homepage": "https://github.com/akadenia/BaseAkadeniaPackageTemplate#readme",
+  "homepage": "https://github.com/akadenia/AkadeniaUtilities#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
