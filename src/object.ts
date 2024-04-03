@@ -38,8 +38,7 @@ export function filterObjectsByProperty<T extends Record<string, any>>(
   propertyName: keyof T,
   propertyValue: T[keyof T],
 ): T[] {
-  const predicate = (obj: T) =>
-    Object.getOwnPropertyDescriptor(obj, propertyName) && obj[propertyName] === propertyValue
+  const predicate = (obj: T) => Object.getOwnPropertyDescriptor(obj, propertyName) && obj[propertyName] === propertyValue
   return array.filter(predicate)
 }
 
