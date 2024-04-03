@@ -9,10 +9,7 @@ import { ObjectHelpers } from "./"
  * @param {"toSnakeCase" | "toCamelCase"} type - The type of casing the string, object, or array of objects should be converted to (snake_case or camelCase)
  * @returns {T} - A new string, object, or array of objects in the specified casing
  */
-export const convertKeyCasing = <T extends string | Object | Array<Object>>(
-  input: T,
-  type: "toSnakeCase" | "toCamelCase",
-): T => {
+export const convertKeyCasing = <T extends string | Object | Array<Object>>(input: T, type: "toSnakeCase" | "toCamelCase"): T => {
   if (typeof input === "string") {
     const transformedString =
       type === "toSnakeCase"
@@ -24,9 +21,7 @@ export const convertKeyCasing = <T extends string | Object | Array<Object>>(
     for (const key in input) {
       if (Object.prototype.hasOwnProperty.call(input, key)) {
         const newKey =
-          type === "toSnakeCase"
-            ? key.replace(/([A-Z])/g, "_$1").toLowerCase()
-            : key.replace(/(_\w)/g, (m) => m[1].toUpperCase())
+          type === "toSnakeCase" ? key.replace(/([A-Z])/g, "_$1").toLowerCase() : key.replace(/(_\w)/g, (m) => m[1].toUpperCase())
         if (ObjectHelpers.isPureObject(input[key]) || Array.isArray(input[key])) {
           newObj[newKey] = convertKeyCasing(input[key] as Object, type)
         } else {
@@ -141,8 +136,7 @@ export const convertCamelToSnakeCase = (data: string | Object | Array<Object>) =
  * @param  value The string to be displayed
  * @returns The passed string or the default string if the passed string is null or undefined
  */
-export const handleNullDisplay = (value: string | null | undefined, defaultValue: string = "N/A") =>
-  value ?? defaultValue
+export const handleNullDisplay = (value: string | null | undefined, defaultValue: string = "N/A") => value ?? defaultValue
 
 /**
  * @function
