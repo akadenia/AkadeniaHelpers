@@ -117,3 +117,19 @@ export const objectPropHasValue = <ObjectType>({
  */
 export const findEntry = <EntryType>(array: EntryType[], predicate: (item: EntryType) => boolean): EntryType | null =>
   array.find(predicate) || null
+
+export function convertArrayToMap<T extends object>(arrayData: T[], keyProp: keyof T) {
+  if (typeof keyProp !== "string") {
+    throw new Error("keyProp can only be strings or numbers")
+  }
+
+  const dataAsObject: { [key: string]: T } = {}
+
+  arrayData.reduce((prev, curr) => {
+    const key = curr[keyProp] as unknown as string
+    prev[key] = curr
+    return prev
+  }, dataAsObject)
+
+  return dataAsObject
+}
