@@ -48,7 +48,7 @@ export const formatDateTime = (
  */
 
 export function getDate(rawDate: string | Date): Date {
-  return typeof rawDate === 'string' ? new Date(rawDate) : rawDate
+  return typeof rawDate === "string" ? new Date(rawDate) : rawDate
 }
 
 /**
@@ -61,24 +61,11 @@ export function getDate(rawDate: string | Date): Date {
 export function getShortOrdinalDate(date: string | Date): string {
   const newDate = getDate(date)
   const day = newDate.getDate()
-  const monthNames = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec'
-  ]
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
   const monthIndex = newDate.getMonth()
   const year = newDate.getFullYear()
 
-  const ordinalEndings = ['th', 'st', 'nd', 'rd']
+  const ordinalEndings = ["th", "st", "nd", "rd"]
   let suffix = ordinalEndings[0]
   if (day <= 3 && day > 0) {
     suffix = ordinalEndings[day]
