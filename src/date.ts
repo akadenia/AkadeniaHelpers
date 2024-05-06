@@ -64,6 +64,9 @@ export function getShortOrdinalDate(date: string | Date): string {
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
   const monthIndex = newDate.getMonth()
   const year = newDate.getFullYear()
+  const hours = newDate.getHours().toString().padStart(2, "0")
+  const minutes = newDate.getMinutes().toString().padStart(2, "0")
+  const seconds = newDate.getSeconds().toString().padStart(2, "0")
 
   const ordinalEndings = ["th", "st", "nd", "rd"]
   let suffix = ordinalEndings[0]
@@ -71,7 +74,7 @@ export function getShortOrdinalDate(date: string | Date): string {
     suffix = ordinalEndings[day]
   } else {
     // Determine the ordinal endings based on the last digit of the day
-    suffix = ordinalEndings[day % 10]
+    suffix = ordinalEndings[day % 10] ?? suffix
   }
-  return `${day}${suffix}, ${monthNames[monthIndex]} ${year}`
+  return `${day}${suffix}, ${monthNames[monthIndex]} ${year} ${hours}:${minutes}:${seconds}`
 }
