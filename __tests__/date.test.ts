@@ -52,7 +52,7 @@ describe("date", () => {
     expect(actual).toBe(expected)
   })
 
-  it("parseDate with not a date string", () => {
+  it("parseDate with invalid date string", () => {
     const dateParser = () => parseDate("not date string")
     const expected = 'Cannot parse passed date: "not date string"'
     expect(dateParser).toThrow(expected)
