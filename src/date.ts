@@ -47,8 +47,12 @@ export const formatDateTime = (
  * @returns {Date} - A date that represents the new date object.
  */
 
-export function getDate(rawDate: string | Date): Date {
-  return typeof rawDate === "string" ? new Date(rawDate) : rawDate
+export function parseDate(rawDate: string | Date): Date {
+  const outputDate = typeof rawDate === "string" ? new Date(rawDate) : rawDate
+  if (isNaN(outputDate.getTime())) {
+    throw new Error(`Cannot parse passed date: ${JSON.stringify(rawDate)}`)
+  }
+  return outputDate
 }
 
 /**
@@ -59,7 +63,7 @@ export function getDate(rawDate: string | Date): Date {
  */
 
 export function getShortOrdinalDate(date: string | Date): string {
-  const newDate = getDate(date)
+  const newDate = parseDate(date)
   const day = newDate.getDate()
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
   const monthIndex = newDate.getMonth()
