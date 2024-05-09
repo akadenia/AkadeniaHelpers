@@ -1,7 +1,5 @@
 ## Getting Started
 
-- [@akadenia/utilities](#akadeniautilities)
-- [Publishing Instructions](#publishing-instructions)
 - [DateHelpers](#datehelpers)
   - [`DateHelpers.getReadableDateTime(datetime)`](#datehelpersgetreadabledatetimedatetime)
   - [`DateHelpers.getReadableDate(datetime)`](#datehelpersgetreadabledatedatetime)
