@@ -44,13 +44,13 @@ export const formatDateTime = (
  *
  * @function
  * @param {string | Date} date - The date string that needs to be returned as a Date object.
- * @returns {Date} - A date that represents the new date object.
+ * @returns {Date} - A date representing the new date object.
  */
 
-export function parseDate(rawDate: string | Date): Date {
-  const outputDate = typeof rawDate === "string" ? new Date(rawDate) : rawDate
+export function parseDate(date: string | Date): Date {
+  const outputDate = typeof date === "string" ? new Date(date) : date
   if (isNaN(outputDate.getTime())) {
-    throw new Error(`Cannot parse passed date: ${JSON.stringify(rawDate)}`)
+    throw new Error(`Cannot parse passed date: ${JSON.stringify(date)}`)
   }
   return outputDate
 }
