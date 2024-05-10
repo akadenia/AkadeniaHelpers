@@ -12,6 +12,7 @@
     "test": "jest",
     "format": "prettier --write \"./**/*.{ts,tsx,js,jsx,json,yml}\"",
     "lint": "prettier --check \"./**/*.{ts,tsx,js,jsx,json,yml}\"",
+    "build": "echo \"Nothing to build\"",
     "version": "git add -A src",
     "generate:docs": "npx typedoc"
   },
