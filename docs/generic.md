@@ -26,7 +26,7 @@ The number of milliseconds to wait.
 
 #### Source
 
-[generic.ts:5](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/generic.ts#L5)
+[generic.ts:5](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/generic.ts#L5)
 
 ***
 
@@ -50,4 +50,4 @@ An IP address or a domain name
 
 #### Source
 
-[generic.ts:12](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/generic.ts#L12)
+[generic.ts:12](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/generic.ts#L12)

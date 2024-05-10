@@ -39,4 +39,4 @@ checkFileExtension("test.txt", ["md"]) // false
 
 #### Source
 
-[file.ts:10](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/file.ts#L10)
+[file.ts:10](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/file.ts#L10)

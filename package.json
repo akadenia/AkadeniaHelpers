@@ -13,7 +13,7 @@
     "format": "prettier --write \"./**/*.{ts,tsx,js,jsx,json,yml}\"",
     "lint": "prettier --check \"./**/*.{ts,tsx,js,jsx,json,yml}\"",
     "version": "git add -A src",
-    "generate:docs": "npx typedoc && mv ./docs/README.md ./README.md"
+    "generate:docs": "npx typedoc"
   },
   "files": [
     "dist"

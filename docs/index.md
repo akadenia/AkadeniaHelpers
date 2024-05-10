@@ -86,4 +86,4 @@ Renames and re-exports [object](object.md)
 
 #### Source
 
-[index.ts:21](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/index.ts#L21)
+[index.ts:21](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/index.ts#L21)

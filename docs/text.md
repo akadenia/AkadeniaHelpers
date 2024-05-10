@@ -28,7 +28,7 @@ The string in a capitalized form
 
 #### Source
 
-[text.ts:146](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/text.ts#L146)
+[text.ts:146](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/text.ts#L146)
 
 ***
 
@@ -52,7 +52,7 @@ The object or array of objects to convert key cases
 
 #### Source
 
-[text.ts:130](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/text.ts#L130)
+[text.ts:130](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/text.ts#L130)
 
 ***
 
@@ -84,7 +84,7 @@ The type of casing the string, object, or array of objects should be converted t
 
 #### Source
 
-[text.ts:12](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/text.ts#L12)
+[text.ts:12](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/text.ts#L12)
 
 ***
 
@@ -108,7 +108,7 @@ The object or array of objects to convert key cases
 
 #### Source
 
-[text.ts:121](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/text.ts#L121)
+[text.ts:121](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/text.ts#L121)
 
 ***
 
@@ -146,7 +146,7 @@ The original string if it is shorter than the character limit, or a truncated ve
 
 #### Source
 
-[text.ts:160](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/text.ts#L160)
+[text.ts:160](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/text.ts#L160)
 
 ***
 
@@ -170,7 +170,7 @@ The path of the file
 
 #### Source
 
-[text.ts:88](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/text.ts#L88)
+[text.ts:88](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/text.ts#L88)
 
 ***
 
@@ -194,7 +194,7 @@ A position number.
 
 #### Source
 
-[text.ts:58](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/text.ts#L58)
+[text.ts:58](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/text.ts#L58)
 
 ***
 
@@ -220,7 +220,7 @@ The passed string or the default string if the passed string is null or undefine
 
 #### Source
 
-[text.ts:139](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/text.ts#L139)
+[text.ts:139](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/text.ts#L139)
 
 ***
 
@@ -246,7 +246,7 @@ The boolean value when the condition is met
 
 #### Source
 
-[text.ts:182](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/text.ts#L182)
+[text.ts:182](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/text.ts#L182)
 
 ***
 
@@ -274,7 +274,7 @@ The condition that determines if the word needs to be pluralized
 
 #### Source
 
-[text.ts:113](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/text.ts#L113)
+[text.ts:113](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/text.ts#L113)
 
 ***
 
@@ -298,7 +298,7 @@ The string that needs to have spaces replaced with underscores
 
 #### Source
 
-[text.ts:96](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/text.ts#L96)
+[text.ts:96](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/text.ts#L96)
 
 ***
 
@@ -322,7 +322,7 @@ The string that needs to have underscores replaced with spaces
 
 #### Source
 
-[text.ts:104](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/text.ts#L104)
+[text.ts:104](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/text.ts#L104)
 
 ***
 
@@ -350,7 +350,7 @@ The maximum number of characters that the text can have
 
 #### Source
 
-[text.ts:79](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/text.ts#L79)
+[text.ts:79](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/text.ts#L79)
 
 ***
 
@@ -368,4 +368,4 @@ The maximum number of characters that the text can have
 
 #### Source
 
-[text.ts:44](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/text.ts#L44)
+[text.ts:44](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/text.ts#L44)

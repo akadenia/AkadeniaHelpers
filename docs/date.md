@@ -36,7 +36,7 @@ The local timezone to be used
 
 #### Source
 
-[date.ts:37](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/date.ts#L37)
+[date.ts:37](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/date.ts#L37)
 
 ***
 
@@ -60,7 +60,7 @@ The date string that needs to be formatted
 
 #### Source
 
-[date.ts:26](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/date.ts#L26)
+[date.ts:26](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/date.ts#L26)
 
 ***
 
@@ -84,7 +84,7 @@ The datetime that needs to be formatted.
 
 #### Source
 
-[date.ts:18](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/date.ts#L18)
+[date.ts:18](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/date.ts#L18)
 
 ***
 
@@ -108,4 +108,4 @@ The datetime that needs to be formatted.
 
 #### Source
 
-[date.ts:7](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/date.ts#L7)
+[date.ts:7](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/date.ts#L7)

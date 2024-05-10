@@ -38,7 +38,7 @@ The sub object to look for in the main object.
 
 #### Source
 
-[object.ts:52](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/object.ts#L52)
+[object.ts:52](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/object.ts#L52)
 
 ***
 
@@ -62,7 +62,7 @@ The sub object to look for in the main object.
 
 #### Source
 
-[object.ts:121](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/object.ts#L121)
+[object.ts:121](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/object.ts#L121)
 
 ***
 
@@ -100,7 +100,7 @@ The value of the property to filter on.
 
 #### Source
 
-[object.ts:36](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/object.ts#L36)
+[object.ts:36](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/object.ts#L36)
 
 ***
 
@@ -134,7 +134,7 @@ The sub object used to search the array
 
 #### Source
 
-[object.ts:85](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/object.ts#L85)
+[object.ts:85](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/object.ts#L85)
 
 ***
 
@@ -168,7 +168,7 @@ The predicate function to use to search the array.
 
 #### Source
 
-[object.ts:118](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/object.ts#L118)
+[object.ts:118](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/object.ts#L118)
 
 ***
 
@@ -202,7 +202,7 @@ The sub object used to search the array.
 
 #### Source
 
-[object.ts:73](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/object.ts#L73)
+[object.ts:73](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/object.ts#L73)
 
 ***
 
@@ -226,7 +226,7 @@ The object to check if it is a pure object (not an array, date, or function)
 
 #### Source
 
-[object.ts:7](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/object.ts#L7)
+[object.ts:7](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/object.ts#L7)
 
 ***
 
@@ -266,7 +266,7 @@ objectPropHasValue(object, 'b', 3) // false
 
 #### Source
 
-[object.ts:101](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/object.ts#L101)
+[object.ts:101](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/object.ts#L101)
 
 ***
 
@@ -290,4 +290,4 @@ The string of cookies to parse
 
 #### Source
 
-[object.ts:17](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/object.ts#L17)
+[object.ts:17](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/object.ts#L17)

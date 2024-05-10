@@ -18,7 +18,7 @@
 
 ###### Source
 
-[map.ts:41](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/map.ts#L41)
+[map.ts:41](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/map.ts#L41)
 
 ##### startCoordinate
 
@@ -26,7 +26,7 @@
 
 ###### Source
 
-[map.ts:40](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/map.ts#L40)
+[map.ts:40](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/map.ts#L40)
 
 ## Functions
 
@@ -48,7 +48,7 @@
 
 #### Source
 
-[map.ts:25](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/map.ts#L25)
+[map.ts:25](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/map.ts#L25)
 
 ***
 
@@ -66,7 +66,7 @@
 
 #### Source
 
-[map.ts:44](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/map.ts#L44)
+[map.ts:44](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/map.ts#L44)
 
 ***
 
@@ -86,4 +86,4 @@
 
 #### Source
 
-[map.ts:5](https://github.com/akadenia/AkadeniaUtilities/blob/8752f6ca9da937529f0c4b35a3f4cafa61a4f5c5/src/map.ts#L5)
+[map.ts:5](https://github.com/akadenia/AkadeniaUtilities/blob/d36d1d1356c9fdf88467891933f4060f688c6d52/src/map.ts#L5)
