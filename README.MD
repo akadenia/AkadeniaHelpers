@@ -1,11 +1,11 @@
 ## Getting Started
 
-- [@akadenia/utilities](#akadeniautilities)
-- [Publishing Instructions](#publishing-instructions)
 - [DateHelpers](#datehelpers)
   - [`DateHelpers.getReadableDateTime(datetime)`](#datehelpersgetreadabledatetimedatetime)
   - [`DateHelpers.getReadableDate(datetime)`](#datehelpersgetreadabledatedatetime)
   - [`DateHelpers.getDateString(date)`](#datehelpersgetdatestringdate)
+  - [`DateHelpers.parseDate(date)`](#datehelpersparsedatedate)
+  - [`DateHelpers.getShortOrdinalDate(date)`](#datehelpersgetshortordinaldatedate)
 - [MapHelpers](#maphelpers)
   - [`MapHelpers.getDistanceBetweenPoints(point1, point2)`](#maphelpersgetdistancebetweenpointspoint1-point2)
   - [`MapHelpers.compareLocations(location1, location2, precision)`](#maphelperscomparelocationslocation1-location2-precision)
@@ -69,7 +69,25 @@ Returns a string representing the date in the user's local timezone.
 Arguments
 |Name|Type|Required|Description|
 |--|--|--|--|
-|`date`|`string`|`true`|The date string to convert to the string in the user's local timezone|
+|`date`|`string` or `Date`|`true`|The date string to convert to the string in the user's local timezone|
+
+## `DateHelpers.parseDate(date)`
+
+Returns a date representing the new date object.
+
+Arguments
+|Name|Type|Required|Description|
+|--|--|--|--|
+|`date`|`string`|`true`|The date string that needs to be returned as a date object|
+
+## `DateHelpers.getShortOrdinalDate(date)`
+
+Returns a string representing the date in short ordinal format.
+
+Arguments
+|Name|Type|Required|Description|
+|--|--|--|--|
+|`date`|`string`|`true`|The date string that needs to be formatted|
 
 # MapHelpers
 

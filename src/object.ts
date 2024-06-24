@@ -111,8 +111,11 @@ export const objectPropHasValue = <ObjectType>({
 /**
  * Finds the first entry in the array that satisfies the predicate.
  * @template EntryType - The type of the entries in the array.
+ * @callback PredicateFunction - The predicate function to use to search the array.
+ * @param {EntryType} item - The entry in the array to search.
+ * @returns {boolean} - True if the entry satisfies the predicate, false otherwise.
  * @param {EntryType[]} array - The array of entries to search.
- * @param {(item: EntryType) => boolean} predicate - The predicate function to use to search the array.
+ * @param {PredicateFunction} predicate - The predicate function to use to search the array.
  * @returns {EntryType | null} - The first entry that satisfies the predicate, or null if not found.
  */
 export const findEntry = <EntryType>(array: EntryType[], predicate: (item: EntryType) => boolean): EntryType | null =>

@@ -39,3 +39,46 @@ export const formatDateTime = (
   options: Intl.DateTimeFormatOptions,
   localTimezone: string | Intl.Locale = "en-US",
 ): string => new Date(date).toLocaleDateString(localTimezone, options)
+
+/**
+ *
+ * @function
+ * @param {string | Date} date - The date string that needs to be returned as a Date object.
+ * @returns {Date} - A date representing the new date object.
+ */
+
+export function parseDate(date: string | Date): Date {
+  const outputDate = typeof date === "string" ? new Date(date) : date
+  if (isNaN(outputDate.getTime())) {
+    throw new Error(`Cannot parse passed date: ${JSON.stringify(date)}`)
+  }
+  return outputDate
+}
+
+/**
+ *
+ * @function
+ * @param {string | Date} date - The date string that needs to be formatted
+ * @returns {string} - A string representing the date in the short ordinal date
+ */
+
+export function getShortOrdinalDate(date: string | Date): string {
+  const newDate = parseDate(date)
+  const day = newDate.getDate()
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  const monthIndex = newDate.getMonth()
+  const year = newDate.getFullYear()
+  const hours = newDate.getHours().toString().padStart(2, "0")
+  const minutes = newDate.getMinutes().toString().padStart(2, "0")
+  const seconds = newDate.getSeconds().toString().padStart(2, "0")
+
+  const ordinalEndings = ["th", "st", "nd", "rd"]
+  let suffix = ordinalEndings[0]
+  if (day <= 3 && day > 0) {
+    suffix = ordinalEndings[day]
+  } else {
+    // Determine the ordinal endings based on the last digit of the day
+    suffix = ordinalEndings[day % 10] ?? suffix
+  }
+  return `${day}${suffix}, ${monthNames[monthIndex]} ${year} ${hours}:${minutes}:${seconds}`
+}
