@@ -8,7 +8,13 @@ module.exports = {
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
+    "@semantic-release/github",
     "@semantic-release/npm",
-    "@semantic-release/git",
+    [
+      "@semantic-release/exec",
+      {
+        successCmd: "chmod u+x ./scripts/commit-release-assets.sh && ./scripts/commit-release-assets.sh ${nextRelease.version}",
+      },
+    ],
   ],
 }
