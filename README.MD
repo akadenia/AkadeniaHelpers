@@ -20,9 +20,15 @@
   - [`TextHelpers.pluralizeOnCondition(word, condition)`](#texthelperspluralizeonconditionword-condition)
   - [`TextHelpers.convertSnakeToCamelCase(data)`](#texthelpersconvertsnaketocamelcasedata)
   - [`TextHelpers.convertCamelToSnakeCase(data)`](#texthelpersconvertcameltosnakecasedata)
+  - [`TextHelpers.convertCamelToKebabCase(data)`](#texthelpersconvertcameltokebabcasedata)
+  - [`TextHelpers.convertKebabToCamelCase(data)`](#texthelpersconvertkebabtocamelcasedata)
+  - [`TextHelpers.isAcronym(data)`](#texthelpersisacronymdata)
+  - [`TextHelpers.acronymToKebabCase(data)`](#texthelpersacronymtokebabcasedata)
   - [`TextHelpers.handleNullDisplay(value, defaultValue="N/A")`](#texthelpershandlenulldisplayvalue-defaultvaluena)
   - [`TextHelpers.enforceCharacterLimit({text, characterLimit, onCharacterLimit})`](#texthelpersenforcecharacterlimittext-characterlimit-oncharacterlimit)
   - [`TextHelpers.isValidEmail(email)`](#texthelpersisvalidemailemail)
+  - [`TextHelpers.generateIdFromWord(word)`](#texthelpersgenerateidfromwordword)
+  - [`TextHelpers.generateWordFromId(id)`](#texthelpersgeneratewordfromidid)
 - [ObjectHelpers](#objecthelpers)
   - [`ObjectHelpers.isPureObject(any)`](#objecthelpersispureobjectany)
   - [`ObjectHelpers.parseCookie(str)`](#objecthelpersparsecookiestr)
@@ -213,6 +219,49 @@ Arguments
 |--|--|--|--|
 |`data`|`Object` or `Array<Object>`|`true`|The object whose keys to transform|
 
+## `TextHelpers.convertCamelToKebabCase(data)`
+
+Convert camel case to kebab case
+The word returned as kebab case
+
+Arguments
+|Name|Type|Required|Description|
+|--|--|--|--|
+|`data`|`string`|The word needed to be converted to kebab case from camel case|
+
+## `TextHelpers.convertKebabToCamelCase(data)`
+
+Convert kebab case to camel case
+The word returned as camel case
+
+Arguments
+|Name|Type|Required|Description|
+|--|--|--|--|
+|`data`|`string`|The word needed to be converted from kebab case to camel case|
+
+
+## `TextHelpers.isAcronym(data)`
+
+Validate if a word is acronym
+The boolean value when the condition is met
+
+Arguments
+|Name|Type|Required|Description|
+|--|--|--|--|
+|`data`|`string`|The word that is being validated as acronym|
+
+
+## `TextHelpers.acronymToKebabCase(data)`
+
+Convert acronym to kebab case
+The word returned as camel case
+
+Arguments
+|Name|Type|Required|Description|
+|--|--|--|--|
+|`data`|`string`|The acronym to be converted to kebab case|
+
+
 ## `TextHelpers.handleNullDisplay(value, defaultValue="N/A")`
 
 Returns the input string or the default string if the input value is null or undefined.
@@ -238,7 +287,28 @@ Returns true when the email is a proper email and returns false when the email i
 Arguments
 |Name|Type|Required|Description|
 |--|--|--|--|
-|`email`|`string`|`true`|The email to be validated
+|`email`|`string`|`true`|The email to be validated|
+
+## `TextHelpers.generateIdFromWord(word)`
+
+Generate ID from word
+The generated ID from the word
+
+Arguments
+|Name|Type|Required|Description|
+|--|--|--|--|
+|`word`|`string`|`true`|The word needed to generate ID from|
+
+## `TextHelpers.generateWordFromId(word)`
+
+Get the word from the generated ID
+The word that is got from the id
+
+Arguments
+|Name|Type|Required|Description|
+|--|--|--|--|
+|`word`|`string`|`true`|The id that is needed to get the word from|
+
 
 # ObjectHelpers
 
