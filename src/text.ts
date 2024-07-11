@@ -171,7 +171,7 @@ export function isAcronym(word: string): boolean {
  * @returns {string} - The word returned as camel case
  */
 export function acronymToKebabCase(word: string): string {
-  if(!isAcronym(word)){
+  if (!isAcronym(word)) {
     throw new Error(`The text passed: ${word} is not an acronym.`)
   }
   return word
