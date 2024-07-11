@@ -15,6 +15,12 @@ import {
   capitalizeText,
   enforceCharacterLimit,
   isValidEmail,
+  convertCamelToKebabCase,
+  convertKebabToCamelCase,
+  isAcronym,
+  acronymToKebabCase,
+  generateIDFromWord,
+  generateWordFromId,
 } from "../src/text"
 
 it("uuidv4", () => {
@@ -353,4 +359,98 @@ describe("isValidEmail", () => {
     //  but we want to test for null values
     expect(isValidEmail(null as unknown as string)).toBe(false)
   })
+})
+
+it("convertCamelToKebabCase", () => {
+  let actual = convertCamelToKebabCase("thisIsATest")
+  let expected = "this-is-a-test"
+
+  expect(actual).toBe(expected)
+
+  actual = convertCamelToKebabCase("someOtherCamelCase")
+  expected = "some-other-camel-case"
+  expect(actual).toBe(expected)
+
+  actual = convertCamelToKebabCase("testWithNumber5")
+  expected = "test-with-number5"
+  expect(actual).toBe(expected)
+})
+
+it("convertKebabToCamelCase", () => {
+  let actual = convertKebabToCamelCase("this-is-a-test")
+  let expected = "ThisIsATest"
+
+  expect(actual).toBe(expected)
+
+  actual = convertKebabToCamelCase("some-other-camel-case")
+  expected = "SomeOtherCamelCase"
+  expect(actual).toBe(expected)
+
+  actual = convertKebabToCamelCase("test-with-number5")
+  expected = "TestWithNumber5"
+  expect(actual).toBe(expected)
+})
+
+it("isAcronym", () => {
+  let actual = isAcronym("NASA")
+  let expected = true
+
+  expect(actual).toBe(expected)
+
+  actual = isAcronym("AI")
+  expected = true
+  expect(actual).toBe(expected)
+
+  actual = isAcronym("FAQs")
+  expected = false
+  expect(actual).toBe(expected)
+
+  actual = isAcronym("faqs")
+  expected = false
+  expect(actual).toBe(expected)
+})
+
+it("acronymToKebabCase", () => {
+  let actual = acronymToKebabCase("AI")
+  let expected = "a-i"
+
+  expect(actual).toBe(expected)
+
+  actual = acronymToKebabCase("FAQ")
+  expected = "f-a-q"
+  expect(actual).toBe(expected)
+
+  let errorActual = () => acronymToKebabCase("faq")
+  expected = "The text passed: faq is not an acronym."
+  expect(errorActual).toThrow(expected)
+})
+
+it("generateIdFromWord", () => {
+  let actual = generateIDFromWord("Public Safety")
+  let expected = "public__safety"
+
+  expect(actual).toBe(expected)
+
+  actual = generateIDFromWord("AI")
+  expected = "a-i"
+  expect(actual).toBe(expected)
+
+  actual = generateIDFromWord("FinTech")
+  expected = "fin-tech"
+  expect(actual).toBe(expected)
+})
+
+it("generateWordFromId", () => {
+  let actual = generateWordFromId("public__safety")
+  let expected = "Public Safety"
+
+  expect(actual).toBe(expected)
+
+  actual = generateWordFromId("a-i")
+  expected = "AI"
+  expect(actual).toBe(expected)
+
+  actual = generateWordFromId("fin-tech")
+  expected = "FinTech"
+  expect(actual).toBe(expected)
 })

@@ -132,6 +132,55 @@ export const convertCamelToSnakeCase = (data: string | Object | Array<Object>) =
 }
 
 /**
+ * Convert camel case to kebab case
+ * @function
+ * @param {string} word - The word needed to be converted to kebab case from camel case
+ * @returns {string} - The word returned as kebab case
+ */
+export function convertCamelToKebabCase(word: string): string {
+  return word.replace(/[A-Z]+(?![a-z])|[A-Z]/g, ($, ofs) => (ofs ? "-" : "") + $.toLowerCase())
+}
+
+/**
+ * Convert kebab case to camel case
+ * @function
+ * @param {string} word - The word needed to be converted from kebab case to camel case
+ * @returns {string} - The word returned as camel case
+ */
+export function convertKebabToCamelCase(word: string): string {
+  return word
+    .split("-")
+    .map((token) => capitalizeText(token))
+    .join("")
+}
+
+/**
+ * Validate if a word is acronym
+ * @function
+ * @param {string} word - The word that is being validated as acronym
+ * @returns {string} - The boolean value when the condition is met
+ */
+export function isAcronym(word: string): boolean {
+  return word.toUpperCase() === word
+}
+
+/**
+ * Convert acronym to kebab case
+ * @function
+ * @param {string} word - The acronym to be converted to kebab case
+ * @returns {string} - The word returned as camel case
+ */
+export function acronymToKebabCase(word: string): string {
+  if (!isAcronym(word)) {
+    throw new Error(`The text passed: ${word} is not an acronym.`)
+  }
+  return word
+    .split("")
+    .map((token) => token.toLowerCase())
+    .join("-")
+}
+
+/**
  * @function
  * @param  value The string to be displayed
  * @returns The passed string or the default string if the passed string is null or undefined
@@ -183,4 +232,30 @@ export const isValidEmail = (email: string) => {
   const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/
   const result = email?.match(emailRegex)
   return !!result
+}
+
+/**
+ * Generate ID from word
+ * @function
+ * @param word The word needed to generate ID from
+ * @returns The generated ID from the word
+ */
+export function generateIDFromWord(word: string): string {
+  return word
+    .split(" ")
+    .map((token) => (isAcronym(token) ? acronymToKebabCase(token) : convertCamelToKebabCase(token)))
+    .join("__")
+}
+
+/**
+ * Get the word from the generated ID
+ * @function
+ * @param id The id that is needed to get the word from.
+ * @returns The word that is got from the id
+ */
+export function generateWordFromId(id: string): string {
+  return id
+    .split("__")
+    .map((token) => convertKebabToCamelCase(token))
+    .join(" ")
 }
