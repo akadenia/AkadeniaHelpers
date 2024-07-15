@@ -11,6 +11,12 @@ import {
   uuidv4,
   enforceCharacterLimit,
   capitalizeText,
+  generateIDFromWord,
+  generateWordFromId,
+  convertCamelToKebabCase,
+  convertKebabToCamelCase,
+  isAcronym,
+  acronymToKebabCase,
 } from "./text"
 import * as DateHelpers from "./date"
 import * as ObjectHelpers from "./object"
@@ -31,6 +37,12 @@ const TextHelpers: {
   uuidv4: typeof uuidv4
   enforceCharacterLimit: typeof enforceCharacterLimit
   capitalizeText: typeof capitalizeText
+  convertCamelToKebabCase: typeof convertCamelToKebabCase
+  convertKebabToCamelCase: typeof convertKebabToCamelCase
+  isAcronym: typeof isAcronym
+  acronymToKebabCase: typeof acronymToKebabCase
+  generateIDFromWord: typeof generateIDFromWord
+  generateWordFromId: typeof generateWordFromId
 } = {
   convertCamelToSnakeCase: convertCamelToSnakeCase,
   convertSnakeToCamelCase: convertSnakeToCamelCase,
@@ -44,6 +56,12 @@ const TextHelpers: {
   uuidv4: uuidv4,
   enforceCharacterLimit: enforceCharacterLimit,
   capitalizeText: capitalizeText,
+  convertCamelToKebabCase: convertCamelToKebabCase,
+  convertKebabToCamelCase: convertKebabToCamelCase,
+  isAcronym: isAcronym,
+  acronymToKebabCase: acronymToKebabCase,
+  generateIDFromWord: generateIDFromWord,
+  generateWordFromId: generateWordFromId,
 }
 
 export { ObjectHelpers, DateHelpers, MapHelpers, TextHelpers, GenericHelpers, FileHelpers }
