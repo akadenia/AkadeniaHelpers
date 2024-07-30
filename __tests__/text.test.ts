@@ -427,30 +427,30 @@ it("acronymToKebabCase", () => {
 
 it("generateIdFromWord", () => {
   let actual = generateIDFromWord("Public Safety")
-  let expected = "public__safety"
+  let expected = "public-safety"
 
   expect(actual).toBe(expected)
 
   actual = generateIDFromWord("AI")
-  expected = "a-i"
+  expected = "ai"
   expect(actual).toBe(expected)
 
   actual = generateIDFromWord("FinTech")
-  expected = "fin-tech"
+  expected = "fintech"
   expect(actual).toBe(expected)
 })
 
 it("generateWordFromId", () => {
-  let actual = generateWordFromId("public__safety")
+  let actual = generateWordFromId("public-safety")
   let expected = "Public Safety"
 
   expect(actual).toBe(expected)
 
-  actual = generateWordFromId("a-i")
+  actual = generateWordFromId("ai", { ai: "AI" })
   expected = "AI"
   expect(actual).toBe(expected)
 
-  actual = generateWordFromId("fin-tech")
+  actual = generateWordFromId("fintech", { fintech: "FinTech" })
   expected = "FinTech"
   expect(actual).toBe(expected)
 })

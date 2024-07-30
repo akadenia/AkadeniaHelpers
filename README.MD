@@ -308,6 +308,7 @@ Arguments
 |Name|Type|Required|Description|
 |--|--|--|--|
 |`word`|`string`|`true`|The id that is needed to get the word from|
+|`customList`|`Record<string, string>`|`false`|The custom lists that has the id with the custom list of words|
 
 
 # ObjectHelpers
