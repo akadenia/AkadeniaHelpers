@@ -48,7 +48,7 @@
 
 Import the DateHelpers utility.
 
-`import { DateHelpers } from "@akadenia/utilities`
+`import { DateHelpers } from "@akadenia/helpers`
 
 ## `DateHelpers.getReadableDateTime(datetime)`
 
@@ -99,7 +99,7 @@ Arguments
 
 Import the MapHelpers utility.
 
-`import { MapHelpers } from "@akadenia/utilities`
+`import { MapHelpers } from "@akadenia/helpers`
 
 ## `MapHelpers.getDistanceBetweenPoints(point1, point2)`
 
@@ -135,7 +135,7 @@ Arguments
 
 Import the TextHelpers utility.
 
-`import { TextHelpers } from "@akadenia/utilities`
+`import { TextHelpers } from "@akadenia/helpers`
 
 ## `TextHelpers.uuidv4()`
 
@@ -315,7 +315,7 @@ Arguments
 
 Import the ObjectHelpers utility.
 
-`import { ObjectHelpers } from "@akadenia/utilities`
+`import { ObjectHelpers } from "@akadenia/helpers`
 
 ## `ObjectHelpers.isPureObject(any)`
 
@@ -415,7 +415,7 @@ Arguments
 
 Import the GenericHelpers utility.
 
-`import { GenericHelpers } from "@akadenia/utilities`
+`import { GenericHelpers } from "@akadenia/helpers`
 
 ## `GenericHelpers.delay(ms)`
 

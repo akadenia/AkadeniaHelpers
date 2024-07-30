@@ -1,11 +1,11 @@
 {
-  "name": "@akadenia/utilities",
+  "name": "@akadenia/helpers",
   "version": "1.2.2",
-  "description": "Akadenia Utilities",
+  "description": "Akadenia helpers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [
-    "utilities",
+    "helpers",
     "akadenia"
   ],
   "scripts": {
@@ -15,7 +15,7 @@
     "lint": "prettier --check \"./**/*.{ts,tsx,js,jsx,json,yml}\"",
     "prepare": "npm run build",
     "version": "git add -A src",
-    "updateLink": "npm run build && npm rm @akadenia/utilities -g && npm link",
+    "updateLink": "npm run build && npm rm @akadenia/helpers -g && npm link",
     "generate:docs": "jsdoc2md dist/*.js"
   },
   "files": [
@@ -23,14 +23,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akadenia/AkadeniaUtilities.git"
+    "url": "git+https://github.com/akadenia/AkadeniaHelpers.git"
   },
   "author": "Akadenia",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/akadenia/AkadeniaUtilities/issues"
+    "url": "https://github.com/akadenia/AkadeniaHelpers/issues"
   },
-  "homepage": "https://github.com/akadenia/AkadeniaUtilities#readme",
+  "homepage": "https://github.com/akadenia/AkadeniaHelpers#readme",
   "devDependencies": {
     "@commitlint/cli": "^18.6.1",
     "@commitlint/config-conventional": "^18.6.2",
