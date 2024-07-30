@@ -240,22 +240,20 @@ export const isValidEmail = (email: string) => {
  * @param word The word needed to generate ID from
  * @returns The generated ID from the word
  */
-export function generateIDFromWord(word: string): string {
-  return word
+export function generateIDFromWord(text: string): string {
+  return text
     .split(" ")
-    .map((token) => (isAcronym(token) ? acronymToKebabCase(token) : convertCamelToKebabCase(token)))
-    .join("__")
+    .map((word) => word.toLowerCase())
+    .join("-")
 }
 
 /**
  * Get the word from the generated ID
  * @function
  * @param id The id that is needed to get the word from.
+ * @param customList The word lists that are used to check the original words from.
  * @returns The word that is got from the id
  */
-export function generateWordFromId(id: string): string {
-  return id
-    .split("__")
-    .map((token) => convertKebabToCamelCase(token))
-    .join(" ")
+export function generateWordFromId(id: string, customList: Record<string, string> = {}): string {
+  return customList[id] ?? id.split("-").map(capitalizeText).join(" ")
 }
