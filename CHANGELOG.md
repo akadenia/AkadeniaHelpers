@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/akadenia/AkadeniaUtilities/compare/1.2.1...1.2.2) (2024-07-30)
+
+
+### Bug Fixes
+
+* **text-helpers:** refactor the way the ids are generated from text and vice versa ([#15](https://github.com/akadenia/AkadeniaUtilities/issues/15)) ([2334b5c](https://github.com/akadenia/AkadeniaUtilities/commit/2334b5c13fe7dc04b05825c679de8cd70ac3e6af))
+
 ## [1.2.1](https://github.com/akadenia/AkadeniaUtilities/compare/1.2.0...1.2.1) (2024-07-15)
 
 
