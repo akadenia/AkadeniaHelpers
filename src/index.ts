@@ -15,6 +15,7 @@ import {
   generateWordFromId,
   convertCamelToKebabCase,
   convertKebabToCamelCase,
+  generateAcronym,
   isAcronym,
   acronymToKebabCase,
 } from "./text"
@@ -39,6 +40,7 @@ const TextHelpers: {
   capitalizeText: typeof capitalizeText
   convertCamelToKebabCase: typeof convertCamelToKebabCase
   convertKebabToCamelCase: typeof convertKebabToCamelCase
+  generateAcronym: typeof generateAcronym
   isAcronym: typeof isAcronym
   acronymToKebabCase: typeof acronymToKebabCase
   generateIDFromWord: typeof generateIDFromWord
@@ -58,6 +60,7 @@ const TextHelpers: {
   capitalizeText: capitalizeText,
   convertCamelToKebabCase: convertCamelToKebabCase,
   convertKebabToCamelCase: convertKebabToCamelCase,
+  generateAcronym: generateAcronym,
   isAcronym: isAcronym,
   acronymToKebabCase: acronymToKebabCase,
   generateIDFromWord: generateIDFromWord,
