@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/akadenia/AkadeniaHelpers/compare/1.4.0...1.4.1) (2024-08-02)
+
+
+### Bug Fixes
+
+* **generate-acronym:** export the method so it can be imported ([3f0eef1](https://github.com/akadenia/AkadeniaHelpers/commit/3f0eef126a630a01a11f8a97e3382f6d80d33ed5))
+
 # [1.4.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.3.0...1.4.0) (2024-08-02)
 
 
