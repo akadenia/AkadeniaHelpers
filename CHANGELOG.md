@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.3.0...1.4.0) (2024-08-02)
+
+
+### Features
+
+* **generate-acronym:** add a text helper method to generate an acronym from a term ([#17](https://github.com/akadenia/AkadeniaHelpers/issues/17)) ([f5ca5df](https://github.com/akadenia/AkadeniaHelpers/commit/f5ca5dffdbc0cbccd9c2bddd2f1c7c5fddf3c1b4))
+
 ## [1.2.2](https://github.com/akadenia/AkadeniaHelpers/compare/1.2.1...1.2.2) (2024-07-30)
 
 
