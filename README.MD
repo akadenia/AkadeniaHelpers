@@ -22,6 +22,7 @@
   - [`TextHelpers.convertCamelToSnakeCase(data)`](#texthelpersconvertcameltosnakecasedata)
   - [`TextHelpers.convertCamelToKebabCase(data)`](#texthelpersconvertcameltokebabcasedata)
   - [`TextHelpers.convertKebabToCamelCase(data)`](#texthelpersconvertkebabtocamelcasedata)
+  - [`TextHelpers.generateAcronym(term)`](#texthelpersgenerateacronymterm)
   - [`TextHelpers.isAcronym(data)`](#texthelpersisacronymdata)
   - [`TextHelpers.acronymToKebabCase(data)`](#texthelpersacronymtokebabcasedata)
   - [`TextHelpers.handleNullDisplay(value, defaultValue="N/A")`](#texthelpershandlenulldisplayvalue-defaultvaluena)
@@ -239,6 +240,15 @@ Arguments
 |--|--|--|--|
 |`data`|`string`|The word needed to be converted from kebab case to camel case|
 
+## `TextHelpers.generateAcronym(term)`
+
+Generate an acronym from a term
+an acronym generated from the term
+
+Arguments
+|Name|Type|Required|Description|
+|--|--|--|--|
+|`term`|`string`|The term to be converted to an acronym|
 
 ## `TextHelpers.isAcronym(data)`
 
