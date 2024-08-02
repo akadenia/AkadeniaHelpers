@@ -155,6 +155,18 @@ export function convertKebabToCamelCase(word: string): string {
 }
 
 /**
+ * Generate acronym from text
+ * @param term term to be converted to an acronym
+ * @returns an acronym generated from the term
+ */
+export function generateAcronym(term: string) {
+  return term
+    .split(" ")
+    .map((word) => word[0])
+    .join("")
+}
+
+/**
  * Validate if a word is acronym
  * @function
  * @param {string} word - The word that is being validated as acronym
