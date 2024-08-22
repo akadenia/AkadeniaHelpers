@@ -269,3 +269,23 @@ export function generateIDFromWord(text: string): string {
 export function generateWordFromId(id: string, customList: Record<string, string> = {}): string {
   return customList[id] ?? id.split("-").map(capitalizeText).join(" ")
 }
+
+/**
+ * Get the slug from words
+ * @function
+ * @param words The words that will be in the slug
+ * @returns The slug from the words
+ */
+export function generateSlugFromWords(...words: string[]): string {
+  return words.map((word) => generateIDFromWord(word)).join("-")
+}
+
+/**
+ * Extracts the id from the slug
+ * @function
+ * @param slug The slug associated with the id
+ * @returns The id from the slug
+ */
+export function extractIDfromSlug(slug: string): string | undefined {
+  return slug.split("-").pop()
+}

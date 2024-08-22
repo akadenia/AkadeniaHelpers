@@ -21,6 +21,8 @@ import {
   acronymToKebabCase,
   generateIDFromWord,
   generateWordFromId,
+  generateSlugFromWords,
+  extractIDfromSlug,
 } from "../src/text"
 
 it("uuidv4", () => {
@@ -452,5 +454,27 @@ it("generateWordFromId", () => {
 
   actual = generateWordFromId("fintech", { fintech: "FinTech" })
   expected = "FinTech"
+  expect(actual).toBe(expected)
+})
+
+it("generateSlugFromWords", () => {
+  let actual = generateSlugFromWords("Hello world post by mo", "qdsad123asd12dasd")
+  let expected = "hello-world-post-by-mo-qdsad123asd12dasd"
+
+  expect(actual).toBe(expected)
+
+  actual = generateSlugFromWords("qdsad123asd12dasd")
+  expected = "qdsad123asd12dasd"
+  expect(actual).toBe(expected)
+})
+
+it("extractIDfromSlug", () => {
+  let actual = extractIDfromSlug("hello-world-post-by-mo-qdsad123asd12dasd")
+  let expected = "qdsad123asd12dasd"
+
+  expect(actual).toBe(expected)
+
+  actual = extractIDfromSlug("qdsad123asd12dasd")
+  expected = "qdsad123asd12dasd"
   expect(actual).toBe(expected)
 })
