@@ -324,7 +324,7 @@ Arguments
 ## `TextHelpers.generateSlugFromWords(id, ...words)`
 
 Get the slug from words
-Returns the slug from the words
+Returns the slug from the words  and it will be url path safe
 
 Arguments
 |Name|Type|Required|Description|

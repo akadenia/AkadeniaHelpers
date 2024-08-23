@@ -275,7 +275,7 @@ export function generateWordFromId(id: string, customList: Record<string, string
  * @function
  * @param id The id that will be in the slug
  * @param words The words that will be in the slug
- * @returns The slug from the words
+ * @returns The slug from the words and it will be url path safe
  */
 export function generateSlugFromWordsWithID(id: string, ...words: string[]): string {
   let allWords = [...words.map((word) => word.split(" ")).flat(), ...id.split(" ").flat()]
