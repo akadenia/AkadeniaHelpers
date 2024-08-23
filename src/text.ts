@@ -273,11 +273,14 @@ export function generateWordFromId(id: string, customList: Record<string, string
 /**
  * Get the slug from words
  * @function
+ * @param id The id that will be in the slug
  * @param words The words that will be in the slug
  * @returns The slug from the words
  */
-export function generateSlugFromWords(...words: string[]): string {
-  return words.map((word) => generateIDFromWord(word)).join("-")
+export function generateSlugFromWordsWithID(id: string, ...words: string[]): string {
+  let allWords = [...words.map((word) => word.split(" ")).flat(), ...id.split(" ").flat()]
+  allWords = allWords.map((word) => encodeURIComponent(word.toLocaleLowerCase()))
+  return allWords.join("-")
 }
 
 /**
@@ -287,5 +290,11 @@ export function generateSlugFromWords(...words: string[]): string {
  * @returns The id from the slug
  */
 export function extractIDfromSlug(slug: string): string | undefined {
+  if (!slug) {
+    if (slug === "") {
+      throw new Error("slug is required, cannot be empty string")
+    }
+    throw new Error("slug is required, cannot be null or undefined")
+  }
   return slug.split("-").pop()
 }

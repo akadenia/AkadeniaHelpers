@@ -30,7 +30,7 @@
   - [`TextHelpers.isValidEmail(email)`](#texthelpersisvalidemailemail)
   - [`TextHelpers.generateIdFromWord(word)`](#texthelpersgenerateidfromwordword)
   - [`TextHelpers.generateWordFromId(id)`](#texthelpersgeneratewordfromidid)
-  - [`TextHelpers.generateSlugFromWords(words)`](#texthelpersgenerateslugfromwordswords)
+  - [`TextHelpers.generateSlugFromWords(id,words)`](#texthelpersgenerateslugfromwordsidwords)
 - [ObjectHelpers](#objecthelpers)
   - [`ObjectHelpers.isPureObject(any)`](#objecthelpersispureobjectany)
   - [`ObjectHelpers.parseCookie(str)`](#objecthelpersparsecookiestr)
@@ -318,10 +318,10 @@ Returns the word that is got from the id
 Arguments
 |Name|Type|Required|Description|
 |--|--|--|--|
-|`word`|`string`|`true`|The id that is needed to get the word from|
+|`words`|`string`|`true`|The id that is needed to get the word from|
 |`customList`|`Record<string, string>`|`false`|The custom lists that has the id with the custom list of words|
 
-## `TextHelpers.generateSlugFromWords(words)`
+## `TextHelpers.generateSlugFromWords(id, ...words)`
 
 Get the slug from words
 Returns the slug from the words
@@ -329,12 +329,14 @@ Returns the slug from the words
 Arguments
 |Name|Type|Required|Description|
 |--|--|--|--|
+|`id`|`string`|`true`|The id that is needed to be concatenated with the slug|
 |`words`|`string[]`|`true`|The words that will be in the slug|
 
 ## `TextHelpers.extractIDfromSlug(slug)`
 
 Extracts the id from the slug
 Returns the id from the slug
+Throws error if the string is empty, null or undefined
 
 Arguments
 |Name|Type|Required|Description|
