@@ -484,14 +484,14 @@ it("extractIDfromSlug", () => {
   expect(actual).toBe(expected)
 
   let errorActual = () => extractIDfromSlug("")
-  expected = "slug is required, cannot be empty string"
+  expected = "slug cannot be empty, null or undefined string"
   expect(errorActual).toThrow(expected)
 
   errorActual = () => extractIDfromSlug(undefined as unknown as string)
-  expected = "slug is required, cannot be null or undefined"
+  expected = "slug cannot be empty, null or undefined string"
   expect(errorActual).toThrow(expected)
 
   errorActual = () => extractIDfromSlug(null as unknown as string)
-  expected = "slug is required, cannot be null or undefined"
+  expected = "slug cannot be empty, null or undefined string"
   expect(errorActual).toThrow(expected)
 })

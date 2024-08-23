@@ -291,10 +291,7 @@ export function generateSlugFromWordsWithID(id: string, ...words: string[]): str
  */
 export function extractIDfromSlug(slug: string): string | undefined {
   if (!slug) {
-    if (slug === "") {
-      throw new Error("slug is required, cannot be empty string")
-    }
-    throw new Error("slug is required, cannot be null or undefined")
+    throw new Error("slug cannot be empty, null or undefined string")
   }
   return slug.split("-").pop()
 }
