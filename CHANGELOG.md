@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.4.1...1.5.0) (2024-08-23)
+
+
+### Features
+
+* **text:** add generating slug from words and extracting ids from slug ([#21](https://github.com/akadenia/AkadeniaHelpers/issues/21)) ([a1ea290](https://github.com/akadenia/AkadeniaHelpers/commit/a1ea290bab87c73c8e4aa4e2c165724978425f82))
+
 ## [1.4.1](https://github.com/akadenia/AkadeniaHelpers/compare/1.4.0...1.4.1) (2024-08-02)
 
 
