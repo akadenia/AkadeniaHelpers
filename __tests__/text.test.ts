@@ -21,6 +21,8 @@ import {
   acronymToKebabCase,
   generateIDFromWord,
   generateWordFromId,
+  generateSlugFromWordsWithID,
+  extractIDfromSlug,
 } from "../src/text"
 
 it("uuidv4", () => {
@@ -453,4 +455,43 @@ it("generateWordFromId", () => {
   actual = generateWordFromId("fintech", { fintech: "FinTech" })
   expected = "FinTech"
   expect(actual).toBe(expected)
+})
+
+it("generateSlugFromWords", () => {
+  let actual = generateSlugFromWordsWithID("qdsad123asd12dasd", "Hello world post by user")
+  let expected = "hello-world-post-by-user-qdsad123asd12dasd"
+
+  expect(actual).toBe(expected)
+
+  actual = generateSlugFromWordsWithID("qdsad123asd12dasd")
+  expected = "qdsad123asd12dasd"
+  expect(actual).toBe(expected)
+
+  actual = generateSlugFromWordsWithID("qdsad123asd12dasd", "Hello world post by user <$>")
+  expected = "hello-world-post-by-user-%3C%24%3E-qdsad123asd12dasd"
+
+  expect(actual).toBe(expected)
+})
+
+it("extractIDfromSlug", () => {
+  let actual = extractIDfromSlug("hello-world-post-by-mo-qdsad123asd12dasd")
+  let expected = "qdsad123asd12dasd"
+
+  expect(actual).toBe(expected)
+
+  actual = extractIDfromSlug("qdsad123asd12dasd")
+  expected = "qdsad123asd12dasd"
+  expect(actual).toBe(expected)
+
+  let errorActual = () => extractIDfromSlug("")
+  expected = "slug cannot be empty, null or undefined string"
+  expect(errorActual).toThrow(expected)
+
+  errorActual = () => extractIDfromSlug(undefined as unknown as string)
+  expected = "slug cannot be empty, null or undefined string"
+  expect(errorActual).toThrow(expected)
+
+  errorActual = () => extractIDfromSlug(null as unknown as string)
+  expected = "slug cannot be empty, null or undefined string"
+  expect(errorActual).toThrow(expected)
 })
