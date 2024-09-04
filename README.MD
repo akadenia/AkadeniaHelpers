@@ -45,6 +45,8 @@
   - [`GenericHelpers.getPreferredUriScheme(host)`](#generichelpersgetpreferredurischemehost)
 - [FileHelpers](#filehelpers)
   - [`FileHelpers.checkFileExtension(filePath, validExtensions)`](#filehelperscheckfileextensionfilepath-validextensions)
+  - [`FileHelpers.getFileExtensionsFromTypes(types)`](#filehelpersgetfileextensionsfromtypestypes)
+  - [`FileHelpers.revokeDiffFilePreviewUrls(oldList,newList)`](#filehelpersrevokedifffilepreviewurlsoldlist-newlist)
 
 # DateHelpers
 
@@ -479,6 +481,26 @@ Arguments
 |--|--|--|--|
 |`filePath`|`string`|`true`|The file path to check|
 |`validExtensions`|`string[]`|`true`|The valid extensions|
+
+## `FileHelpers.getFileExtensionsFromTypes(types)`
+
+Get the files extensions form the types passed. It ignores any value tha is passed in the types array that is not a valid type
+Returns the array of file extensions
+Arguments
+|Name|Type|Required|Description|
+|--|--|--|--|
+|`types`|`string[]`|`true`|The array of types passed|
+
+
+## `FileHelpers.revokeDiffFilePreviewUrls(oldList, newList)`
+
+Gets two arrays of the file preview urls and revokes the urls that are not in the new list
+
+Arguments
+|Name|Type|Required|Description|
+|--|--|--|--|
+|`oldList`|`string[]`|`true`|The array of file preview urls for the old list|
+|`newList`|`string[]`|`true`|The array of file preview urls for the new list|
 
 
 ## Contributing to this package
