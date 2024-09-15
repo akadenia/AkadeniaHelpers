@@ -304,20 +304,18 @@ export function extractIDfromSlug(slug: string): string | undefined {
  */
 export const abbreviateNumber = (number: number | undefined | null): string => {
   const abbreviations = [
-    { value: 1e9, symbol: 'B' },
-    { value: 1e6, symbol: 'M' },
-    { value: 1e3, symbol: 'k' }
+    { value: 1e9, symbol: "B" },
+    { value: 1e6, symbol: "M" },
+    { value: 1e3, symbol: "k" },
   ]
 
-  if (!number) return 'n/a'
+  if (!number) return "n/a"
 
-  const abbreviated = abbreviations.find(
-    ({ value }) => Math.abs(number) >= value
-  )
+  const abbreviated = abbreviations.find(({ value }) => Math.abs(number) >= value)
 
   if (abbreviated) {
     const { value, symbol } = abbreviated
-    return (number / value).toFixed(1).replace(/\.0$/, '') + symbol
+    return (number / value).toFixed(1).replace(/\.0$/, "") + symbol
   }
 
   return number.toString()
