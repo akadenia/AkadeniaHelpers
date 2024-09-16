@@ -499,15 +499,13 @@ it("extractIDfromSlug", () => {
 
 it("abbreviateNumber", () => {
   let actual = abbreviateNumber(undefined)
-  let expected = "n/a"
-  expect(actual).toBe(expected)
+  expect(actual).toBeNull()
 
   actual = abbreviateNumber(null)
-  expected = "n/a"
-  expect(actual).toBe(expected)
+  expect(actual).toBeNull()
 
   actual = abbreviateNumber(298)
-  expected = "298"
+  let expected = "298"
   expect(actual).toBe(expected)
 
   actual = abbreviateNumber(2980)

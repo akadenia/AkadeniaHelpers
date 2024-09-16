@@ -302,14 +302,14 @@ export function extractIDfromSlug(slug: string): string | undefined {
  * @param number The number to be abbreviated
  * @returns The string representation of the abbreviated number
  */
-export const abbreviateNumber = (number: number | undefined | null): string => {
+export const abbreviateNumber = (number: number | undefined | null): string | null => {
   const abbreviations = [
     { value: 1e9, symbol: "B" },
     { value: 1e6, symbol: "M" },
     { value: 1e3, symbol: "k" },
   ]
 
-  if (!number) return "n/a"
+  if (!number || isNaN(number)) return null
 
   const abbreviated = abbreviations.find(({ value }) => Math.abs(number) >= value)
 
