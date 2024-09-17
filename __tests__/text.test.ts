@@ -23,6 +23,7 @@ import {
   generateWordFromId,
   generateSlugFromWordsWithID,
   extractIDfromSlug,
+  abbreviateNumber,
 } from "../src/text"
 
 it("uuidv4", () => {
@@ -494,4 +495,32 @@ it("extractIDfromSlug", () => {
   errorActual = () => extractIDfromSlug(null as unknown as string)
   expected = "slug cannot be empty, null or undefined string"
   expect(errorActual).toThrow(expected)
+})
+
+it("abbreviateNumber", () => {
+  let actual = abbreviateNumber(undefined)
+  expect(actual).toBeNull()
+
+  actual = abbreviateNumber(null)
+  expect(actual).toBeNull()
+
+  actual = abbreviateNumber(298)
+  let expected = "298"
+  expect(actual).toBe(expected)
+
+  actual = abbreviateNumber(2980)
+  expected = "3k"
+  expect(actual).toBe(expected)
+
+  actual = abbreviateNumber(29800)
+  expected = "29.8k"
+  expect(actual).toBe(expected)
+
+  actual = abbreviateNumber(123456789)
+  expected = "123.5M"
+  expect(actual).toBe(expected)
+
+  actual = abbreviateNumber(1234567890)
+  expected = "1.2B"
+  expect(actual).toBe(expected)
 })

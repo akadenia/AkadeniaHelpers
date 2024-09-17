@@ -29,8 +29,10 @@
   - [`TextHelpers.enforceCharacterLimit({text, characterLimit, onCharacterLimit})`](#texthelpersenforcecharacterlimittext-characterlimit-oncharacterlimit)
   - [`TextHelpers.isValidEmail(email)`](#texthelpersisvalidemailemail)
   - [`TextHelpers.generateIdFromWord(word)`](#texthelpersgenerateidfromwordword)
-  - [`TextHelpers.generateWordFromId(id)`](#texthelpersgeneratewordfromidid)
-  - [`TextHelpers.generateSlugFromWords(id,words)`](#texthelpersgenerateslugfromwordsidwords)
+  - [`TextHelpers.generateWordFromId(word)`](#texthelpersgeneratewordfromidword)
+  - [`TextHelpers.generateSlugFromWords(id, ...words)`](#texthelpersgenerateslugfromwordsid-words)
+  - [`TextHelpers.extractIDfromSlug(slug)`](#texthelpersextractidfromslugslug)
+  - [`TextHelpers.abbreviateNumber(number)`](#texthelpersabbreviatenumbernumber)
 - [ObjectHelpers](#objecthelpers)
   - [`ObjectHelpers.isPureObject(any)`](#objecthelpersispureobjectany)
   - [`ObjectHelpers.parseCookie(str)`](#objecthelpersparsecookiestr)
@@ -38,13 +40,15 @@
   - [`ObjectHelpers.containsSubObject(mainObject, subObject)`](#objecthelperscontainssubobjectmainobject-subobject)
   - [`ObjectHelpers.findObjectBySubObject(array, subObject)`](#objecthelpersfindobjectbysubobjectarray-subobject)
   - [`ObjectHelpers.filterObjectsBySubObject(array, subObject)`](#objecthelpersfilterobjectsbysubobjectarray-subobject)
-  - [`ObjectHelpers.objectPropHasValue({object, key, value)}`](#objecthelpersobjectkeyhasvalueobject-key-value)
+  - [`ObjectHelpers.objectPropHasValue({object, key, value)}`](#objecthelpersobjectprophasvalueobject-key-value)
   - [`ObjectHelpers.findEntry(array, predicate)`](#objecthelpersfindentryarray-predicate)
 - [GenericHelpers](#generichelpers)
   - [`GenericHelpers.delay(ms)`](#generichelpersdelayms)
   - [`GenericHelpers.getPreferredUriScheme(host)`](#generichelpersgetpreferredurischemehost)
 - [FileHelpers](#filehelpers)
   - [`FileHelpers.checkFileExtension(filePath, validExtensions)`](#filehelperscheckfileextensionfilepath-validextensions)
+  - [Contributing to this package](#contributing-to-this-package)
+  - [License](#license)
 
 # DateHelpers
 
@@ -261,7 +265,6 @@ Arguments
 |--|--|--|--|
 |`data`|`string`|The word that is being validated as acronym|
 
-
 ## `TextHelpers.acronymToKebabCase(data)`
 
 Convert acronym to kebab case
@@ -271,7 +274,6 @@ Arguments
 |Name|Type|Required|Description|
 |--|--|--|--|
 |`data`|`string`|The acronym to be converted to kebab case|
-
 
 ## `TextHelpers.handleNullDisplay(value, defaultValue="N/A")`
 
@@ -324,7 +326,7 @@ Arguments
 ## `TextHelpers.generateSlugFromWords(id, ...words)`
 
 Get the slug from words
-Returns the slug from the words  and it will be url path safe
+Returns the slug from the words and it will be url path safe
 
 Arguments
 |Name|Type|Required|Description|
@@ -343,6 +345,15 @@ Arguments
 |--|--|--|--|
 |`slug`|`string`|`true`|The slug associated with the id|
 
+## `TextHelpers.abbreviateNumber(number)`
+
+Abbreviate number
+Returns the string representation of the abbreviated number
+
+Arguments
+|Name|Type|Required|Description|
+|--|--|--|--|
+|`number`|`number`|`true`|The number to be abbreviated|
 
 # ObjectHelpers
 
@@ -425,7 +436,9 @@ Arguments
 |--|--|--|--|
 |`array`|`T[]`|`true`|An array of objects to be filtered|
 |`array`|`Partial<T>`|`true`|The sub-object to be searched for in the array|
+
 ## `ObjectHelpers.objectPropHasValue({object, key, value)}`
+
 Checks if the object has the key with the value.
 
 Arguments
@@ -436,6 +449,7 @@ Arguments
 |`value`|`any`|`true`|The value to check|
 
 ## `ObjectHelpers.findEntry(array, predicate)`
+
 Finds the first entry in the array that satisfies the predicate.
 
 Arguments
@@ -479,7 +493,6 @@ Arguments
 |--|--|--|--|
 |`filePath`|`string`|`true`|The file path to check|
 |`validExtensions`|`string[]`|`true`|The valid extensions|
-
 
 ## Contributing to this package
 

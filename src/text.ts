@@ -295,3 +295,28 @@ export function extractIDfromSlug(slug: string): string | undefined {
   }
   return slug.split("-").pop()
 }
+
+/**
+ * Abbreviate number
+ * @function
+ * @param number The number to be abbreviated
+ * @returns The string representation of the abbreviated number
+ */
+export const abbreviateNumber = (number: number | undefined | null): string | null => {
+  const abbreviations = [
+    { value: 1e9, symbol: "B" },
+    { value: 1e6, symbol: "M" },
+    { value: 1e3, symbol: "k" },
+  ]
+
+  if (!number || isNaN(number)) return null
+
+  const abbreviated = abbreviations.find(({ value }) => Math.abs(number) >= value)
+
+  if (abbreviated) {
+    const { value, symbol } = abbreviated
+    return (number / value).toFixed(1).replace(/\.0$/, "") + symbol
+  }
+
+  return number.toString()
+}
