@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.5.0...1.6.0) (2024-09-17)
+
+
+### Features
+
+* **text:** abbreviate number ([#24](https://github.com/akadenia/AkadeniaHelpers/issues/24)) ([b58780f](https://github.com/akadenia/AkadeniaHelpers/commit/b58780f4182d87a2c132d7d4bc45ca1ff891939b))
+
 # [1.5.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.4.1...1.5.0) (2024-08-23)
 
 
