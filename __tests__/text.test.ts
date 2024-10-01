@@ -509,7 +509,7 @@ it("abbreviateNumber", () => {
   expect(actual).toBe(expected)
 
   actual = abbreviateNumber(2980)
-  expected = "3.00k"
+  expected = "29.80k"
   expect(actual).toBe(expected)
 
   actual = abbreviateNumber(29800)
