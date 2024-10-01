@@ -306,7 +306,7 @@ export const abbreviateNumber = (number: number | undefined | null): string | nu
   const abbreviations = [
     { value: 1e9, symbol: "B" },
     { value: 1e6, symbol: "M" },
-    { value: 1e3, symbol: "k" },
+    { value: 1e3, symbol: "K" },
   ]
 
   if (!number || isNaN(number)) return null
