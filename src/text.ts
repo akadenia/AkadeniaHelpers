@@ -315,7 +315,7 @@ export const abbreviateNumber = (number: number | undefined | null): string | nu
 
   if (abbreviated) {
     const { value, symbol } = abbreviated
-    return (number / value).toFixed(1).replace(/\.0$/, "") + symbol
+    return (number / value).toFixed(2).replace(/\.00$/, "") + symbol
   }
 
   return number.toString()
