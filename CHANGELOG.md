@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.6.0...1.7.0) (2024-10-02)
+
+
+### Features
+
+* **abbreviate-number:** update abbreviate number output to two decimal places instead of one ([#26](https://github.com/akadenia/AkadeniaHelpers/issues/26)) ([f05d2f6](https://github.com/akadenia/AkadeniaHelpers/commit/f05d2f6a9838003cd0021e897fb2fc2dc500fbc8))
+
 # [1.6.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.5.0...1.6.0) (2024-09-17)
 
 
