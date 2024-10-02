@@ -347,13 +347,20 @@ Arguments
 
 ## `TextHelpers.abbreviateNumber(number)`
 
-Abbreviate number
-Returns the string representation of the abbreviated number
+Returns the string representation of the abbreviated number, rounded to two decimal places.
 
 Arguments
 |Name|Type|Required|Description|
 |--|--|--|--|
 |`number`|`number`|`true`|The number to be abbreviated|
+
+Examples
+- Numbers below 1,000 are displayed without abbreviation
+- Numbers between 1,000 and 1,000,000 are displayed in thousands (e.g. 1.23K)
+- Numbers between 1,000,000 and 1,000,000,000 are displayed in millions (e.g. 1.23M)
+- Numbers above 1,000,000,000 are displayed in billions (e.g. 1.23B)
+
+Note: If the input `number` is null or undefined, the function returns null.
 
 # ObjectHelpers
 
