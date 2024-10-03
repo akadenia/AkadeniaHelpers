@@ -54,7 +54,7 @@ describe("date", () => {
 
   it("parseDate with an invalid date string", () => {
     const dateParser = () => parseDate("not a date string")
-    const expected = 'Cannot parse passed date: "not a date string"'
+    const expected = 'Cannot parse date: "not a date string"'
     expect(dateParser).toThrow(expected)
   })
 
@@ -73,55 +73,55 @@ describe("date", () => {
   it("parseDate with an invalid date object", () => {
     const invalidDate = new Date("not a date string")
     const dateParser = () => parseDate(invalidDate)
-    const expected = "Cannot parse passed date: null"
+    const expected = "Cannot parse date: null"
     expect(dateParser).toThrow(expected)
   })
 
   it("getShortOrdinalDate with a valid date object of day 1", () => {
     const actual = getShortOrdinalDate("2020-01-01")
-    const expected = "1st, Jan 2020"
+    const expected = "Jan 1st 2020"
     expect(actual.startsWith(expected)).toBeTruthy()
   })
 
   it("getShortOrdinalDate with a valid date object of day 2", () => {
     const actual = getShortOrdinalDate("2020-01-02")
-    const expected = "2nd, Jan 2020"
+    const expected = "Jan 2nd 2020"
     expect(actual.startsWith(expected)).toBeTruthy()
   })
 
   it("getShortOrdinalDate with a valid date object of day 3", () => {
     const actual = getShortOrdinalDate("2020-01-03")
-    const expected = "3rd, Jan 2020"
+    const expected = "Jan 3rd 2020"
     expect(actual.startsWith(expected)).toBeTruthy()
   })
 
   it("getShortOrdinalDate with a valid date object of day 4", () => {
     const actual = getShortOrdinalDate("2020-01-04")
-    const expected = "4th, Jan 2020"
+    const expected = "Jan 4th 2020"
     expect(actual.startsWith(expected)).toBeTruthy()
   })
 
   it("getShortOrdinalDate with a valid date object of day 21", () => {
     const actual = getShortOrdinalDate("2020-01-21")
-    const expected = "21st, Jan 2020"
+    const expected = "Jan 21st 2020"
     expect(actual.startsWith(expected)).toBeTruthy()
   })
 
   it("getShortOrdinalDate with a valid date object of day 22", () => {
     const actual = getShortOrdinalDate("2020-01-22")
-    const expected = "22nd, Jan 2020"
+    const expected = "Jan 22nd 2020"
     expect(actual.startsWith(expected)).toBeTruthy()
   })
 
   it("getShortOrdinalDate with a valid date object of day 23", () => {
     const actual = getShortOrdinalDate("2020-01-23")
-    const expected = "23rd, Jan 2020"
+    const expected = "Jan 23rd 2020"
     expect(actual.startsWith(expected)).toBeTruthy()
   })
 
   it("getShortOrdinalDate with a valid date object of day 24", () => {
     const actual = getShortOrdinalDate("2020-01-24")
-    const expected = "24th, Jan 2020"
+    const expected = "Jan 24th 2020"
     expect(actual.startsWith(expected)).toBeTruthy()
   })
 })

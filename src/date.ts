@@ -50,7 +50,7 @@ export const formatDateTime = (
 export function parseDate(date: string | Date): Date {
   const outputDate = typeof date === "string" ? new Date(date) : date
   if (isNaN(outputDate.getTime())) {
-    throw new Error(`Cannot parse passed date: ${JSON.stringify(date)}`)
+    throw new Error(`Cannot parse date: ${JSON.stringify(date)}`)
   }
   return outputDate
 }
@@ -59,18 +59,19 @@ export function parseDate(date: string | Date): Date {
  *
  * @function
  * @param {string | Date} date - The date string that needs to be formatted
+ * @param {boolean} appendTime - A boolean to determine if the time should be appended to the date
  * @returns {string} - A string representing the date in the short ordinal date
  */
 
-export function getShortOrdinalDate(date: string | Date): string {
+export function getShortOrdinalDate(date: string | Date, appendTime?: boolean): string {
   const newDate = parseDate(date)
-  const day = newDate.getDate()
+  const day = newDate.getUTCDate()
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-  const monthIndex = newDate.getMonth()
-  const year = newDate.getFullYear()
-  const hours = newDate.getHours().toString().padStart(2, "0")
-  const minutes = newDate.getMinutes().toString().padStart(2, "0")
-  const seconds = newDate.getSeconds().toString().padStart(2, "0")
+  const monthIndex = newDate.getUTCMonth()
+  const year = newDate.getUTCFullYear()
+  const hours = newDate.getUTCHours().toString().padStart(2, "0")
+  const minutes = newDate.getUTCMinutes().toString().padStart(2, "0")
+  const seconds = newDate.getUTCSeconds().toString().padStart(2, "0")
 
   const ordinalEndings = ["th", "st", "nd", "rd"]
   let suffix = ordinalEndings[0]
@@ -80,5 +81,10 @@ export function getShortOrdinalDate(date: string | Date): string {
     // Determine the ordinal endings based on the last digit of the day
     suffix = ordinalEndings[day % 10] ?? suffix
   }
-  return `${day}${suffix}, ${monthNames[monthIndex]} ${year} ${hours}:${minutes}:${seconds}`
+
+  if (appendTime) {
+    return `${monthNames[monthIndex]} ${day}${suffix} ${year} ${hours}:${minutes}:${seconds}`
+  } else {
+    return `${monthNames[monthIndex]} ${day}${suffix} ${year}`
+  }
 }
