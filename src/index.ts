@@ -4,5 +4,6 @@ import * as ObjectHelpers from "./object"
 import * as MapHelpers from "./map"
 import * as GenericHelpers from "./generic"
 import * as FileHelpers from "./file"
+import * as ErrorHelpers from "./error"
 
-export { ObjectHelpers, DateHelpers, MapHelpers, TextHelpers, GenericHelpers, FileHelpers }
+export { ObjectHelpers, DateHelpers, MapHelpers, TextHelpers, GenericHelpers, FileHelpers, ErrorHelpers }
