@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/akadenia/AkadeniaHelpers/compare/1.7.0...1.7.1) (2024-11-07)
+
+
+### Bug Fixes
+
+* **date,npm:** change homepage and fix get short ordinal date to exclude timezone ([#28](https://github.com/akadenia/AkadeniaHelpers/issues/28)) ([193ad8f](https://github.com/akadenia/AkadeniaHelpers/commit/193ad8f09786deb95fb20e42b6e01250edd4ebc2))
+
 # [1.7.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.6.0...1.7.0) (2024-10-02)
 
 
