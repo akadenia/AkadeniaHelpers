@@ -351,6 +351,58 @@ describe("isValidEmail", () => {
     expect(isValidEmail("")).toBe(false)
   })
 
+  // Basic valid email formats
+  it("should return true for basic valid email formats", () => {
+    expect(isValidEmail("simple@example.com")).toBe(true)
+    expect(isValidEmail("very.common@example.com")).toBe(true)
+    expect(isValidEmail("disposable.style.email+symbol@example.com")).toBe(true)
+    expect(isValidEmail("other.email-with-hyphen@example.com")).toBe(true)
+    expect(isValidEmail("fully-qualified-domain@example.com")).toBe(true)
+    expect(isValidEmail("user.name+tag+sorting@example.com")).toBe(true)
+    expect(isValidEmail("x@example.com")).toBe(true)
+    expect(isValidEmail("example-indeed@strange-example.com")).toBe(true)
+  })
+
+  // Valid email formats with different TLDs
+  it("should return true for valid emails with different TLDs", () => {
+    expect(isValidEmail("example@example.com")).toBe(true)
+    expect(isValidEmail("example@example.co.uk")).toBe(true)
+    expect(isValidEmail("example@example.io")).toBe(true)
+    expect(isValidEmail("example@example.travel")).toBe(true)
+    expect(isValidEmail("example@example.museum")).toBe(true)
+    expect(isValidEmail("example@example.solutions")).toBe(true)
+  })
+
+  // Valid email formats with numbers
+  it("should return true for valid emails containing numbers", () => {
+    expect(isValidEmail("user123@example.com")).toBe(true)
+    expect(isValidEmail("123user@example.com")).toBe(true)
+    expect(isValidEmail("user123user@example123.com")).toBe(true)
+    expect(isValidEmail("user.123.user@example.com")).toBe(true)
+  })
+
+  // Valid email formats with special characters
+  it("should return true for valid emails with allowed special characters", () => {
+    expect(isValidEmail("user._.-+@example.com")).toBe(true)
+    expect(isValidEmail("user+label@example.com")).toBe(true)
+    expect(isValidEmail("user._.-@example.com")).toBe(true)
+  })
+
+  // Invalid email formats
+  it("should return false for invalid email formats", () => {
+    expect(isValidEmail("plainaddress")).toBe(false)
+    expect(isValidEmail("@example.com")).toBe(false)
+    expect(isValidEmail("email@example")).toBe(false)
+    expect(isValidEmail("email@.com")).toBe(false)
+    expect(isValidEmail("email@example..com")).toBe(false)
+    expect(isValidEmail("email@example.c")).toBe(false)
+    expect(isValidEmail("email@-example.com")).toBe(false)
+    expect(isValidEmail("email@example-.com")).toBe(false)
+    expect(isValidEmail(".email@example.com")).toBe(false)
+    expect(isValidEmail("email.@example.com")).toBe(false)
+    expect(isValidEmail("email..email@example.com")).toBe(false)
+  })
+
   it("isValidEmail - should return false for undefined value", () => {
     // the function parameter takes only String
     //  but we want to test for undefined values

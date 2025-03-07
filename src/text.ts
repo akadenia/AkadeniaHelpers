@@ -241,9 +241,36 @@ export const enforceCharacterLimit = ({
  * @returns The boolean value when the condition is met
  */
 export const isValidEmail = (email: string) => {
-  const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/
-  const result = email?.match(emailRegex)
-  return !!result
+  // First check for null/undefined
+  if (!email) {
+    return false
+  }
+
+  // Check if the email has an @ symbol and the length of the email tokens is exactly 2
+  const parts = email.split("@")
+  if (parts.length !== 2) {
+    return false
+  }
+
+  const [local, domain] = parts
+
+  // Check local part rules
+  if (!local || local.length === 0) {
+    return false
+  }
+  if (local.startsWith(".") || local.endsWith(".")) {
+    return false
+  }
+  if (local.includes("..")) {
+    return false
+  }
+  if (!/^[a-zA-Z0-9][a-zA-Z0-9._+-]*$/.test(local)) {
+    return false
+  }
+
+  // Check domain part rules
+  const domainRegex = /^[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/
+  return domainRegex.test(domain)
 }
 
 /**
