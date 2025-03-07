@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/akadenia/AkadeniaHelpers/compare/1.7.1...1.7.2) (2025-03-07)
+
+
+### Bug Fixes
+
+* **text:** make the isValidEmail funciton supports more email variations ([#31](https://github.com/akadenia/AkadeniaHelpers/issues/31)) ([4c81e98](https://github.com/akadenia/AkadeniaHelpers/commit/4c81e982a02ccc1b958224f61c470fb2a15a6c47))
+
 ## [1.7.1](https://github.com/akadenia/AkadeniaHelpers/compare/1.7.0...1.7.1) (2024-11-07)
 
 
