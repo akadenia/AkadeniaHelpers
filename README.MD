@@ -355,6 +355,7 @@ Arguments
 |`number`|`number`|`true`|The number to be abbreviated|
 
 Examples
+
 - Numbers below 1,000 are displayed without abbreviation
 - Numbers between 1,000 and 1,000,000 are displayed in thousands (e.g. 1.23K)
 - Numbers between 1,000,000 and 1,000,000,000 are displayed in millions (e.g. 1.23M)
@@ -392,9 +393,11 @@ Filter an array of objects based on a specific property and its corresponding va
 Returns an array containing all objects that have the specified property with the given value.
 
 Template
+
 ```typescript
 T extends Record<string, any>
 ```
+
 Arguments
 |Name|Type|Required|Description|
 |--|--|--|--|
@@ -408,6 +411,7 @@ It compares the key-value pairs of the sub-object with the corresponding key-val
 Returns true If all key-value pairs in the sub-object are found in the main object; otherwise, it returns false.
 
 Template
+
 ```typescript
 T extends Record<string, any>
 ```
@@ -425,6 +429,7 @@ Returns the first object found in the array that contains the sub-object or null
 if no match is found.
 
 Template
+
 ```typescript
 T extends Record<string, any>
 ```
@@ -441,6 +446,7 @@ Filters an array of objects based on the presence of a specific sub-object withi
 Returns an array containing all objects from the input array that contain the specified sub-object.
 
 Template
+
 ```typescript
 T extends Record<string, any>
 ```
