@@ -50,7 +50,7 @@
   - [Contributing to this package](#contributing-to-this-package)
   - [License](#license)
 
-# DateHelpers
+## DateHelpers
 
 Import the DateHelpers utility.
 
@@ -137,7 +137,7 @@ Arguments
 |--|--|--|--|
 |`coordinates`|`object`|`true`|An object containing the start and end coordinates. i.e. `{startCoordinate: [lat, lng], endCoordinate: [lat, lng]}`|
 
-# TextHelpers
+## TextHelpers
 
 Import the TextHelpers utility.
 
@@ -363,7 +363,7 @@ Examples
 
 Note: If the input `number` is null or undefined, the function returns null.
 
-# ObjectHelpers
+## ObjectHelpers
 
 Import the ObjectHelpers utility.
 
@@ -478,7 +478,7 @@ Arguments
 |`array`|`Array<any>`|`true`|The array of entries to search|
 |`predicate`|`(item: any) => boolean`|`true`|The predicate function to use to search the array|
 
-# GenericHelpers
+## GenericHelpers
 
 Import the GenericHelpers utility.
 
@@ -502,7 +502,7 @@ Arguments
 |--|--|--|--|
 |`host`|`string`|`true`|An IP address or a domain name|
 
-# FileHelpers
+## FileHelpers
 
 ## `FileHelpers.checkFileExtension(filePath, validExtensions)`
 
