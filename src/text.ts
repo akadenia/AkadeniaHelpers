@@ -323,7 +323,6 @@ export function extractIDfromSlug(slug: string): string | undefined {
   return slug.split("-").pop()
 }
 
-
 /**
  * Abbreviate number
  * @function
