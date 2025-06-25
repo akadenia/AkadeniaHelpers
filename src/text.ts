@@ -336,10 +336,7 @@ export const abbreviateNumber = (number: number | undefined | null): string | nu
     { value: 1e3, symbol: "K" },
   ]
 
-  const validateInput = (input: number | undefined | null): input is number =>
-    input !== null && input !== undefined && !isNaN(input)
-
-  if (!validateInput(number)) {
+  if(number === null || number === undefined || isNaN(number)) {
     return null
   }
 
