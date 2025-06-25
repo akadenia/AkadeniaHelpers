@@ -323,6 +323,7 @@ export function extractIDfromSlug(slug: string): string | undefined {
   return slug.split("-").pop()
 }
 
+
 /**
  * Abbreviate number
  * @function
@@ -336,7 +337,12 @@ export const abbreviateNumber = (number: number | undefined | null): string | nu
     { value: 1e3, symbol: "K" },
   ]
 
-  if (!number || isNaN(number)) return null
+  const validateInput = (input: number | undefined | null): input is number =>
+    input !== null && input !== undefined && !isNaN(input)
+
+  if (!validateInput(number)) {
+    return null
+  }
 
   const abbreviated = abbreviations.find(({ value }) => Math.abs(number) >= value)
 
