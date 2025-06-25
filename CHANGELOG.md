@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/akadenia/AkadeniaHelpers/compare/1.7.2...1.7.3) (2025-06-25)
+
+
+### Bug Fixes
+
+* **abbreviateNumber:** abbreviate 0 instead of returning null ([#35](https://github.com/akadenia/AkadeniaHelpers/issues/35)) ([f113856](https://github.com/akadenia/AkadeniaHelpers/commit/f1138561e5e2c973c87bfc3463ed308897d65197))
+
 ## [1.7.2](https://github.com/akadenia/AkadeniaHelpers/compare/1.7.1...1.7.2) (2025-03-07)
 
 
