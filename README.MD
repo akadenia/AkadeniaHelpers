@@ -22,6 +22,7 @@
   - [`TextHelpers.convertCamelToSnakeCase(data)`](#texthelpersconvertcameltosnakecasedata)
   - [`TextHelpers.convertCamelToKebabCase(data)`](#texthelpersconvertcameltokebabcasedata)
   - [`TextHelpers.convertKebabToCamelCase(data)`](#texthelpersconvertkebabtocamelcasedata)
+  - [`TextHelpers.convertCamelCaseToReadableText(text)`](#texthelpersconvertcamelcasetoreadabletexttext)
   - [`TextHelpers.generateAcronym(term)`](#texthelpersgenerateacronymterm)
   - [`TextHelpers.isAcronym(data)`](#texthelpersisacronymdata)
   - [`TextHelpers.acronymToKebabCase(data)`](#texthelpersacronymtokebabcasedata)
@@ -199,7 +200,7 @@ Arguments
 
 ## `TextHelpers.pluralizeOnCondition(word, condition)`
 
-Returns a pluralised version of the input string or returns the same string.
+Returns a pluralised version of the input string or returns the same string. Handles various pluralization rules including words ending in 'y' (library → libraries), 's/sh/ch' (class → classes), and default 's' addition.
 
 Arguments
 |Name|Type|Required|Description|
@@ -244,6 +245,15 @@ Arguments
 |Name|Type|Required|Description|
 |--|--|--|--|
 |`data`|`string`|The word needed to be converted from kebab case to camel case|
+
+## `TextHelpers.convertCamelCaseToReadableText(text)`
+
+Convert camel case to readable text by adding spaces before capital letters and capitalizing the first letter.
+
+Arguments
+|Text|Type|Required|Description|
+|--|--|--|--|
+|`text`|`string`|`true`|The camel case string to be converted to readable text|
 
 ## `TextHelpers.generateAcronym(term)`
 
