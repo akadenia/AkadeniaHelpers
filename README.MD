@@ -1,542 +1,893 @@
-## Getting Started
+# @akadenia/helpers
+
+A comprehensive collection of utility functions for common JavaScript/TypeScript operations including date manipulation, text processing, object handling, map calculations, and more.
+
+## Installation
+
+```bash
+npm install @akadenia/helpers
+```
+
+## Usage
+
+```typescript
+import { DateHelpers, TextHelpers, ObjectHelpers, MapHelpers, GenericHelpers, FileHelpers } from '@akadenia/helpers'
+```
+
+## Table of Contents
 
 - [DateHelpers](#datehelpers)
-  - [`DateHelpers.getReadableDateTime(datetime)`](#datehelpersgetreadabledatetimedatetime)
-  - [`DateHelpers.getReadableDate(datetime)`](#datehelpersgetreadabledatedatetime)
-  - [`DateHelpers.getDateString(date)`](#datehelpersgetdatestringdate)
-  - [`DateHelpers.parseDate(date)`](#datehelpersparsedatedate)
-  - [`DateHelpers.getShortOrdinalDate(date)`](#datehelpersgetshortordinaldatedate)
-- [MapHelpers](#maphelpers)
-  - [`MapHelpers.getDistanceBetweenPoints(point1, point2)`](#maphelpersgetdistancebetweenpointspoint1-point2)
-  - [`MapHelpers.compareLocations(location1, location2, precision)`](#maphelperscomparelocationslocation1-location2-precision)
-  - [`MapHelpers.getBearingToCoordinate({startCoordinate, endCoordinate})`](#maphelpersgetbearingtocoordinatestartcoordinate-endcoordinate)
 - [TextHelpers](#texthelpers)
-  - [`TextHelpers.uuidv4()`](#texthelpersuuidv4)
-  - [`TextHelpers.formatPosition(position)`](#texthelpersformatpositionposition)
-  - [`TextHelpers.truncateText(text, characterLimit)`](#texthelperstruncatetexttext-characterlimit)
-  - [`TextHelpers.fileNameFromPath(path)`](#texthelpersfilenamefrompathpath)
-  - [`TextHelpers.replaceSpacesWithUnderscore(s)`](#texthelpersreplacespaceswithunderscores)
-  - [`TextHelpers.replaceUnderscoreWithSpaces(s)`](#texthelpersreplaceunderscorewithspacess)
-  - [`TextHelpers.pluralizeOnCondition(word, condition)`](#texthelperspluralizeonconditionword-condition)
-  - [`TextHelpers.convertSnakeToCamelCase(data)`](#texthelpersconvertsnaketocamelcasedata)
-  - [`TextHelpers.convertCamelToSnakeCase(data)`](#texthelpersconvertcameltosnakecasedata)
-  - [`TextHelpers.convertCamelToKebabCase(data)`](#texthelpersconvertcameltokebabcasedata)
-  - [`TextHelpers.convertKebabToCamelCase(data)`](#texthelpersconvertkebabtocamelcasedata)
-  - [`TextHelpers.generateAcronym(term)`](#texthelpersgenerateacronymterm)
-  - [`TextHelpers.isAcronym(data)`](#texthelpersisacronymdata)
-  - [`TextHelpers.acronymToKebabCase(data)`](#texthelpersacronymtokebabcasedata)
-  - [`TextHelpers.handleNullDisplay(value, defaultValue="N/A")`](#texthelpershandlenulldisplayvalue-defaultvaluena)
-  - [`TextHelpers.enforceCharacterLimit({text, characterLimit, onCharacterLimit})`](#texthelpersenforcecharacterlimittext-characterlimit-oncharacterlimit)
-  - [`TextHelpers.isValidEmail(email)`](#texthelpersisvalidemailemail)
-  - [`TextHelpers.generateIdFromWord(word)`](#texthelpersgenerateidfromwordword)
-  - [`TextHelpers.generateWordFromId(word)`](#texthelpersgeneratewordfromidword)
-  - [`TextHelpers.generateSlugFromWords(id, ...words)`](#texthelpersgenerateslugfromwordsid-words)
-  - [`TextHelpers.extractIDfromSlug(slug)`](#texthelpersextractidfromslugslug)
-  - [`TextHelpers.abbreviateNumber(number)`](#texthelpersabbreviatenumbernumber)
 - [ObjectHelpers](#objecthelpers)
-  - [`ObjectHelpers.isPureObject(any)`](#objecthelpersispureobjectany)
-  - [`ObjectHelpers.parseCookie(str)`](#objecthelpersparsecookiestr)
-  - [`ObjectHelpers.filterObjectsByProperty ( array, propertyName, propertyValue)`](#objecthelpersfilterobjectsbyproperty--array-propertyname-propertyvalue)
-  - [`ObjectHelpers.containsSubObject(mainObject, subObject)`](#objecthelperscontainssubobjectmainobject-subobject)
-  - [`ObjectHelpers.findObjectBySubObject(array, subObject)`](#objecthelpersfindobjectbysubobjectarray-subobject)
-  - [`ObjectHelpers.filterObjectsBySubObject(array, subObject)`](#objecthelpersfilterobjectsbysubobjectarray-subobject)
-  - [`ObjectHelpers.objectPropHasValue({object, key, value)}`](#objecthelpersobjectprophasvalueobject-key-value)
-  - [`ObjectHelpers.findEntry(array, predicate)`](#objecthelpersfindentryarray-predicate)
+- [MapHelpers](#maphelpers)
 - [GenericHelpers](#generichelpers)
-  - [`GenericHelpers.delay(ms)`](#generichelpersdelayms)
-  - [`GenericHelpers.getPreferredUriScheme(host)`](#generichelpersgetpreferredurischemehost)
 - [FileHelpers](#filehelpers)
-  - [`FileHelpers.checkFileExtension(filePath, validExtensions)`](#filehelperscheckfileextensionfilepath-validextensions)
-  - [Contributing to this package](#contributing-to-this-package)
-  - [License](#license)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## DateHelpers
 
-Import the DateHelpers utility.
+Utility functions for date and time operations.
 
-`import { DateHelpers } from "@akadenia/helpers`
-
-## `DateHelpers.getReadableDateTime(datetime)`
+### `getReadableDateTime(datetime?)`
 
 Returns the date in `yyyy-mm-dd hh:mm:ss` format.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`datetime`|`Date`|`false`|The date to convert to readable date time. Default is current datetime. i.e. `new Date()`|
+**Parameters:**
+- `datetime` (optional): `Date` - The date to convert. Defaults to current date.
 
-## `DateHelpers.getReadableDate(datetime)`
+**Example:**
+```typescript
+import { DateHelpers } from '@akadenia/helpers'
+
+// Using current date
+const now = DateHelpers.getReadableDateTime()
+console.log(now) // "2024-01-15 14:30:25"
+
+// Using specific date
+const specificDate = DateHelpers.getReadableDateTime(new Date('2024-01-15T10:30:00Z'))
+console.log(specificDate) // "2024-01-15 10:30:00"
+```
+
+### `getReadableDate(datetime?)`
 
 Returns the date in `yyyy-mm-dd` format.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`datetime`|`Date`|`false`|The date to convert to readable date time. Default is current datetime. i.e. `new Date()`|
+**Parameters:**
+- `datetime` (optional): `Date` - The date to convert. Defaults to current date.
 
-## `DateHelpers.getDateString(date)`
+**Example:**
+```typescript
+const date = DateHelpers.getReadableDate()
+console.log(date) // "2024-01-15"
+
+const specificDate = DateHelpers.getReadableDate(new Date('2024-01-15T10:30:00Z'))
+console.log(specificDate) // "2024-01-15"
+```
+
+### `getDateString(date)`
 
 Returns a string representing the date in the user's local timezone.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`date`|`string` or `Date`|`true`|The date string to convert to the string in the user's local timezone|
+**Parameters:**
+- `date`: `string | Date` - The date to convert.
 
-## `DateHelpers.parseDate(date)`
+**Example:**
+```typescript
+const dateString = DateHelpers.getDateString('2024-01-15')
+console.log(dateString) // "1/15/2024" (format depends on locale)
 
-Returns a date representing the new date object.
+const dateString2 = DateHelpers.getDateString(new Date('2024-01-15T10:30:00Z'))
+console.log(dateString2) // "1/15/2024"
+```
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`date`|`string`|`true`|The date string that needs to be returned as a date object|
+### `formatDateTime(date, options, localTimezone?)`
 
-## `DateHelpers.getShortOrdinalDate(date)`
+Returns a formatted date string using Intl.DateTimeFormat options.
+
+**Parameters:**
+- `date`: `string | Date` - The date to format.
+- `options`: `Intl.DateTimeFormatOptions` - Formatting options.
+- `localTimezone` (optional): `string | Intl.Locale` - Locale for formatting. Defaults to "en-US".
+
+**Example:**
+```typescript
+const formatted = DateHelpers.formatDateTime(
+  new Date('2024-01-15T10:30:00Z'),
+  { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  },
+  'en-US'
+)
+console.log(formatted) // "January 15, 2024 at 10:30 AM"
+```
+
+### `parseDate(date)`
+
+Returns a Date object from a string or Date input. Throws an error for invalid dates.
+
+**Parameters:**
+- `date`: `string | Date` - The date to parse.
+
+**Example:**
+```typescript
+const parsedDate = DateHelpers.parseDate('2024-01-15')
+console.log(parsedDate) // Date object for 2024-01-15
+
+const parsedDate2 = DateHelpers.parseDate('invalid-date')
+// Throws: Error: Cannot parse date: "invalid-date"
+```
+
+### `getShortOrdinalDate(date, appendTime?)`
 
 Returns a string representing the date in short ordinal format.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`date`|`string`|`true`|The date string that needs to be formatted|
+**Parameters:**
+- `date`: `string | Date` - The date to format.
+- `appendTime` (optional): `boolean` - Whether to include time. Defaults to false.
 
-# MapHelpers
+**Example:**
+```typescript
+const ordinalDate = DateHelpers.getShortOrdinalDate('2024-01-15')
+console.log(ordinalDate) // "Jan 15th 2024"
 
-Import the MapHelpers utility.
+const ordinalDateTime = DateHelpers.getShortOrdinalDate('2024-01-15T10:30:00Z', true)
+console.log(ordinalDateTime) // "Jan 15th 2024 10:30:00"
+```
 
-`import { MapHelpers } from "@akadenia/helpers`
+## MapHelpers
 
-## `MapHelpers.getDistanceBetweenPoints(point1, point2)`
+Utility functions for geographical calculations and map operations.
 
-Returns the distance between two points in meters. Returns `null` if either point is invalid.
+### `getDistanceBetweenPoints(point1, point2)`
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`point1`|`Array<number>`|false| The coordinates of the first point. i.e. `[lat, lng]` |
-|`point2`|`Array<number>`|false|The coordinates of the second point. i.e. `[lat, lng]`|
+Calculates the distance between two geographical points using the Haversine formula.
 
-## `MapHelpers.compareLocations(location1, location2, precision)`
+**Parameters:**
+- `point1`: `number[] | undefined` - First point coordinates [longitude, latitude].
+- `point2`: `number[] | undefined` - Second point coordinates [longitude, latitude].
 
-Returns a boolean value that indicates whether or not the two locations are the same based on precision provided.
+**Example:**
+```typescript
+// Distance between New York and Los Angeles
+const nyc = [-74.006, 40.7128] // [lng, lat]
+const la = [-118.2437, 34.0522] // [lng, lat]
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`location1`|`Array<number>`|false| The coordinates of the first location. i.e. `[lat, lng]` |
-|`location2`|`Array<number>`|false|The coordinates of the second location. i.e. `[lat, lng]`|
-|`precision`|`number`|false|The precision to compare the locations to. Default is `6`|
+const distance = MapHelpers.getDistanceBetweenPoints(nyc, la)
+console.log(distance) // 3944419.5 (meters, approximately 3944 km)
 
-## `MapHelpers.getBearingToCoordinate({startCoordinate, endCoordinate})`
+// Returns null for invalid points
+const invalid = MapHelpers.getDistanceBetweenPoints(nyc, undefined)
+console.log(invalid) // null
+```
 
-Returns the bearing to the end coordinate from the start coordinate in degrees.
+### `compareLocations(location1, location2, precision?)`
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`coordinates`|`object`|`true`|An object containing the start and end coordinates. i.e. `{startCoordinate: [lat, lng], endCoordinate: [lat, lng]}`|
+Compares two locations to see if they are the same within a specified precision.
+
+**Parameters:**
+- `location1`: `number[] | undefined` - First location coordinates [longitude, latitude].
+- `location2`: `number[] | undefined` - Second location coordinates [longitude, latitude].
+- `precision` (optional): `number` - Decimal precision for comparison. Defaults to 6.
+
+**Example:**
+```typescript
+const loc1 = [-74.006, 40.7128]
+const loc2 = [-74.006001, 40.712801] // Very close to loc1
+const loc3 = [-74.01, 40.72] // Further from loc1
+
+console.log(MapHelpers.compareLocations(loc1, loc2)) // true (within 6 decimal precision)
+console.log(MapHelpers.compareLocations(loc1, loc3)) // false
+console.log(MapHelpers.compareLocations(loc1, loc2, 3)) // true (within 3 decimal precision)
+
+// Throws error for undefined locations
+MapHelpers.compareLocations(loc1, undefined) // Error: location1 and location2 are required
+```
+
+### `getBearingToCoordinate({startCoordinate, endCoordinate})`
+
+Calculates the bearing (direction) from one coordinate to another in degrees.
+
+**Parameters:**
+- `startCoordinate`: `number[] | undefined` - Starting point [longitude, latitude].
+- `endCoordinate`: `number[] | undefined` - Ending point [longitude, latitude].
+
+**Example:**
+```typescript
+const start = [-74.006, 40.7128] // New York
+const end = [-118.2437, 34.0522] // Los Angeles
+
+const bearing = MapHelpers.getBearingToCoordinate({ startCoordinate: start, endCoordinate: end })
+console.log(bearing) // 277.5 (degrees, approximately west)
+
+// Throws error for undefined coordinates
+MapHelpers.getBearingToCoordinate({ startCoordinate: start, endCoordinate: undefined })
+// Error: startCoordinate and endCoordinate are required
+```
 
 ## TextHelpers
 
-Import the TextHelpers utility.
+Utility functions for text manipulation and processing.
 
-`import { TextHelpers } from "@akadenia/helpers`
+### `uuidv4()`
 
-## `TextHelpers.uuidv4()`
+Returns a randomly generated UUID v4 string.
 
-Returns a randomly generated string.
+**Example:**
+```typescript
+const id = TextHelpers.uuidv4()
+console.log(id) // "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+```
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
+### `formatPosition(position)`
 
-## `TextHelpers.formatPosition(position)`
+Returns a string position with appropriate suffix (st, nd, rd, th).
 
-Returns a string position for a provided number. eg. `"2nd"`, `"3rd"` etc.
+**Parameters:**
+- `position`: `number` - The position number.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`position`|`number`|`true`|A position number to add the appropriate suffix to|
+**Example:**
+```typescript
+console.log(TextHelpers.formatPosition(1))  // "1st"
+console.log(TextHelpers.formatPosition(2))  // "2nd"
+console.log(TextHelpers.formatPosition(3))  // "3rd"
+console.log(TextHelpers.formatPosition(4))  // "4th"
+console.log(TextHelpers.formatPosition(21)) // "21st"
+```
 
-## `TextHelpers.truncateText(text, characterLimit)`
+### `truncateText(text, characterLimit)`
 
-Returns a string ending in an ellipsis `...` or returns the input string if maximum character limit isn't met.
+Returns truncated text with ellipsis if it exceeds the character limit.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`text`|`string`|`true`|The text to truncate|
-|`characterLimit`|`number`|`true`|The target number of characters to truncate text to|
+**Parameters:**
+- `text`: `string` - The text to truncate.
+- `characterLimit`: `number` - Maximum number of characters.
 
-## `TextHelpers.fileNameFromPath(path)`
+**Example:**
+```typescript
+const short = TextHelpers.truncateText("Hello World", 5)
+console.log(short) // "He..."
 
-Returns a file name.
+const long = TextHelpers.truncateText("Hello World", 20)
+console.log(long) // "Hello World"
+```
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`path`|`string`|`true`|The path to extract the file name from|
+### `fileNameFromPath(path)`
 
-## `TextHelpers.replaceSpacesWithUnderscore(s)`
+Extracts the filename from a file path.
 
-Returns a string where the spaces have been replaced with underscores.
+**Parameters:**
+- `path`: `string` - The file path.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`s`|`string`|`false`|The text to replace spaces with underscores in|
+**Example:**
+```typescript
+const filename = TextHelpers.fileNameFromPath('/path/to/file.txt')
+console.log(filename) // "file.txt"
 
-## `TextHelpers.replaceUnderscoreWithSpaces(s)`
+const filename2 = TextHelpers.fileNameFromPath('C:\\Users\\file.pdf')
+console.log(filename2) // "file.pdf"
+```
 
-Returns a string where the underscores have been replaced with spaces.
+### `replaceSpacesWithUnderscore(s?)`
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`s`|`string`|`false`|The text to replace underscores with spaces in|
+Replaces spaces with underscores in a string.
 
-## `TextHelpers.pluralizeOnCondition(word, condition)`
+**Parameters:**
+- `s` (optional): `string` - The string to process.
+
+**Example:**
+```typescript
+const result = TextHelpers.replaceSpacesWithUnderscore("hello world test")
+console.log(result) // "hello_world_test"
 
-Returns a pluralised version of the input string or returns the same string.
+const result2 = TextHelpers.replaceSpacesWithUnderscore()
+console.log(result2) // ""
+```
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`word`|`string`|`true`|The word to pluralise|
-|`condition`|`boolean`|`true`|The condition that determines whether to plurize the input word|
+### `replaceUnderscoreWithSpaces(s?)`
 
-## `TextHelpers.convertSnakeToCamelCase(data)`
+Replaces underscores with spaces in a string.
 
-Returns the input object or array with all object keys recursively transformed to camelCase. Returns input object if type is invalid.
+**Parameters:**
+- `s` (optional): `string` - The string to process.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`data`|`Object` or `Array<Object>`|`true`|The object whose keys to transform|
+**Example:**
+```typescript
+const result = TextHelpers.replaceUnderscoreWithSpaces("hello_world_test")
+console.log(result) // "hello world test"
+```
 
-## `TextHelpers.convertCamelToSnakeCase(data)`
+### `pluralizeOnCondition(word, condition)`
 
-Returns the input object or array with all object keys recursively transformed to snake_case. Returns input object if type is invalid.
+Returns pluralized version of the word if condition is true.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`data`|`Object` or `Array<Object>`|`true`|The object whose keys to transform|
+**Parameters:**
+- `word`: `string` - The word to pluralize.
+- `condition`: `boolean` - Whether to pluralize.
 
-## `TextHelpers.convertCamelToKebabCase(data)`
+**Example:**
+```typescript
+const plural = TextHelpers.pluralizeOnCondition("item", true)
+console.log(plural) // "items"
+
+const singular = TextHelpers.pluralizeOnCondition("item", false)
+console.log(singular) // "item"
+```
+
+### `convertSnakeToCamelCase(data)`
+
+Converts snake_case to camelCase for strings, objects, or arrays of objects.
+
+**Parameters:**
+- `data`: `string | Object | Array<Object>` - The data to convert.
+
+**Example:**
+```typescript
+// String conversion
+const camelString = TextHelpers.convertSnakeToCamelCase("hello_world")
+console.log(camelString) // "helloWorld"
+
+// Object conversion
+const camelObject = TextHelpers.convertSnakeToCamelCase({
+  first_name: "John",
+  last_name: "Doe",
+  user_info: {
+    phone_number: "123-456-7890"
+  }
+})
+console.log(camelObject)
+// {
+//   firstName: "John",
+//   lastName: "Doe",
+//   userInfo: {
+//     phoneNumber: "123-456-7890"
+//   }
+// }
+```
+
+### `convertCamelToSnakeCase(data)`
+
+Converts camelCase to snake_case for strings, objects, or arrays of objects.
+
+**Parameters:**
+- `data`: `string | Object | Array<Object>` - The data to convert.
+
+**Example:**
+```typescript
+// String conversion
+const snakeString = TextHelpers.convertCamelToSnakeCase("helloWorld")
+console.log(snakeString) // "hello_world"
+
+// Object conversion
+const snakeObject = TextHelpers.convertCamelToSnakeCase({
+  firstName: "John",
+  lastName: "Doe",
+  userInfo: {
+    phoneNumber: "123-456-7890"
+  }
+})
+console.log(snakeObject)
+// {
+//   first_name: "John",
+//   last_name: "Doe",
+//   user_info: {
+//     phone_number: "123-456-7890"
+//   }
+// }
+```
 
-Convert camel case to kebab case
-The word returned as kebab case
+### `convertCamelToKebabCase(word)`
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`data`|`string`|The word needed to be converted to kebab case from camel case|
+Converts camelCase to kebab-case.
 
-## `TextHelpers.convertKebabToCamelCase(data)`
+**Parameters:**
+- `word`: `string` - The word to convert.
 
-Convert kebab case to camel case
-The word returned as camel case
+**Example:**
+```typescript
+const kebab = TextHelpers.convertCamelToKebabCase("helloWorld")
+console.log(kebab) // "hello-world"
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`data`|`string`|The word needed to be converted from kebab case to camel case|
+const kebab2 = TextHelpers.convertCamelToKebabCase("XMLHttpRequest")
+console.log(kebab2) // "xml-http-request"
+```
 
-## `TextHelpers.generateAcronym(term)`
+### `convertKebabToCamelCase(word)`
 
-Generate an acronym from a term
-an acronym generated from the term
+Converts kebab-case to camelCase.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`term`|`string`|The term to be converted to an acronym|
+**Parameters:**
+- `word`: `string` - The word to convert.
 
-## `TextHelpers.isAcronym(data)`
+**Example:**
+```typescript
+const camel = TextHelpers.convertKebabToCamelCase("hello-world")
+console.log(camel) // "HelloWorld"
+
+const camel2 = TextHelpers.convertKebabToCamelCase("xml-http-request")
+console.log(camel2) // "XmlHttpRequest"
+```
+
+### `generateAcronym(term)`
+
+Generates an acronym from a term.
 
-Validate if a word is acronym
-The boolean value when the condition is met
+**Parameters:**
+- `term`: `string` - The term to convert to acronym.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`data`|`string`|The word that is being validated as acronym|
+**Example:**
+```typescript
+const acronym = TextHelpers.generateAcronym("Hyper Text Markup Language")
+console.log(acronym) // "HTML"
+
+const acronym2 = TextHelpers.generateAcronym("JavaScript Object Notation")
+console.log(acronym2) // "JSON"
+```
+
+### `isAcronym(word)`
+
+Validates if a word is an acronym (all uppercase).
 
-## `TextHelpers.acronymToKebabCase(data)`
+**Parameters:**
+- `word`: `string` - The word to validate.
 
-Convert acronym to kebab case
-The word returned as camel case
+**Example:**
+```typescript
+console.log(TextHelpers.isAcronym("HTML")) // true
+console.log(TextHelpers.isAcronym("html")) // false
+console.log(TextHelpers.isAcronym("JavaScript")) // false
+```
+
+### `acronymToKebabCase(word)`
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`data`|`string`|The acronym to be converted to kebab case|
+Converts an acronym to kebab-case.
 
-## `TextHelpers.handleNullDisplay(value, defaultValue="N/A")`
+**Parameters:**
+- `word`: `string` - The acronym to convert.
 
-Returns the input string or the default string if the input value is null or undefined.
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`value`|`string`|`true`|The string to display in the ui|
-|`defaultValue`|`string`|`false`|The default string to display if the input value is null or undefined defaults to `N/A`|
+**Example:**
+```typescript
+const kebab = TextHelpers.acronymToKebabCase("HTML")
+console.log(kebab) // "h-t-m-l"
 
-## `TextHelpers.enforceCharacterLimit({text, characterLimit, onCharacterLimit})`
+const kebab2 = TextHelpers.acronymToKebabCase("API")
+console.log(kebab2) // "a-p-i"
 
-Returns the input string if the character limit is not exceeded or returns the truncated string when the character limit is exceeded. Calls the `onCharacterLimit` callback when the character limit is exceeded.
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`text`|`string`|`true`|The string to truncate|
-|`characterLimit`|`number`|`true`|The target number of characters to truncate text to|
-|`onCharacterLimit`|`function`|`true`|The callback to call when the character limit is exceeded|
+// Throws error if not an acronym
+TextHelpers.acronymToKebabCase("html") // Error: The text passed: html is not an acronym.
+```
 
-## `TextHelpers.isValidEmail(email)`
+### `handleNullDisplay(value, defaultValue?)`
 
-Returns true when the email is a proper email and returns false when the email is not a proper email
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`email`|`string`|`true`|The email to be validated|
+Returns the value or a default string if the value is null or undefined.
 
-## `TextHelpers.generateIdFromWord(word)`
+**Parameters:**
+- `value`: `string | null | undefined` - The value to display.
+- `defaultValue` (optional): `string` - Default value. Defaults to "N/A".
 
-Generate ID from word
-Returns the generated ID from the word
+**Example:**
+```typescript
+console.log(TextHelpers.handleNullDisplay("Hello")) // "Hello"
+console.log(TextHelpers.handleNullDisplay(null)) // "N/A"
+console.log(TextHelpers.handleNullDisplay(undefined)) // "N/A"
+console.log(TextHelpers.handleNullDisplay(null, "No data")) // "No data"
+```
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`word`|`string`|`true`|The word needed to generate ID from|
+### `capitalizeText(text?)`
 
-## `TextHelpers.generateWordFromId(word)`
+Capitalizes the first letter of a text.
 
-Get the word from the generated ID
-Returns the word that is got from the id
+**Parameters:**
+- `text` (optional): `string` - The text to capitalize.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`words`|`string`|`true`|The id that is needed to get the word from|
-|`customList`|`Record<string, string>`|`false`|The custom lists that has the id with the custom list of words|
+**Example:**
+```typescript
+console.log(TextHelpers.capitalizeText("hello world")) // "Hello world"
+console.log(TextHelpers.capitalizeText("HELLO")) // "Hello"
+console.log(TextHelpers.capitalizeText()) // ""
+```
 
-## `TextHelpers.generateSlugFromWords(id, ...words)`
+### `enforceCharacterLimit({text, characterLimit, onCharacterLimit})`
 
-Get the slug from words
-Returns the slug from the words and it will be url path safe
+Enforces a character limit and calls a callback when exceeded.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`id`|`string`|`true`|The id that is needed to be concatenated with the slug|
-|`words`|`string[]`|`true`|The words that will be in the slug|
+**Parameters:**
+- `text`: `string` - The text to limit.
+- `characterLimit`: `number` - Maximum characters allowed.
+- `onCharacterLimit`: `() => void` - Callback when limit is exceeded.
 
-## `TextHelpers.extractIDfromSlug(slug)`
+**Example:**
+```typescript
+const result = TextHelpers.enforceCharacterLimit({
+  text: "This is a very long text that exceeds the limit",
+  characterLimit: 10,
+  onCharacterLimit: () => console.log("Character limit exceeded!")
+})
+console.log(result) // "This is a" (truncated)
+// Console: "Character limit exceeded!"
+```
 
-Extracts the id from the slug
-Returns the id from the slug
-Throws error if the string is empty, null or undefined
+### `isValidEmail(email)`
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`slug`|`string`|`true`|The slug associated with the id|
+Validates if an email address is properly formatted.
 
-## `TextHelpers.abbreviateNumber(number)`
+**Parameters:**
+- `email`: `string` - The email to validate.
 
-Returns the string representation of the abbreviated number, rounded to two decimal places.
+**Example:**
+```typescript
+console.log(TextHelpers.isValidEmail("user@example.com")) // true
+console.log(TextHelpers.isValidEmail("invalid-email")) // false
+console.log(TextHelpers.isValidEmail("user@domain.co.uk")) // true
+console.log(TextHelpers.isValidEmail("")) // false
+```
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`number`|`number`|`true`|The number to be abbreviated|
+### `generateIDFromWord(text)`
 
-Examples
+Generates an ID from a word by converting to lowercase and replacing spaces with hyphens.
 
-- Numbers below 1,000 are displayed without abbreviation
-- Numbers between 1,000 and 1,000,000 are displayed in thousands (e.g. 1.23K)
-- Numbers between 1,000,000 and 1,000,000,000 are displayed in millions (e.g. 1.23M)
-- Numbers above 1,000,000,000 are displayed in billions (e.g. 1.23B)
+**Parameters:**
+- `text`: `string` - The text to convert to ID.
 
-Note: If the input `number` is null or undefined, the function returns null.
+**Example:**
+```typescript
+const id = TextHelpers.generateIDFromWord("Hello World Test")
+console.log(id) // "hello-world-test"
+
+const id2 = TextHelpers.generateIDFromWord("My Awesome Feature")
+console.log(id2) // "my-awesome-feature"
+```
+
+### `generateWordFromId(id, customList?)`
+
+Converts an ID back to a readable word format.
+
+**Parameters:**
+- `id`: `string` - The ID to convert.
+- `customList` (optional): `Record<string, string>` - Custom mapping for specific IDs.
+
+**Example:**
+```typescript
+const word = TextHelpers.generateWordFromId("hello-world-test")
+console.log(word) // "Hello World Test"
+
+const customWord = TextHelpers.generateWordFromId("api", { "api": "Application Programming Interface" })
+console.log(customWord) // "Application Programming Interface"
+```
+
+### `generateSlugFromWordsWithID(id, ...words)`
+
+Generates a URL-safe slug from an ID and additional words.
+
+**Parameters:**
+- `id`: `string` - The ID to include in the slug.
+- `...words`: `string[]` - Additional words to include.
+
+**Example:**
+```typescript
+const slug = TextHelpers.generateSlugFromWordsWithID("user", "profile", "settings")
+console.log(slug) // "profile-settings-user"
+
+const slug2 = TextHelpers.generateSlugFromWordsWithID("123", "hello world", "test")
+console.log(slug2) // "hello%20world-test-123"
+```
+
+### `extractIDfromSlug(slug)`
+
+Extracts the ID from a slug (last part after splitting by hyphens).
+
+**Parameters:**
+- `slug`: `string` - The slug to extract ID from.
+
+**Example:**
+```typescript
+const id = TextHelpers.extractIDfromSlug("hello-world-test-123")
+console.log(id) // "123"
+
+const id2 = TextHelpers.extractIDfromSlug("user-profile-abc")
+console.log(id2) // "abc"
+
+// Throws error for empty slug
+TextHelpers.extractIDfromSlug("") // Error: slug cannot be empty, null or undefined string
+```
+
+### `abbreviateNumber(number)`
+
+Abbreviates large numbers with K, M, B suffixes.
+
+**Parameters:**
+- `number`: `number | undefined | null` - The number to abbreviate.
+
+**Example:**
+```typescript
+console.log(TextHelpers.abbreviateNumber(500)) // "500"
+console.log(TextHelpers.abbreviateNumber(1500)) // "1.5K"
+console.log(TextHelpers.abbreviateNumber(1500000)) // "1.5M"
+console.log(TextHelpers.abbreviateNumber(1500000000)) // "1.5B"
+console.log(TextHelpers.abbreviateNumber(null)) // null
+```
 
 ## ObjectHelpers
 
-Import the ObjectHelpers utility.
+Utility functions for object manipulation and processing.
 
-`import { ObjectHelpers } from "@akadenia/helpers`
+### `isPureObject(object)`
 
-## `ObjectHelpers.isPureObject(any)`
+Checks if an object is a pure object (not array, date, or function).
 
-Returns a boolean indicating whether or not the input is a pure object.
+**Parameters:**
+- `object`: `any` - The object to check.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`object`|`any`|`true`|The object to test for pureness|
-
-## `ObjectHelpers.parseCookie(str)`
-
-Returns an object containing the key-value pairs of the parsed cookies.
-
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`str`|`string`|`true`|The string of cookies to parse|
-
-## `ObjectHelpers.filterObjectsByProperty ( array, propertyName, propertyValue)`
-
-Filter an array of objects based on a specific property and its corresponding value.
-Returns an array containing all objects that have the specified property with the given value.
-
-Template
-
+**Example:**
 ```typescript
-T extends Record<string, any>
+console.log(ObjectHelpers.isPureObject({})) // true
+console.log(ObjectHelpers.isPureObject([])) // false
+console.log(ObjectHelpers.isPureObject(new Date())) // false
+console.log(ObjectHelpers.isPureObject(() => {})) // false
+console.log(ObjectHelpers.isPureObject("string")) // false
 ```
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`array`|`T[]`|`true`|An array of objects to be searched|
-|`propertyName`|`keyof T`|`true`|The name of the property to match against|
-|`propertyValue`|`T[keyof T]`|`true`|The value that the property should have to be considered|
+### `parseCookie(str)`
 
-## `ObjectHelpers.containsSubObject(mainObject, subObject)`
+Parses a cookie string into an object.
 
-It compares the key-value pairs of the sub-object with the corresponding key-value pairs in the main object.
-Returns true If all key-value pairs in the sub-object are found in the main object; otherwise, it returns false.
+**Parameters:**
+- `str`: `string` - The cookie string to parse.
 
-Template
-
+**Example:**
 ```typescript
-T extends Record<string, any>
+const cookies = ObjectHelpers.parseCookie("name=John; age=30; city=New York")
+console.log(cookies) // { name: "John", age: "30", city: "New York" }
+
+const cookies2 = ObjectHelpers.parseCookie("session=abc123; theme=dark")
+console.log(cookies2) // { session: "abc123", theme: "dark" }
 ```
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`mainObject`|`T`|`true`|The main object to be checked|
-|`subObject`|`Partial<T>`|`true`|The sub-object to be searched for|
+### `filterObjectsByProperty(array, propertyName, propertyValue)`
 
-## `ObjectHelpers.findObjectBySubObject(array, subObject)`
+Filters an array of objects based on a specific property and value.
 
-Searches an array of objects for an object that contains a specific sub-object.
-Returns the first object found in the array that contains the sub-object or null
-if no match is found.
+**Parameters:**
+- `array`: `T[]` - Array of objects to filter.
+- `propertyName`: `keyof T` - Name of the property to filter on.
+- `propertyValue`: `T[keyof T]` - Value to match.
 
-Template
-
+**Example:**
 ```typescript
-T extends Record<string, any>
+const users = [
+  { id: 1, name: "John", age: 30 },
+  { id: 2, name: "Jane", age: 25 },
+  { id: 3, name: "John", age: 35 }
+]
+
+const johns = ObjectHelpers.filterObjectsByProperty(users, "name", "John")
+console.log(johns) // [{ id: 1, name: "John", age: 30 }, { id: 3, name: "John", age: 35 }]
+
+const adults = ObjectHelpers.filterObjectsByProperty(users, "age", 30)
+console.log(adults) // [{ id: 1, name: "John", age: 30 }]
 ```
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`array`|`T[]`|`true`|An array of objects to be searched|
-|`array`|`Partial<T>`|`true`|The sub-object to be searched for in the array|
+### `containsSubObject(mainObject, subObject)`
 
-## `ObjectHelpers.filterObjectsBySubObject(array, subObject)`
+Checks if the main object contains all key-value pairs from the sub-object.
 
-Filters an array of objects based on the presence of a specific sub-object within each object.
-Returns an array containing all objects from the input array that contain the specified sub-object.
+**Parameters:**
+- `mainObject`: `T` - The main object to check.
+- `subObject`: `Partial<T>` - The sub-object to search for.
 
-Template
-
+**Example:**
 ```typescript
-T extends Record<string, any>
+const mainObj = { id: 1, name: "John", age: 30, city: "New York" }
+const subObj = { name: "John", age: 30 }
+
+console.log(ObjectHelpers.containsSubObject(mainObj, subObj)) // true
+
+const subObj2 = { name: "Jane", age: 30 }
+console.log(ObjectHelpers.containsSubObject(mainObj, subObj2)) // false
 ```
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`array`|`T[]`|`true`|An array of objects to be filtered|
-|`array`|`Partial<T>`|`true`|The sub-object to be searched for in the array|
+### `findObjectBySubObject(array, subObject)`
 
-## `ObjectHelpers.objectPropHasValue({object, key, value)}`
+Finds the first object in an array that contains the specified sub-object.
 
-Checks if the object has the key with the value.
+**Parameters:**
+- `array`: `T[]` - Array of objects to search.
+- `subObject`: `Partial<T>` - The sub-object to search for.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`object`|`Object`|`true`|The object to check|
-|`key`|`string`|`true`|The key to check|
-|`value`|`any`|`true`|The value to check|
+**Example:**
+```typescript
+const users = [
+  { id: 1, name: "John", age: 30, city: "New York" },
+  { id: 2, name: "Jane", age: 25, city: "Boston" },
+  { id: 3, name: "Bob", age: 30, city: "Chicago" }
+]
 
-## `ObjectHelpers.findEntry(array, predicate)`
+const result = ObjectHelpers.findObjectBySubObject(users, { age: 30, city: "New York" })
+console.log(result) // { id: 1, name: "John", age: 30, city: "New York" }
 
-Finds the first entry in the array that satisfies the predicate.
+const result2 = ObjectHelpers.findObjectBySubObject(users, { name: "Alice" })
+console.log(result2) // null
+```
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`array`|`Array<any>`|`true`|The array of entries to search|
-|`predicate`|`(item: any) => boolean`|`true`|The predicate function to use to search the array|
+### `filterObjectsBySubObject(array, subObject)`
+
+Filters an array of objects based on containing the specified sub-object.
+
+**Parameters:**
+- `array`: `T[]` - Array of objects to filter.
+- `subObject`: `Partial<T>` - The sub-object to search for.
+
+**Example:**
+```typescript
+const users = [
+  { id: 1, name: "John", age: 30, city: "New York" },
+  { id: 2, name: "Jane", age: 25, city: "Boston" },
+  { id: 3, name: "Bob", age: 30, city: "Chicago" }
+]
+
+const results = ObjectHelpers.filterObjectsBySubObject(users, { age: 30 })
+console.log(results) // [{ id: 1, name: "John", age: 30, city: "New York" }, { id: 3, name: "Bob", age: 30, city: "Chicago" }]
+```
+
+### `objectPropHasValue({object, propName, value})`
+
+Checks if an object has a specific property with a specific value.
+
+**Parameters:**
+- `object`: `ObjectType` - The object to check.
+- `propName`: `keyof ObjectType` - The property name.
+- `value`: `ObjectType[keyof ObjectType]` - The expected value.
+
+**Example:**
+```typescript
+const user = { id: 1, name: "John", age: 30 }
+
+console.log(ObjectHelpers.objectPropHasValue({ object: user, propName: "name", value: "John" })) // true
+console.log(ObjectHelpers.objectPropHasValue({ object: user, propName: "age", value: 25 })) // false
+```
+
+### `findEntry(array, predicate)`
+
+Finds the first entry in an array that satisfies a predicate function.
+
+**Parameters:**
+- `array`: `EntryType[]` - Array to search.
+- `predicate`: `(item: EntryType) => boolean` - Predicate function.
+
+**Example:**
+```typescript
+const numbers = [1, 2, 3, 4, 5, 6]
+
+const even = ObjectHelpers.findEntry(numbers, (n) => n % 2 === 0)
+console.log(even) // 2
+
+const greaterThan5 = ObjectHelpers.findEntry(numbers, (n) => n > 5)
+console.log(greaterThan5) // 6
+
+const greaterThan10 = ObjectHelpers.findEntry(numbers, (n) => n > 10)
+console.log(greaterThan10) // null
+```
+
+### `convertArrayToMap(arrayData, keyProp)`
+
+Converts an array of objects to a map using a specified key property.
+
+**Parameters:**
+- `arrayData`: `T[]` - Array of objects to convert.
+- `keyProp`: `keyof T` - Property to use as the key.
+
+**Example:**
+```typescript
+const users = [
+  { id: 1, name: "John", age: 30 },
+  { id: 2, name: "Jane", age: 25 },
+  { id: 3, name: "Bob", age: 35 }
+]
+
+const userMap = ObjectHelpers.convertArrayToMap(users, "id")
+console.log(userMap)
+// {
+//   "1": { id: 1, name: "John", age: 30 },
+//   "2": { id: 2, name: "Jane", age: 25 },
+//   "3": { id: 3, name: "Bob", age: 35 }
+// }
+```
 
 ## GenericHelpers
 
-Import the GenericHelpers utility.
+General utility functions for common operations.
 
-`import { GenericHelpers } from "@akadenia/helpers`
+### `delay(ms)`
 
-## `GenericHelpers.delay(ms)`
+Creates a delay (sleep) for the specified number of milliseconds.
 
-A "modern" sleep statement.
+**Parameters:**
+- `ms`: `number` - Number of milliseconds to wait.
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`ms`|`number`|`true`|The number of milliseconds to wait|
+**Example:**
+```typescript
+// Using with async/await
+async function example() {
+  console.log("Starting...")
+  await GenericHelpers.delay(2000) // Wait 2 seconds
+  console.log("Done!")
+}
 
-## `GenericHelpers.getPreferredUriScheme(host)`
+// Using with promises
+GenericHelpers.delay(1000).then(() => {
+  console.log("1 second has passed")
+})
+```
 
-Get the preferred scheme for a host
+### `getPreferredUriScheme(host)`
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`host`|`string`|`true`|An IP address or a domain name|
+Determines the preferred URI scheme (http or https) for a given host.
+
+**Parameters:**
+- `host`: `string` - IP address or domain name.
+
+**Example:**
+```typescript
+console.log(GenericHelpers.getPreferredUriScheme("example.com")) // "https"
+console.log(GenericHelpers.getPreferredUriScheme("localhost")) // "http"
+console.log(GenericHelpers.getPreferredUriScheme("127.0.0.1")) // "http"
+console.log(GenericHelpers.getPreferredUriScheme("192.168.1.1")) // "http"
+console.log(GenericHelpers.getPreferredUriScheme("10.0.0.1")) // "http"
+```
 
 ## FileHelpers
 
-## `FileHelpers.checkFileExtension(filePath, validExtensions)`
+Utility functions for file operations and validation.
 
-Check if a file path has a valid extension
+### `checkFileExtension(filePath, validExtensions)`
 
-Arguments
-|Name|Type|Required|Description|
-|--|--|--|--|
-|`filePath`|`string`|`true`|The file path to check|
-|`validExtensions`|`string[]`|`true`|The valid extensions|
+Checks if a file path has one of the valid extensions.
 
-## Contributing to this package
+**Parameters:**
+- `filePath`: `string` - The file path to check.
+- `validExtensions`: `string[]` - Array of valid file extensions.
 
-This package follows the commitlint and conventional commits standards. As such the commit messages should follow the following format:
-
-```text
-<type>(optional scope): <description> eg: feat: add new feature OR fix(map-loading): fix rendering on ipad devices
+**Example:**
+```typescript
+console.log(FileHelpers.checkFileExtension("document.pdf", ["pdf", "doc", "docx"])) // true
+console.log(FileHelpers.checkFileExtension("image.jpg", ["png", "gif", "svg"])) // false
+console.log(FileHelpers.checkFileExtension("data.geojson", ["geojson", "json"])) // true
+console.log(FileHelpers.checkFileExtension("script.js", ["js", "ts", "jsx"])) // true
+console.log(FileHelpers.checkFileExtension("file", ["txt", "md"])) // false (no extension)
 ```
 
-Common types according to [commitlint-config-conventional (based on the Angular convention)](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional#type-enum) can be:
+## Contributing
 
-- build
-- chore
-- ci
-- docs
-- feat
-- fix
-- perf
-- refactor
-- revert
-- style
-- test
+This package follows the commitlint and conventional commits standards. Commit messages should follow this format:
 
-if you introduce a breaking change, please add BREAKING CHANGE in the pull request description
+```text
+<type>(optional scope): <description>
+```
+
+Examples:
+- `feat: add new feature`
+- `fix(map-loading): fix rendering on ipad devices`
+- `docs: update README with examples`
+
+Common types according to [commitlint-config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional#type-enum):
+
+- `build` - Changes that affect the build system or external dependencies
+- `chore` - Changes to the build process or auxiliary tools
+- `ci` - Changes to our CI configuration files and scripts
+- `docs` - Documentation only changes
+- `feat` - A new feature
+- `fix` - A bug fix
+- `perf` - A code change that improves performance
+- `refactor` - A code change that neither fixes a bug nor adds a feature
+- `revert` - Reverts a previous commit
+- `style` - Changes that do not affect the meaning of the code
+- `test` - Adding missing tests or correcting existing tests
+
+If you introduce a breaking change, please add `BREAKING CHANGE` in the pull request description.
 
 ## License
 
