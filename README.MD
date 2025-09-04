@@ -901,7 +901,7 @@ npm test
 
 We follow [Conventional Commits](https://www.conventionalcommits.org/) for our semantic release process. **We prefer commit messages to include a scope in parentheses** for better categorization and changelog generation.
 
-#### Preferred Format
+### Preferred Format
 ```
 type(scope): description
 
@@ -910,22 +910,22 @@ type(scope): description
 [optional footer]
 ```
 
-#### Examples
+### Examples
 ```bash
-# ✅ Preferred - with scope
+## ✅ Preferred - with scope
 feat(date): add new date formatting options
 fix(text): resolve string validation issue
 docs(readme): add troubleshooting section
 chore(deps): update dependencies
 
-# ❌ Less preferred - without scope
+## ❌ Less preferred - without scope
 feat: add new date formatting options
 fix: resolve string validation issue
 docs: add troubleshooting section
 chore: update dependencies
 ```
 
-#### Common Scopes
+### Common Scopes
 - `date` - Date manipulation functions
 - `text` - Text processing functions
 - `object` - Object manipulation functions
@@ -938,7 +938,7 @@ chore: update dependencies
 - `build` - Build and build tooling
 - `ci` - CI/CD configuration
 
-#### Commit Types
+### Commit Types
 - `feat` - New features
 - `fix` - Bug fixes
 - `docs` - Documentation changes
