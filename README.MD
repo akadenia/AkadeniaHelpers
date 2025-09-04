@@ -1,6 +1,27 @@
-# @akadenia/helpers
+<div align="center">
+  <img src="https://cdn.akadenia.com/images/akadenia-webp/logo/horizontal-logo.svg" alt="Akadenia" width="200" style="filter: drop-shadow(0 0 1px rgba(0,0,0,1)) drop-shadow(0 0 1px rgba(255,255,255,1));" />
+  
+  # @akadenia/helpers
+  
+  [![npm version](https://badge.fury.io/js/%40akadenia%2Fhelpers.svg)](https://badge.fury.io/js/%40akadenia%2Fhelpers)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
+  
+  A comprehensive collection of utility functions for common JavaScript/TypeScript operations including date manipulation, text processing, object handling, map calculations, and more.
+  
+  [Documentation](https://akadenia.com/packages/akadenia-helpers) • [GitHub](https://github.com/akadenia/AkadeniaHelpers) • [Issues](https://github.com/akadenia/AkadeniaHelpers/issues)
+</div>
 
-A comprehensive collection of utility functions for common JavaScript/TypeScript operations including date manipulation, text processing, object handling, map calculations, and more.
+## Features
+
+- **Date Helpers**: Comprehensive date manipulation and formatting utilities
+- **Text Helpers**: String processing, validation, and transformation functions
+- **Object Helpers**: Object manipulation, filtering, and utility functions
+- **Map Helpers**: Geographical calculations and coordinate operations
+- **Generic Helpers**: General utility functions for common operations
+- **File Helpers**: File validation and processing utilities
+- **TypeScript Support**: Full type definitions included
+- **Zero Dependencies**: Lightweight with no external dependencies
 
 ## Installation
 
@@ -16,6 +37,8 @@ import { DateHelpers, TextHelpers, ObjectHelpers, MapHelpers, GenericHelpers, Fi
 
 ## Table of Contents
 
+- [Installation](#installation)
+- [Usage](#usage)
 - [DateHelpers](#datehelpers)
 - [TextHelpers](#texthelpers)
 - [ObjectHelpers](#objecthelpers)
@@ -862,33 +885,74 @@ console.log(FileHelpers.checkFileExtension("file", ["txt", "md"])) // false (no 
 
 ## Contributing
 
-This package follows the commitlint and conventional commits standards. Commit messages should follow this format:
+We welcome contributions! Please feel free to submit a Pull Request.
 
-```text
-<type>(optional scope): <description>
+### Development Setup
+
+```bash
+git clone https://github.com/akadenia/AkadeniaHelpers.git
+cd AkadeniaHelpers
+npm install
+npm run build
+npm test
 ```
 
-Examples:
-- `feat: add new feature`
-- `fix(map-loading): fix rendering on ipad devices`
-- `docs: update README with examples`
+### Commit Message Guidelines
 
-Common types according to [commitlint-config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional#type-enum):
+We follow [Conventional Commits](https://www.conventionalcommits.org/) for our semantic release process. **We prefer commit messages to include a scope in parentheses** for better categorization and changelog generation.
 
-- `build` - Changes that affect the build system or external dependencies
-- `chore` - Changes to the build process or auxiliary tools
-- `ci` - Changes to our CI configuration files and scripts
-- `docs` - Documentation only changes
-- `feat` - A new feature
-- `fix` - A bug fix
-- `perf` - A code change that improves performance
-- `refactor` - A code change that neither fixes a bug nor adds a feature
-- `revert` - Reverts a previous commit
-- `style` - Changes that do not affect the meaning of the code
-- `test` - Adding missing tests or correcting existing tests
+#### Preferred Format
+```
+type(scope): description
+
+[optional body]
+
+[optional footer]
+```
+
+#### Examples
+```bash
+# ✅ Preferred - with scope
+feat(date): add new date formatting options
+fix(text): resolve string validation issue
+docs(readme): add troubleshooting section
+chore(deps): update dependencies
+
+# ❌ Less preferred - without scope
+feat: add new date formatting options
+fix: resolve string validation issue
+docs: add troubleshooting section
+chore: update dependencies
+```
+
+#### Common Scopes
+- `date` - Date manipulation functions
+- `text` - Text processing functions
+- `object` - Object manipulation functions
+- `map` - Map and geographical functions
+- `generic` - Generic utility functions
+- `file` - File processing functions
+- `docs` - Documentation updates
+- `deps` - Dependency updates
+- `test` - Test-related changes
+- `build` - Build and build tooling
+- `ci` - CI/CD configuration
+
+#### Commit Types
+- `feat` - New features
+- `fix` - Bug fixes
+- `docs` - Documentation changes
+- `style` - Code style changes (formatting, etc.)
+- `refactor` - Code refactoring
+- `test` - Adding or updating tests
+- `chore` - Maintenance tasks
 
 If you introduce a breaking change, please add `BREAKING CHANGE` in the pull request description.
 
 ## License
 
-MIT
+[MIT](https://github.com/akadenia/AkadeniaHelpers/blob/main/LICENSE)
+
+## Support
+
+For support, please open an issue on [GitHub](https://github.com/akadenia/AkadeniaHelpers/issues).
