@@ -111,7 +111,24 @@ export const replaceUnderscoreWithSpaces = (s?: string): string => s?.trim().rep
  * @returns {string} - The word with "s" added to the end if the condition is true
  */
 export const pluralizeOnCondition = (word: string, condition: boolean) => {
-  return condition ? `${word}s` : word
+  if (!condition) return word
+
+  const lowerCasedWord = word.toLowerCase()
+  // Handle words ending with 'y' (e.g., 'library' -> 'libraries')
+  if (lowerCasedWord.endsWith("y")) {
+    return `${word.slice(0, -1)}ies`
+  }
+  // Handle words ending with 's', 'sh', or 'ch' (e.g., 'class' -> 'classes')
+  if (
+    lowerCasedWord.endsWith("s") ||
+    lowerCasedWord.endsWith("sh") ||
+    lowerCasedWord.endsWith("ch") ||
+    lowerCasedWord.endsWith("x")
+  ) {
+    return `${word}es`
+  }
+  // Default pluralization by adding 's'
+  return `${word}s`
 }
 /**
  * @function
@@ -152,6 +169,19 @@ export function convertKebabToCamelCase(word: string): string {
     .split("-")
     .map((token) => capitalizeText(token))
     .join("")
+}
+
+/**
+ * Convert camel case to readable text
+ * @function
+ * @param {string} name - The name to be converted to readable text
+ * @returns {string} - The readable text
+ */
+export function convertCamelCaseToReadableText(name: string): string {
+  return name
+    .replace(/([A-Z])/g, " $1")
+    .replace(/^./, (str) => str.toUpperCase())
+    .trim()
 }
 
 /**

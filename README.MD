@@ -337,6 +337,12 @@ Returns pluralized version of the word if condition is true.
 const plural = TextHelpers.pluralizeOnCondition("item", true)
 console.log(plural) // "items"
 
+const plural2 = TextHelpers.pluralizeOnCondition("address", true)
+console.log(plural2) // "addresses"
+
+const plural3 = TextHelpers.pluralizeOnCondition("library", true)
+console.log(plural3) // "libraries"
+
 const singular = TextHelpers.pluralizeOnCondition("item", false)
 console.log(singular) // "item"
 ```
@@ -433,6 +439,27 @@ console.log(camel) // "HelloWorld"
 
 const camel2 = TextHelpers.convertKebabToCamelCase("xml-http-request")
 console.log(camel2) // "XmlHttpRequest"
+```
+
+### `convertCamelCaseToReadableText(name)`
+
+Converts camelCase to readable text format with proper capitalization.
+
+**Parameters:**
+
+- `name`: `string` - The camelCase string to convert.
+
+**Example:**
+
+```typescript
+const readable = TextHelpers.convertCamelCaseToReadableText("helloWorld")
+console.log(readable) // "Hello World"
+
+const readable2 = TextHelpers.convertCamelCaseToReadableText("XMLHttpRequest")
+console.log(readable2) // "XML Http Request"
+
+const readable3 = TextHelpers.convertCamelCaseToReadableText("userName")
+console.log(readable3) // "User Name"
 ```
 
 ### `generateAcronym(term)`
