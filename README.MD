@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="https://cdn.akadenia.com/images/akadenia-webp/logo/horizontal-logo.svg" alt="Akadenia" width="200" style="filter: drop-shadow(0 0 1px rgba(0,0,0,1)) drop-shadow(0 0 1px rgba(255,255,255,1));" />
+  <img src="https://cdn.akadenia.com/images/akadenia-webp/logo/horizontal-logo.svg" alt="Akadenia" width="200" />
   
-  # @akadenia/helpers
+  ## @akadenia/helpers
   
-  [![npm version](https://badge.fury.io/js/%40akadenia%2Fhelpers.svg)](https://badge.fury.io/js/%40akadenia%2Fhelpers)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
+  <img src="https://cdn.akadenia.com/images/badges/npm-version-helpers.svg" alt="npm version" />
+  <img src="https://cdn.akadenia.com/images/badges/license-mit.svg" alt="License: MIT" />
+  <img src="https://cdn.akadenia.com/images/badges/typescript.svg" alt="TypeScript" />
   
   A comprehensive collection of utility functions for common JavaScript/TypeScript operations including date manipulation, text processing, object handling, map calculations, and more.
   
@@ -46,7 +46,7 @@ import { DateHelpers, TextHelpers, ObjectHelpers, MapHelpers, GenericHelpers, Fi
 - [GenericHelpers](#generichelpers)
 - [FileHelpers](#filehelpers)
 - [Contributing](#contributing)
-- [License](#license)
+  - [License](#license)
 
 ## DateHelpers
 
@@ -928,7 +928,7 @@ npm test
 
 We follow [Conventional Commits](https://www.conventionalcommits.org/) for our semantic release process. **We prefer commit messages to include a scope in parentheses** for better categorization and changelog generation.
 
-#### Preferred Format
+### Preferred Format
 ```
 type(scope): description
 
@@ -937,22 +937,22 @@ type(scope): description
 [optional footer]
 ```
 
-#### Examples
+### Examples
 ```bash
-# ✅ Preferred - with scope
+## ✅ Preferred - with scope
 feat(date): add new date formatting options
 fix(text): resolve string validation issue
 docs(readme): add troubleshooting section
 chore(deps): update dependencies
 
-# ❌ Less preferred - without scope
+## ❌ Less preferred - without scope
 feat: add new date formatting options
 fix: resolve string validation issue
 docs: add troubleshooting section
 chore: update dependencies
 ```
 
-#### Common Scopes
+### Common Scopes
 - `date` - Date manipulation functions
 - `text` - Text processing functions
 - `object` - Object manipulation functions
@@ -965,7 +965,7 @@ chore: update dependencies
 - `build` - Build and build tooling
 - `ci` - CI/CD configuration
 
-#### Commit Types
+### Commit Types
 - `feat` - New features
 - `fix` - Bug fixes
 - `docs` - Documentation changes
