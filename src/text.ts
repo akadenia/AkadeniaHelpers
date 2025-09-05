@@ -119,7 +119,12 @@ export const pluralizeOnCondition = (word: string, condition: boolean) => {
     return `${word.slice(0, -1)}ies`
   }
   // Handle words ending with 's', 'sh', or 'ch' (e.g., 'class' -> 'classes')
-  if (lowerCasedWord.endsWith("s") || lowerCasedWord.endsWith("sh") || lowerCasedWord.endsWith("ch")) {
+  if (
+    lowerCasedWord.endsWith("s") ||
+    lowerCasedWord.endsWith("sh") ||
+    lowerCasedWord.endsWith("ch") ||
+    lowerCasedWord.endsWith("x")
+  ) {
     return `${word}es`
   }
   // Default pluralization by adding 's'

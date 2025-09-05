@@ -251,7 +251,7 @@ Arguments
 Convert camel case to readable text by adding spaces before capital letters and capitalizing the first letter.
 
 Arguments
-|Text|Type|Required|Description|
+|Name|Type|Required|Description|
 |--|--|--|--|
 |`text`|`string`|`true`|The camel case string to be converted to readable text|
 

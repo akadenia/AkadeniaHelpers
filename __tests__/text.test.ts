@@ -196,28 +196,42 @@ it("formatPosition", () => {
 })
 
 describe("pluralizeOnCondition", () => {
-  it("pluralizeOnCondition - should return plural if condition is true", () => {
-    expect(pluralizeOnCondition("thing", true)).toBe("things")
-  })
-
   it("pluralizeOnCondition - should return unaltered word if condition is false", () => {
     expect(pluralizeOnCondition("thing", false)).toBe("thing")
   })
+
+  it("pluralizeOnCondition - should add 's' for default pluralization", () => {
+    expect(pluralizeOnCondition("thing", true)).toBe("things")
+    expect(pluralizeOnCondition("book", true)).toBe("books")
+    expect(pluralizeOnCondition("car", true)).toBe("cars")
+  })
+
+  it("pluralizeOnCondition - should handle words ending with 'y' (changes to 'ies')", () => {
+    expect(pluralizeOnCondition("library", true)).toBe("libraries")
+    expect(pluralizeOnCondition("party", true)).toBe("parties")
+    expect(pluralizeOnCondition("baby", true)).toBe("babies")
+  })
+
+  it("pluralizeOnCondition - should handle words ending with 's', 'sh', or 'ch' (adds 'es')", () => {
+    expect(pluralizeOnCondition("class", true)).toBe("classes")
+    expect(pluralizeOnCondition("brush", true)).toBe("brushes")
+    expect(pluralizeOnCondition("watch", true)).toBe("watches")
+    expect(pluralizeOnCondition("box", true)).toBe("boxes")
+    expect(pluralizeOnCondition("bus", true)).toBe("buses")
+  })
 })
 
-describe("pluralizeOnCondition", () => {
-  it("replaceUnderscoreWithSpaces - should replace underscores with spaces", () => {
-    expect(replaceUnderscoreWithSpaces("some_random_string")).toBe("some random string")
-    expect(replaceUnderscoreWithSpaces(" some_random_string ")).toBe("some random string")
-    expect(replaceUnderscoreWithSpaces(" some_random_ string ")).toBe("some random  string")
-  })
+it("replaceUnderscoreWithSpaces - should replace underscores with spaces", () => {
+  expect(replaceUnderscoreWithSpaces("some_random_string")).toBe("some random string")
+  expect(replaceUnderscoreWithSpaces(" some_random_string ")).toBe("some random string")
+  expect(replaceUnderscoreWithSpaces(" some_random_ string ")).toBe("some random  string")
+})
 
-  it("replaceSpacesWithUnderscore - should replace spaces with underscore", () => {
-    expect(replaceSpacesWithUnderscore("some random string")).toBe("some_random_string")
-    expect(replaceSpacesWithUnderscore(" some random string ")).toBe("some_random_string")
-    expect(replaceSpacesWithUnderscore("some random  string ")).toBe("some_random__string")
-    expect(replaceSpacesWithUnderscore(undefined)).toBe("")
-  })
+it("replaceSpacesWithUnderscore - should replace spaces with underscore", () => {
+  expect(replaceSpacesWithUnderscore("some random string")).toBe("some_random_string")
+  expect(replaceSpacesWithUnderscore(" some random string ")).toBe("some_random_string")
+  expect(replaceSpacesWithUnderscore("some random  string ")).toBe("some_random__string")
+  expect(replaceSpacesWithUnderscore(undefined)).toBe("")
 })
 
 it("handleNullDisplay", () => {
