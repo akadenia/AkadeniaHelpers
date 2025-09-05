@@ -337,7 +337,7 @@ Returns pluralized version of the word if condition is true.
 const plural = TextHelpers.pluralizeOnCondition("item", true)
 console.log(plural) // "items"
 
-const plural2 = TextHelpers.pluralizeOnCondition("church", true)
+const plural2 = TextHelpers.pluralizeOnCondition("address", true)
 console.log(plural2) // "churches"
 
 const plural3 = TextHelpers.pluralizeOnCondition("library", true)
