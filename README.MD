@@ -338,7 +338,7 @@ const plural = TextHelpers.pluralizeOnCondition("item", true)
 console.log(plural) // "items"
 
 const plural2 = TextHelpers.pluralizeOnCondition("address", true)
-console.log(plural2) // "churches"
+console.log(plural2) // "addresses"
 
 const plural3 = TextHelpers.pluralizeOnCondition("library", true)
 console.log(plural3) // "libraries"
