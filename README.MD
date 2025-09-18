@@ -1,15 +1,16 @@
 <div align="center">
   <img src="https://cdn.akadenia.com/images/akadenia-webp/logo/horizontal-logo.svg" alt="Akadenia" width="200" />
-  
-  ## @akadenia/helpers
-  
+
+## @akadenia/helpers
+
   <img src="https://cdn.akadenia.com/images/badges/npm-version-helpers.svg" alt="npm version" />
   <img src="https://cdn.akadenia.com/images/badges/license-mit.svg" alt="License: MIT" />
   <img src="https://cdn.akadenia.com/images/badges/typescript.svg" alt="TypeScript" />
-  
-  A comprehensive collection of utility functions for common JavaScript/TypeScript operations including date manipulation, text processing, object handling, map calculations, and more.
-  
-  [Documentation](https://akadenia.com/packages/akadenia-helpers) • [GitHub](https://github.com/akadenia/AkadeniaHelpers) • [Issues](https://github.com/akadenia/AkadeniaHelpers/issues)
+
+A comprehensive collection of utility functions for common JavaScript/TypeScript operations including date manipulation, text processing, object handling, map calculations, and more.
+
+[Documentation](https://akadenia.com/packages/akadenia-helpers) • [GitHub](https://github.com/akadenia/AkadeniaHelpers) • [Issues](https://github.com/akadenia/AkadeniaHelpers/issues)
+
 </div>
 
 ## Features
@@ -32,7 +33,7 @@ npm install @akadenia/helpers
 ## Usage
 
 ```typescript
-import { DateHelpers, TextHelpers, ObjectHelpers, MapHelpers, GenericHelpers, FileHelpers } from '@akadenia/helpers'
+import { DateHelpers, TextHelpers, ObjectHelpers, MapHelpers, GenericHelpers, FileHelpers } from "@akadenia/helpers"
 ```
 
 ## Table of Contents
@@ -57,18 +58,20 @@ Utility functions for date and time operations.
 Returns the date in `yyyy-mm-dd hh:mm:ss` format.
 
 **Parameters:**
+
 - `datetime` (optional): `Date` - The date to convert. Defaults to current date.
 
 **Example:**
+
 ```typescript
-import { DateHelpers } from '@akadenia/helpers'
+import { DateHelpers } from "@akadenia/helpers"
 
 // Using current date
 const now = DateHelpers.getReadableDateTime()
 console.log(now) // "2024-01-15 14:30:25"
 
 // Using specific date
-const specificDate = DateHelpers.getReadableDateTime(new Date('2024-01-15T10:30:00Z'))
+const specificDate = DateHelpers.getReadableDateTime(new Date("2024-01-15T10:30:00Z"))
 console.log(specificDate) // "2024-01-15 10:30:00"
 ```
 
@@ -77,14 +80,16 @@ console.log(specificDate) // "2024-01-15 10:30:00"
 Returns the date in `yyyy-mm-dd` format.
 
 **Parameters:**
+
 - `datetime` (optional): `Date` - The date to convert. Defaults to current date.
 
 **Example:**
+
 ```typescript
 const date = DateHelpers.getReadableDate()
 console.log(date) // "2024-01-15"
 
-const specificDate = DateHelpers.getReadableDate(new Date('2024-01-15T10:30:00Z'))
+const specificDate = DateHelpers.getReadableDate(new Date("2024-01-15T10:30:00Z"))
 console.log(specificDate) // "2024-01-15"
 ```
 
@@ -93,14 +98,16 @@ console.log(specificDate) // "2024-01-15"
 Returns a string representing the date in the user's local timezone.
 
 **Parameters:**
+
 - `date`: `string | Date` - The date to convert.
 
 **Example:**
+
 ```typescript
-const dateString = DateHelpers.getDateString('2024-01-15')
+const dateString = DateHelpers.getDateString("2024-01-15")
 console.log(dateString) // "1/15/2024" (format depends on locale)
 
-const dateString2 = DateHelpers.getDateString(new Date('2024-01-15T10:30:00Z'))
+const dateString2 = DateHelpers.getDateString(new Date("2024-01-15T10:30:00Z"))
 console.log(dateString2) // "1/15/2024"
 ```
 
@@ -109,22 +116,24 @@ console.log(dateString2) // "1/15/2024"
 Returns a formatted date string using Intl.DateTimeFormat options.
 
 **Parameters:**
+
 - `date`: `string | Date` - The date to format.
 - `options`: `Intl.DateTimeFormatOptions` - Formatting options.
 - `localTimezone` (optional): `string | Intl.Locale` - Locale for formatting. Defaults to "en-US".
 
 **Example:**
+
 ```typescript
 const formatted = DateHelpers.formatDateTime(
-  new Date('2024-01-15T10:30:00Z'),
-  { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit'
+  new Date("2024-01-15T10:30:00Z"),
+  {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
   },
-  'en-US'
+  "en-US",
 )
 console.log(formatted) // "January 15, 2024 at 10:30 AM"
 ```
@@ -134,14 +143,16 @@ console.log(formatted) // "January 15, 2024 at 10:30 AM"
 Returns a Date object from a string or Date input. Throws an error for invalid dates.
 
 **Parameters:**
+
 - `date`: `string | Date` - The date to parse.
 
 **Example:**
+
 ```typescript
-const parsedDate = DateHelpers.parseDate('2024-01-15')
+const parsedDate = DateHelpers.parseDate("2024-01-15")
 console.log(parsedDate) // Date object for 2024-01-15
 
-const parsedDate2 = DateHelpers.parseDate('invalid-date')
+const parsedDate2 = DateHelpers.parseDate("invalid-date")
 // Throws: Error: Cannot parse date: "invalid-date"
 ```
 
@@ -150,15 +161,17 @@ const parsedDate2 = DateHelpers.parseDate('invalid-date')
 Returns a string representing the date in short ordinal format.
 
 **Parameters:**
+
 - `date`: `string | Date` - The date to format.
 - `appendTime` (optional): `boolean` - Whether to include time. Defaults to false.
 
 **Example:**
+
 ```typescript
-const ordinalDate = DateHelpers.getShortOrdinalDate('2024-01-15')
+const ordinalDate = DateHelpers.getShortOrdinalDate("2024-01-15")
 console.log(ordinalDate) // "Jan 15th 2024"
 
-const ordinalDateTime = DateHelpers.getShortOrdinalDate('2024-01-15T10:30:00Z', true)
+const ordinalDateTime = DateHelpers.getShortOrdinalDate("2024-01-15T10:30:00Z", true)
 console.log(ordinalDateTime) // "Jan 15th 2024 10:30:00"
 ```
 
@@ -171,10 +184,12 @@ Utility functions for geographical calculations and map operations.
 Calculates the distance between two geographical points using the Haversine formula.
 
 **Parameters:**
+
 - `point1`: `number[] | undefined` - First point coordinates [longitude, latitude].
 - `point2`: `number[] | undefined` - Second point coordinates [longitude, latitude].
 
 **Example:**
+
 ```typescript
 // Distance between New York and Los Angeles
 const nyc = [-74.006, 40.7128] // [lng, lat]
@@ -193,11 +208,13 @@ console.log(invalid) // null
 Compares two locations to see if they are the same within a specified precision.
 
 **Parameters:**
+
 - `location1`: `number[] | undefined` - First location coordinates [longitude, latitude].
 - `location2`: `number[] | undefined` - Second location coordinates [longitude, latitude].
 - `precision` (optional): `number` - Decimal precision for comparison. Defaults to 6.
 
 **Example:**
+
 ```typescript
 const loc1 = [-74.006, 40.7128]
 const loc2 = [-74.006001, 40.712801] // Very close to loc1
@@ -216,10 +233,12 @@ MapHelpers.compareLocations(loc1, undefined) // Error: location1 and location2 a
 Calculates the bearing (direction) from one coordinate to another in degrees.
 
 **Parameters:**
+
 - `startCoordinate`: `number[] | undefined` - Starting point [longitude, latitude].
 - `endCoordinate`: `number[] | undefined` - Ending point [longitude, latitude].
 
 **Example:**
+
 ```typescript
 const start = [-74.006, 40.7128] // New York
 const end = [-118.2437, 34.0522] // Los Angeles
@@ -241,6 +260,7 @@ Utility functions for text manipulation and processing.
 Returns a randomly generated UUID v4 string.
 
 **Example:**
+
 ```typescript
 const id = TextHelpers.uuidv4()
 console.log(id) // "f47ac10b-58cc-4372-a567-0e02b2c3d479"
@@ -251,14 +271,16 @@ console.log(id) // "f47ac10b-58cc-4372-a567-0e02b2c3d479"
 Returns a string position with appropriate suffix (st, nd, rd, th).
 
 **Parameters:**
+
 - `position`: `number` - The position number.
 
 **Example:**
+
 ```typescript
-console.log(TextHelpers.formatPosition(1))  // "1st"
-console.log(TextHelpers.formatPosition(2))  // "2nd"
-console.log(TextHelpers.formatPosition(3))  // "3rd"
-console.log(TextHelpers.formatPosition(4))  // "4th"
+console.log(TextHelpers.formatPosition(1)) // "1st"
+console.log(TextHelpers.formatPosition(2)) // "2nd"
+console.log(TextHelpers.formatPosition(3)) // "3rd"
+console.log(TextHelpers.formatPosition(4)) // "4th"
 console.log(TextHelpers.formatPosition(21)) // "21st"
 ```
 
@@ -267,10 +289,12 @@ console.log(TextHelpers.formatPosition(21)) // "21st"
 Returns truncated text with ellipsis if it exceeds the character limit.
 
 **Parameters:**
+
 - `text`: `string` - The text to truncate.
 - `characterLimit`: `number` - Maximum number of characters.
 
 **Example:**
+
 ```typescript
 const short = TextHelpers.truncateText("Hello World", 5)
 console.log(short) // "He..."
@@ -284,14 +308,16 @@ console.log(long) // "Hello World"
 Extracts the filename from a file path.
 
 **Parameters:**
+
 - `path`: `string` - The file path.
 
 **Example:**
+
 ```typescript
-const filename = TextHelpers.fileNameFromPath('/path/to/file.txt')
+const filename = TextHelpers.fileNameFromPath("/path/to/file.txt")
 console.log(filename) // "file.txt"
 
-const filename2 = TextHelpers.fileNameFromPath('C:\\Users\\file.pdf')
+const filename2 = TextHelpers.fileNameFromPath("C:\\Users\\file.pdf")
 console.log(filename2) // "file.pdf"
 ```
 
@@ -300,9 +326,11 @@ console.log(filename2) // "file.pdf"
 Replaces spaces with underscores in a string.
 
 **Parameters:**
+
 - `s` (optional): `string` - The string to process.
 
 **Example:**
+
 ```typescript
 const result = TextHelpers.replaceSpacesWithUnderscore("hello world test")
 console.log(result) // "hello_world_test"
@@ -316,9 +344,11 @@ console.log(result2) // ""
 Replaces underscores with spaces in a string.
 
 **Parameters:**
+
 - `s` (optional): `string` - The string to process.
 
 **Example:**
+
 ```typescript
 const result = TextHelpers.replaceUnderscoreWithSpaces("hello_world_test")
 console.log(result) // "hello world test"
@@ -329,10 +359,12 @@ console.log(result) // "hello world test"
 Returns pluralized version of the word if condition is true.
 
 **Parameters:**
+
 - `word`: `string` - The word to pluralize.
 - `condition`: `boolean` - Whether to pluralize.
 
 **Example:**
+
 ```typescript
 const plural = TextHelpers.pluralizeOnCondition("item", true)
 console.log(plural) // "items"
@@ -352,9 +384,11 @@ console.log(singular) // "item"
 Converts snake_case to camelCase for strings, objects, or arrays of objects.
 
 **Parameters:**
+
 - `data`: `string | Object | Array<Object>` - The data to convert.
 
 **Example:**
+
 ```typescript
 // String conversion
 const camelString = TextHelpers.convertSnakeToCamelCase("hello_world")
@@ -365,8 +399,8 @@ const camelObject = TextHelpers.convertSnakeToCamelCase({
   first_name: "John",
   last_name: "Doe",
   user_info: {
-    phone_number: "123-456-7890"
-  }
+    phone_number: "123-456-7890",
+  },
 })
 console.log(camelObject)
 // {
@@ -383,9 +417,11 @@ console.log(camelObject)
 Converts camelCase to snake_case for strings, objects, or arrays of objects.
 
 **Parameters:**
+
 - `data`: `string | Object | Array<Object>` - The data to convert.
 
 **Example:**
+
 ```typescript
 // String conversion
 const snakeString = TextHelpers.convertCamelToSnakeCase("helloWorld")
@@ -396,8 +432,8 @@ const snakeObject = TextHelpers.convertCamelToSnakeCase({
   firstName: "John",
   lastName: "Doe",
   userInfo: {
-    phoneNumber: "123-456-7890"
-  }
+    phoneNumber: "123-456-7890",
+  },
 })
 console.log(snakeObject)
 // {
@@ -414,9 +450,11 @@ console.log(snakeObject)
 Converts camelCase to kebab-case.
 
 **Parameters:**
+
 - `word`: `string` - The word to convert.
 
 **Example:**
+
 ```typescript
 const kebab = TextHelpers.convertCamelToKebabCase("helloWorld")
 console.log(kebab) // "hello-world"
@@ -430,9 +468,11 @@ console.log(kebab2) // "xml-http-request"
 Converts kebab-case to camelCase.
 
 **Parameters:**
+
 - `word`: `string` - The word to convert.
 
 **Example:**
+
 ```typescript
 const camel = TextHelpers.convertKebabToCamelCase("hello-world")
 console.log(camel) // "HelloWorld"
@@ -467,9 +507,11 @@ console.log(readable3) // "User Name"
 Generates an acronym from a term.
 
 **Parameters:**
+
 - `term`: `string` - The term to convert to acronym.
 
 **Example:**
+
 ```typescript
 const acronym = TextHelpers.generateAcronym("Hyper Text Markup Language")
 console.log(acronym) // "HTML"
@@ -483,9 +525,11 @@ console.log(acronym2) // "JSON"
 Validates if a word is an acronym (all uppercase).
 
 **Parameters:**
+
 - `word`: `string` - The word to validate.
 
 **Example:**
+
 ```typescript
 console.log(TextHelpers.isAcronym("HTML")) // true
 console.log(TextHelpers.isAcronym("html")) // false
@@ -497,9 +541,11 @@ console.log(TextHelpers.isAcronym("JavaScript")) // false
 Converts an acronym to kebab-case.
 
 **Parameters:**
+
 - `word`: `string` - The acronym to convert.
 
 **Example:**
+
 ```typescript
 const kebab = TextHelpers.acronymToKebabCase("HTML")
 console.log(kebab) // "h-t-m-l"
@@ -516,10 +562,12 @@ TextHelpers.acronymToKebabCase("html") // Error: The text passed: html is not an
 Returns the value or a default string if the value is null or undefined.
 
 **Parameters:**
+
 - `value`: `string | null | undefined` - The value to display.
 - `defaultValue` (optional): `string` - Default value. Defaults to "N/A".
 
 **Example:**
+
 ```typescript
 console.log(TextHelpers.handleNullDisplay("Hello")) // "Hello"
 console.log(TextHelpers.handleNullDisplay(null)) // "N/A"
@@ -532,9 +580,11 @@ console.log(TextHelpers.handleNullDisplay(null, "No data")) // "No data"
 Capitalizes the first letter of a text.
 
 **Parameters:**
+
 - `text` (optional): `string` - The text to capitalize.
 
 **Example:**
+
 ```typescript
 console.log(TextHelpers.capitalizeText("hello world")) // "Hello world"
 console.log(TextHelpers.capitalizeText("HELLO")) // "Hello"
@@ -546,16 +596,18 @@ console.log(TextHelpers.capitalizeText()) // ""
 Enforces a character limit and calls a callback when exceeded.
 
 **Parameters:**
+
 - `text`: `string` - The text to limit.
 - `characterLimit`: `number` - Maximum characters allowed.
 - `onCharacterLimit`: `() => void` - Callback when limit is exceeded.
 
 **Example:**
+
 ```typescript
 const result = TextHelpers.enforceCharacterLimit({
   text: "This is a very long text that exceeds the limit",
   characterLimit: 10,
-  onCharacterLimit: () => console.log("Character limit exceeded!")
+  onCharacterLimit: () => console.log("Character limit exceeded!"),
 })
 console.log(result) // "This is a" (truncated)
 // Console: "Character limit exceeded!"
@@ -566,9 +618,11 @@ console.log(result) // "This is a" (truncated)
 Validates if an email address is properly formatted.
 
 **Parameters:**
+
 - `email`: `string` - The email to validate.
 
 **Example:**
+
 ```typescript
 console.log(TextHelpers.isValidEmail("user@example.com")) // true
 console.log(TextHelpers.isValidEmail("invalid-email")) // false
@@ -581,9 +635,11 @@ console.log(TextHelpers.isValidEmail("")) // false
 Generates an ID from a word by converting to lowercase and replacing spaces with hyphens.
 
 **Parameters:**
+
 - `text`: `string` - The text to convert to ID.
 
 **Example:**
+
 ```typescript
 const id = TextHelpers.generateIDFromWord("Hello World Test")
 console.log(id) // "hello-world-test"
@@ -597,15 +653,17 @@ console.log(id2) // "my-awesome-feature"
 Converts an ID back to a readable word format.
 
 **Parameters:**
+
 - `id`: `string` - The ID to convert.
 - `customList` (optional): `Record<string, string>` - Custom mapping for specific IDs.
 
 **Example:**
+
 ```typescript
 const word = TextHelpers.generateWordFromId("hello-world-test")
 console.log(word) // "Hello World Test"
 
-const customWord = TextHelpers.generateWordFromId("api", { "api": "Application Programming Interface" })
+const customWord = TextHelpers.generateWordFromId("api", { api: "Application Programming Interface" })
 console.log(customWord) // "Application Programming Interface"
 ```
 
@@ -614,10 +672,12 @@ console.log(customWord) // "Application Programming Interface"
 Generates a URL-safe slug from an ID and additional words.
 
 **Parameters:**
+
 - `id`: `string` - The ID to include in the slug.
 - `...words`: `string[]` - Additional words to include.
 
 **Example:**
+
 ```typescript
 const slug = TextHelpers.generateSlugFromWordsWithID("user", "profile", "settings")
 console.log(slug) // "profile-settings-user"
@@ -631,9 +691,11 @@ console.log(slug2) // "hello%20world-test-123"
 Extracts the ID from a slug (last part after splitting by hyphens).
 
 **Parameters:**
+
 - `slug`: `string` - The slug to extract ID from.
 
 **Example:**
+
 ```typescript
 const id = TextHelpers.extractIDfromSlug("hello-world-test-123")
 console.log(id) // "123"
@@ -650,9 +712,11 @@ TextHelpers.extractIDfromSlug("") // Error: slug cannot be empty, null or undefi
 Abbreviates large numbers with K, M, B suffixes.
 
 **Parameters:**
+
 - `number`: `number | undefined | null` - The number to abbreviate.
 
 **Example:**
+
 ```typescript
 console.log(TextHelpers.abbreviateNumber(500)) // "500"
 console.log(TextHelpers.abbreviateNumber(1500)) // "1.5K"
@@ -670,9 +734,11 @@ Utility functions for object manipulation and processing.
 Checks if an object is a pure object (not array, date, or function).
 
 **Parameters:**
+
 - `object`: `any` - The object to check.
 
 **Example:**
+
 ```typescript
 console.log(ObjectHelpers.isPureObject({})) // true
 console.log(ObjectHelpers.isPureObject([])) // false
@@ -686,9 +752,11 @@ console.log(ObjectHelpers.isPureObject("string")) // false
 Parses a cookie string into an object.
 
 **Parameters:**
+
 - `str`: `string` - The cookie string to parse.
 
 **Example:**
+
 ```typescript
 const cookies = ObjectHelpers.parseCookie("name=John; age=30; city=New York")
 console.log(cookies) // { name: "John", age: "30", city: "New York" }
@@ -702,16 +770,18 @@ console.log(cookies2) // { session: "abc123", theme: "dark" }
 Filters an array of objects based on a specific property and value.
 
 **Parameters:**
+
 - `array`: `T[]` - Array of objects to filter.
 - `propertyName`: `keyof T` - Name of the property to filter on.
 - `propertyValue`: `T[keyof T]` - Value to match.
 
 **Example:**
+
 ```typescript
 const users = [
   { id: 1, name: "John", age: 30 },
   { id: 2, name: "Jane", age: 25 },
-  { id: 3, name: "John", age: 35 }
+  { id: 3, name: "John", age: 35 },
 ]
 
 const johns = ObjectHelpers.filterObjectsByProperty(users, "name", "John")
@@ -726,10 +796,12 @@ console.log(adults) // [{ id: 1, name: "John", age: 30 }]
 Checks if the main object contains all key-value pairs from the sub-object.
 
 **Parameters:**
+
 - `mainObject`: `T` - The main object to check.
 - `subObject`: `Partial<T>` - The sub-object to search for.
 
 **Example:**
+
 ```typescript
 const mainObj = { id: 1, name: "John", age: 30, city: "New York" }
 const subObj = { name: "John", age: 30 }
@@ -745,15 +817,17 @@ console.log(ObjectHelpers.containsSubObject(mainObj, subObj2)) // false
 Finds the first object in an array that contains the specified sub-object.
 
 **Parameters:**
+
 - `array`: `T[]` - Array of objects to search.
 - `subObject`: `Partial<T>` - The sub-object to search for.
 
 **Example:**
+
 ```typescript
 const users = [
   { id: 1, name: "John", age: 30, city: "New York" },
   { id: 2, name: "Jane", age: 25, city: "Boston" },
-  { id: 3, name: "Bob", age: 30, city: "Chicago" }
+  { id: 3, name: "Bob", age: 30, city: "Chicago" },
 ]
 
 const result = ObjectHelpers.findObjectBySubObject(users, { age: 30, city: "New York" })
@@ -768,15 +842,17 @@ console.log(result2) // null
 Filters an array of objects based on containing the specified sub-object.
 
 **Parameters:**
+
 - `array`: `T[]` - Array of objects to filter.
 - `subObject`: `Partial<T>` - The sub-object to search for.
 
 **Example:**
+
 ```typescript
 const users = [
   { id: 1, name: "John", age: 30, city: "New York" },
   { id: 2, name: "Jane", age: 25, city: "Boston" },
-  { id: 3, name: "Bob", age: 30, city: "Chicago" }
+  { id: 3, name: "Bob", age: 30, city: "Chicago" },
 ]
 
 const results = ObjectHelpers.filterObjectsBySubObject(users, { age: 30 })
@@ -788,11 +864,13 @@ console.log(results) // [{ id: 1, name: "John", age: 30, city: "New York" }, { i
 Checks if an object has a specific property with a specific value.
 
 **Parameters:**
+
 - `object`: `ObjectType` - The object to check.
 - `propName`: `keyof ObjectType` - The property name.
 - `value`: `ObjectType[keyof ObjectType]` - The expected value.
 
 **Example:**
+
 ```typescript
 const user = { id: 1, name: "John", age: 30 }
 
@@ -805,10 +883,12 @@ console.log(ObjectHelpers.objectPropHasValue({ object: user, propName: "age", va
 Finds the first entry in an array that satisfies a predicate function.
 
 **Parameters:**
+
 - `array`: `EntryType[]` - Array to search.
 - `predicate`: `(item: EntryType) => boolean` - Predicate function.
 
 **Example:**
+
 ```typescript
 const numbers = [1, 2, 3, 4, 5, 6]
 
@@ -827,15 +907,17 @@ console.log(greaterThan10) // null
 Converts an array of objects to a map using a specified key property.
 
 **Parameters:**
+
 - `arrayData`: `T[]` - Array of objects to convert.
 - `keyProp`: `keyof T` - Property to use as the key.
 
 **Example:**
+
 ```typescript
 const users = [
   { id: 1, name: "John", age: 30 },
   { id: 2, name: "Jane", age: 25 },
-  { id: 3, name: "Bob", age: 35 }
+  { id: 3, name: "Bob", age: 35 },
 ]
 
 const userMap = ObjectHelpers.convertArrayToMap(users, "id")
@@ -847,6 +929,31 @@ console.log(userMap)
 // }
 ```
 
+### `convertObjectKeysToKebabCase(obj)`
+
+Converts object keys from camelCase to kebab-case.
+
+**Parameters:**
+
+- `obj`: `T | undefined` - The object to convert.
+
+**Example:**
+
+```typescript
+const camelCaseObj = { firstName: "John", lastName: "Doe", age: 30 }
+const result = ObjectHelpers.convertObjectKeysToKebabCase(camelCaseObj)
+console.log(result) // { "first-name": "John", "last-name": "Doe", age: 30 }
+
+// Handles mixed case keys
+const mixedObj = { firstName: "John", "last-name": "Doe", userName: "johndoe" }
+const result2 = ObjectHelpers.convertObjectKeysToKebabCase(mixedObj)
+console.log(result2) // { "first-name": "John", "last-name": "Doe", "user-name": "johndoe" }
+
+// Returns undefined for undefined input
+const result3 = ObjectHelpers.convertObjectKeysToKebabCase(undefined)
+console.log(result3) // undefined
+```
+
 ## GenericHelpers
 
 General utility functions for common operations.
@@ -856,9 +963,11 @@ General utility functions for common operations.
 Creates a delay (sleep) for the specified number of milliseconds.
 
 **Parameters:**
+
 - `ms`: `number` - Number of milliseconds to wait.
 
 **Example:**
+
 ```typescript
 // Using with async/await
 async function example() {
@@ -878,9 +987,11 @@ GenericHelpers.delay(1000).then(() => {
 Determines the preferred URI scheme (http or https) for a given host.
 
 **Parameters:**
+
 - `host`: `string` - IP address or domain name.
 
 **Example:**
+
 ```typescript
 console.log(GenericHelpers.getPreferredUriScheme("example.com")) // "https"
 console.log(GenericHelpers.getPreferredUriScheme("localhost")) // "http"
@@ -898,10 +1009,12 @@ Utility functions for file operations and validation.
 Checks if a file path has one of the valid extensions.
 
 **Parameters:**
+
 - `filePath`: `string` - The file path to check.
 - `validExtensions`: `string[]` - Array of valid file extensions.
 
 **Example:**
+
 ```typescript
 console.log(FileHelpers.checkFileExtension("document.pdf", ["pdf", "doc", "docx"])) // true
 console.log(FileHelpers.checkFileExtension("image.jpg", ["png", "gif", "svg"])) // false
@@ -929,6 +1042,7 @@ npm test
 We follow [Conventional Commits](https://www.conventionalcommits.org/) for our semantic release process. **We prefer commit messages to include a scope in parentheses** for better categorization and changelog generation.
 
 ### Preferred Format
+
 ```
 type(scope): description
 
@@ -938,6 +1052,7 @@ type(scope): description
 ```
 
 ### Examples
+
 ```bash
 ## ✅ Preferred - with scope
 feat(date): add new date formatting options
@@ -953,6 +1068,7 @@ chore: update dependencies
 ```
 
 ### Common Scopes
+
 - `date` - Date manipulation functions
 - `text` - Text processing functions
 - `object` - Object manipulation functions
@@ -966,6 +1082,7 @@ chore: update dependencies
 - `ci` - CI/CD configuration
 
 ### Commit Types
+
 - `feat` - New features
 - `fix` - Bug fixes
 - `docs` - Documentation changes
