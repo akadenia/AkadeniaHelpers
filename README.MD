@@ -1,14 +1,14 @@
 <div align="center">
   <img src="https://cdn.akadenia.com/images/akadenia-webp/logo/horizontal-logo.svg" alt="Akadenia" width="200" />
-  
+
   ## @akadenia/helpers
-  
+
   <img src="https://cdn.akadenia.com/images/badges/npm-version-helpers.svg" alt="npm version" />
   <img src="https://cdn.akadenia.com/images/badges/license-mit.svg" alt="License: MIT" />
   <img src="https://cdn.akadenia.com/images/badges/typescript.svg" alt="TypeScript" />
-  
+
   A comprehensive collection of utility functions for common JavaScript/TypeScript operations including date manipulation, text processing, object handling, map calculations, and more.
-  
+
   [Documentation](https://akadenia.com/packages/akadenia-helpers) • [GitHub](https://github.com/akadenia/AkadeniaHelpers) • [Issues](https://github.com/akadenia/AkadeniaHelpers/issues)
 </div>
 
@@ -117,9 +117,9 @@ Returns a formatted date string using Intl.DateTimeFormat options.
 ```typescript
 const formatted = DateHelpers.formatDateTime(
   new Date('2024-01-15T10:30:00Z'),
-  { 
-    year: 'numeric', 
-    month: 'long', 
+  {
+    year: 'numeric',
+    month: 'long',
     day: 'numeric',
     hour: '2-digit',
     minute: '2-digit'
@@ -845,6 +845,29 @@ console.log(userMap)
 //   "2": { id: 2, name: "Jane", age: 25 },
 //   "3": { id: 3, name: "Bob", age: 35 }
 // }
+```
+
+Converts object keys from camelCase to kebab-case.
+
+**Parameters:**
+
+- `obj`: `T | undefined` - The object to convert.
+
+**Example:**
+
+```typescript
+const camelCaseObj = { firstName: "John", lastName: "Doe", age: 30 }
+const result = ObjectHelpers.convertObjectKeysToKebabCase(camelCaseObj)
+console.log(result) // { "first-name": "John", "last-name": "Doe", age: 30 }
+
+// Handles mixed case keys
+const mixedObj = { firstName: "John", "last-name": "Doe", userName: "johndoe" }
+const result2 = ObjectHelpers.convertObjectKeysToKebabCase(mixedObj)
+console.log(result2) // { "first-name": "John", "last-name": "Doe", "user-name": "johndoe" }
+
+// Returns undefined for undefined input
+const result3 = ObjectHelpers.convertObjectKeysToKebabCase(undefined)
+console.log(result3) // undefined
 ```
 
 ## GenericHelpers

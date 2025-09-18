@@ -9,6 +9,7 @@ import {
   containsSubObject,
   objectPropHasValue,
   findEntry,
+  convertObjectKeysToKebabCase,
 } from "../src/object"
 
 interface TestUser {
@@ -257,5 +258,30 @@ describe("findEntry", () => {
     const predicate = (item: any) => typeof item === "string"
     const result = findEntry(mixed, predicate)
     expect(result).toBe("apple")
+  })
+})
+
+describe("convertObjectKeysToKebabCase", () => {
+  it("should convert camelCase object keys to kebab-case", () => {
+    const camelCaseObj = { firstName: "John", lastName: "Doe", age: 30 }
+    const result = convertObjectKeysToKebabCase(camelCaseObj)
+    expect(result).toEqual({ "first-name": "John", "last-name": "Doe", age: 30 })
+  })
+
+  it("should handle object with mixed camelCase and kebab-case keys", () => {
+    const mixedObj = { firstName: "John", "last-name": "Doe", userName: "johndoe" }
+    const result = convertObjectKeysToKebabCase(mixedObj)
+    expect(result).toEqual({ "first-name": "John", "last-name": "Doe", "user-name": "johndoe" })
+  })
+
+  it("should handle empty object", () => {
+    const emptyObj = {}
+    const result = convertObjectKeysToKebabCase(emptyObj)
+    expect(result).toEqual({})
+  })
+
+  it("should return undefined when input is undefined", () => {
+    const result = convertObjectKeysToKebabCase(undefined)
+    expect(result).toBeUndefined()
   })
 })
