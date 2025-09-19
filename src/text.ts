@@ -179,8 +179,9 @@ export function convertKebabToCamelCase(word: string): string {
  */
 export function convertCamelCaseToReadableText(name: string): string {
   return name
-    .replace(/([A-Z])/g, " $1")
-    .replace(/^./, (str) => str.toUpperCase())
+    .replace(/([A-Z]+)([A-Z][a-z])/g, "$1 $2")
+    .replace(/([a-z\d])([A-Z])/g, "$1 $2")
+    .replace(/^./, (c) => c.toUpperCase())
     .trim()
 }
 

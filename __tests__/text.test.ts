@@ -17,6 +17,7 @@ import {
   isValidEmail,
   convertCamelToKebabCase,
   convertKebabToCamelCase,
+  convertCamelCaseToReadableText,
   isAcronym,
   acronymToKebabCase,
   generateIDFromWord,
@@ -457,6 +458,40 @@ it("convertKebabToCamelCase", () => {
 
   actual = convertKebabToCamelCase("test-with-number5")
   expected = "TestWithNumber5"
+  expect(actual).toBe(expected)
+})
+
+it("convertCamelCaseToReadableText", () => {
+  let actual = convertCamelCaseToReadableText("XMLHttpRequest")
+  let expected = "XML Http Request"
+  expect(actual).toBe(expected)
+
+  actual = convertCamelCaseToReadableText("getURLForID")
+  expected = "Get URL For ID"
+  expect(actual).toBe(expected)
+
+  actual = convertCamelCaseToReadableText("userName")
+  expected = "User Name"
+  expect(actual).toBe(expected)
+
+  // Edge case: single word
+  actual = convertCamelCaseToReadableText("name")
+  expected = "Name"
+  expect(actual).toBe(expected)
+
+  // Edge case: empty string
+  actual = convertCamelCaseToReadableText("")
+  expected = ""
+  expect(actual).toBe(expected)
+
+  // Edge case: numbers mixed with letters
+  actual = convertCamelCaseToReadableText("user123Name")
+  expected = "User123 Name"
+  expect(actual).toBe(expected)
+
+  // Edge case: already starts with capital
+  actual = convertCamelCaseToReadableText("FirstName")
+  expected = "First Name"
   expect(actual).toBe(expected)
 })
 
