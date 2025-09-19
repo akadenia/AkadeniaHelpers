@@ -1,3 +1,5 @@
+import { convertCamelToKebabCase } from "./text"
+
 /**
  *
  * @function
@@ -135,4 +137,23 @@ export function convertArrayToMap<T extends object>(arrayData: T[], keyProp: key
   }, dataAsObject)
 
   return dataAsObject
+}
+
+/**
+ * Converts object keys from camelCase to kebab-case
+ * @template T extends Record<string, any> - The type of the object
+ * @param {T | undefined} obj - The object to convert
+ * @returns {Record<string, any> | undefined} - The object with kebab-case keys or undefined
+ */
+export const convertObjectKeysToKebabCase = <T extends Record<string, any>>(
+  obj: T | undefined,
+): Record<string, any> | undefined => {
+  if (!obj) return undefined
+  return Object.entries(obj).reduce(
+    (acc, [key, value]) => ({
+      ...acc,
+      [convertCamelToKebabCase(key)]: value,
+    }),
+    {},
+  )
 }
