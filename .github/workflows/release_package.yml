@@ -30,7 +30,7 @@ jobs:
     steps:
       - name: Load Environment Variables From 1Password
         id: op-env
-        uses: 1password/load-secrets-action@v2
+        uses: 1password/load-secrets-action@v3
         with:
           export-env: true
         env:
@@ -49,8 +49,8 @@ jobs:
       - uses: codfish/semantic-release-action@v3
         id: semantic
         env:
-          GITHUB_TOKEN: ${{ env.GH_TOKEN }}
-          NPM_TOKEN: ${{ env.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.op-env.outputs.GH_TOKEN }}
+          NPM_TOKEN: ${{ steps.op-env.outputs.NPM_TOKEN }}
 
       - name: Release Version
         run: echo ${{ steps.semantic.outputs.release-version }}
