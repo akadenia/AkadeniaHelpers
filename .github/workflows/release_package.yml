@@ -30,7 +30,7 @@ jobs:
     steps:
       - name: Load Environment Variables From 1Password
         id: op-env
-        uses: 1password/load-secrets-action@v3
+        uses: 1password/load-secrets-action@13f58eec611f8e5db52ec16247f58c508398f3e6  # Using 3.0.0
         with:
           export-env: true
         env:
@@ -46,7 +46,7 @@ jobs:
       - name: Install dependencies
         run: npm clean-install
 
-      - uses: codfish/semantic-release-action@v3
+      - uses: codfish/semantic-release-action@b621d34fabe0940f031e89b6ebfea28322892a10  # Using 3.5.0
         id: semantic
         env:
           GITHUB_TOKEN: ${{ steps.op-env.outputs.GH_TOKEN }}
