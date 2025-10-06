@@ -1,3 +1,16 @@
+# [1.8.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.7.3...1.8.0) (2025-09-22)
+
+
+### Bug Fixes
+
+* **text helpers:** address issue where convertCamelCaseToReadableText splits acronyms ([#42](https://github.com/akadenia/AkadeniaHelpers/issues/42)) ([ba55714](https://github.com/akadenia/AkadeniaHelpers/commit/ba55714a614985af1b5feb09d8d7d5b6f8e110e6))
+
+
+### Features
+
+* **object:** add convertObjectKeysToKebabCase function to convert camelCase keys to kebab-case ([#40](https://github.com/akadenia/AkadeniaHelpers/issues/40)) ([a640fe9](https://github.com/akadenia/AkadeniaHelpers/commit/a640fe90cd2e3c9cd299be737ffadbbb989f8e81))
+* **text helpers:** add camelCasee to readable text, update pluralize text helper ([#37](https://github.com/akadenia/AkadeniaHelpers/issues/37)) ([063ddc3](https://github.com/akadenia/AkadeniaHelpers/commit/063ddc3a4f13e9c58c041f10d01080e24d64a7e5))
+
 ## [1.7.3](https://github.com/akadenia/AkadeniaHelpers/compare/1.7.2...1.7.3) (2025-06-25)
 
 
