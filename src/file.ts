@@ -26,8 +26,9 @@ export const formatFileSize = (bytes: number | null): string => {
   const units = ["B", "KB", "MB", "GB", "TB"]
 
   const unitIndex = Math.floor(Math.log2(bytes) / 10)
+  const clampedIndex = Math.min(unitIndex, units.length - 1)
 
-  const size = bytes / Math.pow(1024, unitIndex)
+  const size = bytes / Math.pow(1024, clampedIndex)
 
-  return `${size.toFixed(unitIndex === 0 ? 0 : 1)} ${units[unitIndex]}`
+  return `${size.toFixed(clampedIndex === 0 ? 0 : 1)} ${units[clampedIndex]}`
 }
