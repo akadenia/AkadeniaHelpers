@@ -11,3 +11,26 @@ export const checkFileExtension = (filePath: string, validExtensions: string[]):
   const fileExtension = filePath.split(".").pop()
   return !!fileExtension && validExtensions.includes(fileExtension)
 }
+
+/**
+ * Format a file size to a human readable string
+ * @param bytes The file size in bytes
+ * @returns The formatted file size
+ * @example
+ * formatFileSize(1024) // "1.0 KB"
+ * formatFileSize(1024 * 1024) // "1.0 MB"
+ */
+export const formatFileSize = (bytes: number | null): string => {
+  if (!bytes || bytes === 0) return "0 B"
+
+  const units = ["B", "KB", "MB", "GB", "TB"]
+  let size = bytes
+  let unitIndex = 0
+
+  while (size >= 1024 && unitIndex < units.length - 1) {
+    size /= 1024
+    unitIndex++
+  }
+
+  return `${size.toFixed(unitIndex === 0 ? 0 : 1)} ${units[unitIndex]}`
+}

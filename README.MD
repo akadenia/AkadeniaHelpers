@@ -933,6 +933,26 @@ console.log(FileHelpers.checkFileExtension("script.js", ["js", "ts", "jsx"])) //
 console.log(FileHelpers.checkFileExtension("file", ["txt", "md"])) // false (no extension)
 ```
 
+### `formatFileSize(bytes)`
+
+Formats a file size in bytes to a human-readable string with appropriate units.
+
+**Parameters:**
+
+- `bytes`: `number | null` - The file size in bytes.
+
+**Example:**
+
+```typescript
+console.log(FileHelpers.formatFileSize(1024)) // "1.0 KB"
+console.log(FileHelpers.formatFileSize(1024 * 1024)) // "1.0 MB"
+console.log(FileHelpers.formatFileSize(1024 * 1024 * 1024)) // "1.0 GB"
+console.log(FileHelpers.formatFileSize(512)) // "512 B"
+console.log(FileHelpers.formatFileSize(1536)) // "1.5 KB"
+console.log(FileHelpers.formatFileSize(0)) // "0 B"
+console.log(FileHelpers.formatFileSize(null)) // "0 B"
+```
+
 ## Contributing
 
 We welcome contributions! Please feel free to submit a Pull Request.
