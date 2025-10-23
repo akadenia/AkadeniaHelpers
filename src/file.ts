@@ -21,7 +21,7 @@ export const checkFileExtension = (filePath: string, validExtensions: string[]):
  * formatFileSize(1024 * 1024) // "1.0 MB"
  */
 export const formatFileSize = (bytes: number | null): string => {
-  if (!bytes || bytes === 0) return "0 B"
+  if (!bytes || bytes <= 0) return "0 B"
 
   const units = ["B", "KB", "MB", "GB", "TB"]
 

@@ -33,6 +33,10 @@ describe("formatFileSize", () => {
     expect(formatFileSize(0)).toBe("0 B")
   })
 
+  it("returns '0 B' when the size is negative", () => {
+    expect(formatFileSize(-1)).toBe("0 B")
+  })
+
   it("returns '0 B' when the input value is null (invalid size)", () => {
     expect(formatFileSize(null)).toBe("0 B")
   })
