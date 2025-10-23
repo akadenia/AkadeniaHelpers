@@ -17,8 +17,16 @@ describe("checkFileExtension", () => {
 })
 
 describe("formatFileSize", () => {
+  it("formats 100 bytes as '100 B'", () => {
+    expect(formatFileSize(100)).toBe("100 B")
+  })
+
   it("formats 1024 bytes as '1.0 KB'", () => {
     expect(formatFileSize(1024)).toBe("1.0 KB")
+  })
+
+  it("formats 1536 bytes as '1.5 KB'", () => {
+    expect(formatFileSize(1536)).toBe("1.5 KB")
   })
 
   it("formats 1,048,576 bytes (1024 * 1024) as '1.0 MB'", () => {
