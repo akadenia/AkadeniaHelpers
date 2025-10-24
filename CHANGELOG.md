@@ -1,3 +1,16 @@
+# [1.9.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.8.0...1.9.0) (2025-10-24)
+
+
+### Bug Fixes
+
+* **formatFileSize:** clamp unit index to prevent out-of-bounds access ([2a95fda](https://github.com/akadenia/AkadeniaHelpers/commit/2a95fda05fcb18e243793e73a6f40f0bf85d97e5))
+
+
+### Features
+
+* **file-helpers:** add formatFileSize function to format bytes into human-readable format ([#46](https://github.com/akadenia/AkadeniaHelpers/issues/46)) ([f094419](https://github.com/akadenia/AkadeniaHelpers/commit/f094419ff39d79a23a6f8ed4a979caee8d6de756))
+* **file-helpers:** add formatFileSize function to format bytes into human-readable units ([819d229](https://github.com/akadenia/AkadeniaHelpers/commit/819d2292bce8d2a36313b203fb768f5be610bd3a))
+
 # [1.8.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.7.3...1.8.0) (2025-09-22)
 
 
