@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.8.0...1.9.0) (2025-10-24)
+
+
+### Features
+
+* **file-helpers:** add formatFileSize function to format bytes into human-readable format ([#46](https://github.com/akadenia/AkadeniaHelpers/issues/46)) ([f094419](https://github.com/akadenia/AkadeniaHelpers/commit/f094419ff39d79a23a6f8ed4a979caee8d6de756))
+
 # [1.8.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.7.3...1.8.0) (2025-09-22)
 
 
