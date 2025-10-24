@@ -1,11 +1,24 @@
-import { describe, it, expect } from "@jest/globals"
+import { describe, it, expect, jest, afterEach, beforeEach } from "@jest/globals"
 
 import { delay, getPreferredUriScheme } from "../src/generic"
 
 describe("delay", () => {
+  beforeEach(() => {
+    jest.useFakeTimers()
+    jest.setSystemTime(0)
+  })
+
+  afterEach(() => {
+    jest.useRealTimers()
+  })
+
   it("should resolve after the specified time", async () => {
     const startTime = Date.now()
-    await delay(1000)
+    const promise = delay(1000)
+
+    jest.advanceTimersByTime(1000)
+    await promise
+
     const endTime = Date.now()
 
     expect(endTime - startTime).toBeCloseTo(1000, -1)
