@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://cdn.akadenia.com/images/akadenia-webp/logo/horizontal-logo.svg" alt="Akadenia" width="200" />
 
-  ## @akadenia/helpers
+  <h2><code>@akadenia/helpers</code></h2>
 
   <img src="https://cdn.akadenia.com/images/badges/npm-version-helpers.svg" alt="npm version" />
   <img src="https://cdn.akadenia.com/images/badges/license-mit.svg" alt="License: MIT" />
