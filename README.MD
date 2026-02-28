@@ -677,8 +677,8 @@ Returns the compass bearing (0–360°) from start to end coordinate. Throws if 
 ```typescript
 // New York → Los Angeles
 MapHelpers.getBearingToCoordinate({
-  startCoordinate: [-74.006,    40.7128],
-  endCoordinate:   [-118.2437,  34.0522],
+  startCoordinate: [40.7128, -74.006],
+  endCoordinate:   [34.0522, -118.2437],
 })
 // ~277.5 (roughly west)
 ```
