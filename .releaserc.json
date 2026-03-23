@@ -6,15 +6,15 @@
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     [
-      "@semantic-release/npm",
-      {
-        "npmPublish": true
-      }
-    ],
-    [
       "@semantic-release/exec",
       {
         "prepareCmd": "npm run build"
+      }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": true
       }
     ],
     [
