@@ -36,6 +36,15 @@ jobs:
       - checkout
       - node/install:
           node-version: "22"
+      - run:
+          name: Import GPG key and configure git signing
+          command: |
+            echo "$GPG_PRIVATE_KEY" | base64 --decode | gpg --batch --import
+            git config --global user.signingkey 65C0CE72
+            git config --global commit.gpgsign true
+            git config --global tag.gpgsign true
+            git config --global user.name "Akadenia CI Bot"
+            git config --global user.email "ci@akadenia.com"
       - node/install-packages:
           pkg-manager: npm
       - run: npm run build
