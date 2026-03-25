@@ -8,20 +8,15 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "npm run build"
+        "prepareCmd": "npm run build",
+        "successCmd": "bash scripts/commit-release-assets.sh ${nextRelease.version}",
+        "verifyConditionsCmd": "echo \"Checking required tools and env vars...\" && command -v jq >/dev/null 2>&1 || (echo \"ERROR: jq not found\" && exit 1) && command -v curl >/dev/null 2>&1 || (echo \"ERROR: curl not found\" && exit 1) && [ -n \"${GH_TOKEN:-}\" ] || (echo \"ERROR: GH_TOKEN not set\" && exit 1) && echo \"Preflight checks passed.\""
       }
     ],
     [
       "@semantic-release/npm",
       {
         "npmPublish": true
-      }
-    ],
-    [
-      "@semantic-release/git",
-      {
-        "assets": ["package.json", "package-lock.json", "CHANGELOG.md"],
-        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
     ],
     "@semantic-release/github"
