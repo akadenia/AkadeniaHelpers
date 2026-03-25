@@ -21,11 +21,11 @@ if [ -z "$CHANGED" ]; then
   exit 0
 fi
 
-# Create and push release branch
-git checkout -b "$BRANCH"
+# Create (or reset) and push release branch
+git checkout -B "$BRANCH"
 git add package.json package-lock.json CHANGELOG.md 2>/dev/null || git add package.json CHANGELOG.md
-git commit -m "chore(release): ${VERSION} assets [skip ci]"
-git push "https://${GH_TOKEN}@github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git" "$BRANCH"
+git commit -m "chore(release): ${VERSION} assets"
+git push --force-with-lease "https://x-access-token:${GH_TOKEN}@github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git" "$BRANCH"
 
 # Open PR
 PAYLOAD=$(jq -n \
