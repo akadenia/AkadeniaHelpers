@@ -378,3 +378,14 @@ export const abbreviateNumber = (number: number | undefined | null): string | nu
 
   return number.toString()
 }
+
+/**
+ * Sanitize log message
+ * @function
+ * @param message The log message to be sanitized
+ * @returns The sanitized log message
+ */
+export const sanitizeLogMessage = (message: string): string => {
+  // replace line breaks/tabs with a single space, then strip control characters
+  return message.replace(/[\r\n\t]/g, " ").replace(/[\u0000-\u001F\u007F\u0080-\u009F]/g, "")
+}

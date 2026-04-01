@@ -25,6 +25,7 @@ import {
   generateSlugFromWordsWithID,
   extractIDfromSlug,
   abbreviateNumber,
+  sanitizeLogMessage,
 } from "../src/text"
 
 it("uuidv4", () => {
@@ -624,4 +625,24 @@ it("abbreviateNumber", () => {
   actual = abbreviateNumber(1234567890)
   expected = "1.23B"
   expect(actual).toBe(expected)
+})
+
+describe("sanitizeLogMessage", () => {
+  it("preserves normal printable text", () => {
+    expect(sanitizeLogMessage("Hello World")).toBe("Hello World")
+  })
+
+  it("replaces newlines and tabs with spaces", () => {
+    expect(sanitizeLogMessage("Line1\nLine2\tEnd")).toBe("Line1 Line2 End")
+    expect(sanitizeLogMessage("Line1\r\nLine2")).toBe("Line1  Line2")
+  })
+
+  it("removes non-printable control characters and DEL and C1 range", () => {
+    const msg = "A" + String.fromCharCode(1) + "B" + String.fromCharCode(127) + "C" + String.fromCharCode(129) + "D"
+    expect(sanitizeLogMessage(msg)).toBe("ABCD")
+  })
+
+  it("preserves unicode characters and emoji", () => {
+    expect(sanitizeLogMessage("café 😊")).toBe("café 😊")
+  })
 })
