@@ -1,3 +1,19 @@
+## [1.9.2](https://github.com/akadenia/AkadeniaHelpers/compare/1.9.1...1.9.2) (2026-03-25)
+
+
+### Bug Fixes
+
+* **deps:** align package.json version with latest release tag and upgrade dependencies ([#70](https://github.com/akadenia/AkadeniaHelpers/issues/70)) ([3988852](https://github.com/akadenia/AkadeniaHelpers/commit/398885269c0abfc90cf877ab646b028ad1ba43d9))
+* **release:** move verifyConditionsCmd to script to fix syntax error ([#75](https://github.com/akadenia/AkadeniaHelpers/issues/75)) ([4ee8b1e](https://github.com/akadenia/AkadeniaHelpers/commit/4ee8b1e1ecc3f4731f485ba03ecd9df7a03d3de7))
+* **release:** replace @semantic-release/git with PR-based release asset workflow ([#72](https://github.com/akadenia/AkadeniaHelpers/issues/72)) ([747d5cf](https://github.com/akadenia/AkadeniaHelpers/commit/747d5cfc683e6bb3b9b05598259a900d5e70b7f4))
+
+# [1.9.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.8.0...1.9.0) (2025-10-24)
+
+
+### Features
+
+* **file-helpers:** add formatFileSize function to format bytes into human-readable format ([#46](https://github.com/akadenia/AkadeniaHelpers/issues/46)) ([f094419](https://github.com/akadenia/AkadeniaHelpers/commit/f094419ff39d79a23a6f8ed4a979caee8d6de756))
+
 # [1.8.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.7.3...1.8.0) (2025-09-22)
 
 

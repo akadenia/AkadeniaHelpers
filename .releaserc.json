@@ -1,0 +1,24 @@
+{
+  "branches": ["main"],
+  "tagFormat": "${version}",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "npm run build",
+        "successCmd": "bash scripts/commit-release-assets.sh ${nextRelease.version}",
+        "verifyConditionsCmd": "bash scripts/preflight-release.sh"
+      }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": true
+      }
+    ],
+    "@semantic-release/github"
+  ]
+}
