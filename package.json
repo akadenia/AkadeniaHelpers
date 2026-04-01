@@ -1,6 +1,6 @@
 {
   "name": "@akadenia/helpers",
-  "version": "1.9.2",
+  "version": "1.10.0",
   "description": "Akadenia helpers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

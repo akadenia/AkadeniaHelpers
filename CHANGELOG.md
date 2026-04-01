@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.9.2...1.10.0) (2026-04-01)
+
+
+### Features
+
+* **test:** add text sanitization text helper ([#80](https://github.com/akadenia/AkadeniaHelpers/issues/80)) ([2cc2b45](https://github.com/akadenia/AkadeniaHelpers/commit/2cc2b45627b491230d110271266e228b71483c8d))
+
 ## [1.9.2](https://github.com/akadenia/AkadeniaHelpers/compare/1.9.1...1.9.2) (2026-03-25)
 
 
