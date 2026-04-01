@@ -386,12 +386,6 @@ export const abbreviateNumber = (number: number | undefined | null): string | nu
  * @returns The sanitized log message
  */
 export const sanitizeLogMessage = (message: string): string => {
-  return message
-    .replace(/[\r\n\t]/g, " ")
-    .split("")
-    .filter((char) => {
-      const code = char.charCodeAt(0)
-      return code >= 32 && code !== 127 && (code < 128 || code > 159)
-    })
-    .join("")
+  // replace line breaks/tabs with a single space, then strip control characters
+  return message.replace(/[\r\n\t]/g, " ").replace(/[\u0000-\u001F\u007F\u0080-\u009F]/g, "")
 }
