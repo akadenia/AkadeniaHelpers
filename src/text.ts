@@ -378,3 +378,20 @@ export const abbreviateNumber = (number: number | undefined | null): string | nu
 
   return number.toString()
 }
+
+/**
+ * Sanitize log message
+ * @function
+ * @param message The log message to be sanitized
+ * @returns The sanitized log message
+ */
+export const sanitizeLogMessage = (message: string): string => {
+  return message
+    .replace(/[\r\n\t]/g, " ")
+    .split("")
+    .filter((char) => {
+      const code = char.charCodeAt(0)
+      return code >= 32 && code !== 127 && (code < 128 || code > 159)
+    })
+    .join("")
+}
