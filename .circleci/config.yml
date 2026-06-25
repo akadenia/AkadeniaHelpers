@@ -14,11 +14,15 @@ jobs:
       - checkout
       - node/install:
           node-version: << parameters.node-version >>
-      - node/install-packages:
-          pkg-manager: npm
-      - run: npm run build
-      - run: npm run lint
-      - run: npm run test --if-present
+      - run:
+          name: Install pnpm
+          command: npm install -g pnpm@11.9.0
+      - run:
+          name: Install dependencies
+          command: pnpm install --frozen-lockfile
+      - run: pnpm run build
+      - run: pnpm run lint
+      - run: pnpm test
 
   build_lint_test:
     docker:
@@ -35,10 +39,14 @@ jobs:
     steps:
       - checkout
       - node/install:
-          node-version: "22"
-      - node/install-packages:
-          pkg-manager: npm
-      - run: npm run build
+          node-version: "26"
+      - run:
+          name: Install pnpm
+          command: npm install -g pnpm@11.9.0
+      - run:
+          name: Install dependencies
+          command: pnpm install --frozen-lockfile
+      - run: pnpm run build
       - run:
           name: Semantic Release
           command: npx semantic-release
@@ -54,7 +62,7 @@ jobs:
                 --arg body "Merge release ${VERSION} assets" \
                 '{title: $title, head: $head, base: $base, body: $body}')
               RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
-                -H "Authorization: Bearer $GH_TOKEN" \
+                -H "Authorization: Bearer ${GH_TOKEN}" \
                 -H "Accept: application/vnd.github+json" \
                 "https://api.github.com/repos/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/pulls" \
                 -d "$PAYLOAD")
@@ -73,7 +81,7 @@ workflows:
       - build_lint_test_node:
           matrix:
             parameters:
-              node-version: ["20", "22", "24"]
+              node-version: ["22", "24", "26"]
       - build_lint_test:
           requires:
             - build_lint_test_node
