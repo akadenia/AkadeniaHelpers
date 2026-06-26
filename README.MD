@@ -776,3 +776,4 @@ type(scope): description
 ## License
 
 [MIT](LICENSE)
+
