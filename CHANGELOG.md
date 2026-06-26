@@ -1,3 +1,15 @@
+# [1.11.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.10.0...1.11.0) (2026-06-26)
+
+
+### Bug Fixes
+
+* migrate to pnpm, align CI, and add Node 26 ([#88](https://github.com/akadenia/AkadeniaHelpers/issues/88)) ([a1f7676](https://github.com/akadenia/AkadeniaHelpers/commit/a1f76767d453588eae6d2169962542ac5ce98bdc)), closes [#87](https://github.com/akadenia/AkadeniaHelpers/issues/87)
+
+
+### Features
+
+* **ci:** make PR title scope optional in linter ([#85](https://github.com/akadenia/AkadeniaHelpers/issues/85)) ([7730aac](https://github.com/akadenia/AkadeniaHelpers/commit/7730aac9e8665e261df062621c1ab886c4096eef))
+
 # [1.10.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.9.2...1.10.0) (2026-04-01)
 
 
