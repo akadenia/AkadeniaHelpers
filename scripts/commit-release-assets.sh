@@ -15,7 +15,7 @@ git config user.email "ci@akadenia.com"
 git config user.name "Akadenia CI"
 
 # Check if there are any changes to commit
-CHANGED=$(git diff --name-only package.json package-lock.json CHANGELOG.md 2>/dev/null || true)
+CHANGED=$(git diff --name-only package.json pnpm-lock.yaml CHANGELOG.md 2>/dev/null || true)
 if [ -z "$CHANGED" ]; then
   echo "No release asset changes to commit."
   exit 0
@@ -23,7 +23,7 @@ fi
 
 # Create (or reset) and push release branch
 git checkout -B "$BRANCH"
-git add package.json package-lock.json CHANGELOG.md 2>/dev/null || git add package.json CHANGELOG.md
+git add package.json pnpm-lock.yaml CHANGELOG.md 2>/dev/null || git add package.json CHANGELOG.md
 git commit -m "chore(release): ${VERSION} assets"
 git push --force-with-lease "https://x-access-token:${GH_TOKEN}@github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git" "$BRANCH"
 
@@ -32,7 +32,7 @@ PAYLOAD=$(jq -n \
   --arg title "chore(release): ${VERSION} assets" \
   --arg head "$BRANCH" \
   --arg base "$BASE_BRANCH" \
-  --arg body "Automated release assets for v${VERSION}. Merging this will update \`package.json\`, \`package-lock.json\`, and \`CHANGELOG.md\` on main." \
+  --arg body "Automated release assets for v${VERSION}. Merging this will update \`package.json\`, \`pnpm-lock.yaml\`, and \`CHANGELOG.md\` on main." \
   '{title: $title, head: $head, base: $base, body: $body}')
 
 RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \

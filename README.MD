@@ -751,9 +751,9 @@ We welcome contributions! Please feel free to submit a Pull Request.
 ```bash
 git clone https://github.com/akadenia/AkadeniaHelpers.git
 cd AkadeniaHelpers
-npm install
-npm run build
-npm test
+pnpm install
+pnpm run build
+pnpm test
 ```
 
 ### Commit Message Guidelines
@@ -776,3 +776,4 @@ type(scope): description
 ## License
 
 [MIT](LICENSE)
+

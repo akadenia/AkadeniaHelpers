@@ -8,7 +8,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "npm run build",
+        "prepareCmd": "pnpm run build",
         "successCmd": "bash scripts/commit-release-assets.sh ${nextRelease.version}",
         "verifyConditionsCmd": "bash scripts/preflight-release.sh"
       }
