@@ -15,7 +15,7 @@
     "lint": "prettier --check \"./**/*.{ts,tsx,js,jsx,json,yml}\"",
     "prepare": "pnpm run build",
     "version": "git add -A src",
-    "updateLink": "pnpm run build && pnpm rm -g @akadenia/helpers && pnpm link",
+    "updateLink": "pnpm run build && pnpm rm -g @akadenia/helpers && pnpm add -g .",
     "generate:docs": "jsdoc2md dist/*.js"
   },
   "files": [
