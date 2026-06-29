@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/akadenia/AkadeniaHelpers/compare/1.11.1...1.11.2) (2026-06-29)
+
+
+### Bug Fixes
+
+* correct curl header syntax in CircleCI config ([#92](https://github.com/akadenia/AkadeniaHelpers/issues/92)) ([26af98f](https://github.com/akadenia/AkadeniaHelpers/commit/26af98f63074fe07275a8d37f194aa0841b4bb5f))
+
 ## [1.11.1](https://github.com/akadenia/AkadeniaHelpers/compare/1.11.0...1.11.1) (2026-06-29)
 
 
