@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/akadenia/AkadeniaHelpers/compare/1.11.0...1.11.1) (2026-06-29)
+
+
+### Bug Fixes
+
+* unify CI scripts ([#90](https://github.com/akadenia/AkadeniaHelpers/issues/90)) ([ba7049f](https://github.com/akadenia/AkadeniaHelpers/commit/ba7049f1c3f8e48b8aa1414fbc61dfa8e5ddd7c3))
+
 # [1.10.0](https://github.com/akadenia/AkadeniaHelpers/compare/1.9.2...1.10.0) (2026-04-01)
 
 
